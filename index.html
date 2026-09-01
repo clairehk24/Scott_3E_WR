@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Web resource for Contemporary Leadership in Sport Organizations, 3rd Edition."
+    />
+    <title>Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource</title>
+    <style>
+      :root {
+        --navy: #0b478d;
+        --navy-deep: #073971;
+        --cream: #f6e8c9;
+        --paper: #fffdf8;
+        --background: #f8f4eb;
+        --red: #af3b55;
+        --sky: #0ea6df;
+        --ink: #111821;
+        --muted: #5f6872;
+        --border: #d8d1c5;
+        --content-width: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        background: var(--background);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .page-shell {
+        min-height: 100vh;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 330px;
+        overflow: hidden;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: auto 0 0;
+        height: 10px;
+        background: linear-gradient(
+          90deg,
+          var(--cream) 0 68%,
+          var(--red) 68% 85%,
+          var(--sky) 85%
+        );
+        content: '';
+      }
+
+      .site-nav,
+      .hero-grid,
+      .activities,
+      .site-footer {
+        width: min(var(--content-width), calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .site-nav {
+        display: flex;
+        min-height: 64px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(255 255 255 / 24%);
+      }
+
+      .wordmark {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .wordmark-mark {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border: 2px solid var(--cream);
+        color: var(--cream);
+        font-size: 0.66rem;
+        letter-spacing: 0;
+      }
+
+      .nav-link {
+        padding: 10px 0;
+        border-bottom: 2px solid transparent;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        border-color: var(--cream);
+      }
+
+      .hero-grid {
+        display: grid;
+        min-height: 256px;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: center;
+        padding: 30px 0 38px;
+      }
+
+      .hero-copy {
+        max-width: 850px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--cream);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(2.4rem, 4.7vw, 4.5rem);
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .hero h1 span {
+        display: block;
+      }
+
+      .activities {
+        padding: 38px 0 64px;
+      }
+
+      .section-heading {
+        margin-bottom: 24px;
+      }
+
+      .eyebrow-dark {
+        margin-bottom: 12px;
+        color: var(--red);
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(1.9rem, 3vw, 2.65rem);
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+
+      .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .activity-card {
+        display: flex;
+        min-height: 270px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-top: 7px solid var(--navy);
+        background: var(--paper);
+        box-shadow: 0 14px 38px rgb(25 38 53 / 7%);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .activity-card:nth-child(2) {
+        border-top-color: var(--red);
+      }
+
+      .activity-card:nth-child(3) {
+        border-top-color: var(--sky);
+      }
+
+      .activity-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 46px rgb(25 38 53 / 14%);
+      }
+
+      .activity-card:focus-visible,
+      .back-link:focus-visible {
+        outline: 3px solid var(--navy);
+        outline-offset: 4px;
+      }
+
+      .card-topline,
+      .activity-action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .card-topline {
+        justify-content: flex-end;
+      }
+
+      .activity-number {
+        color: #a89f91;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+
+      .activity-card h3 {
+        margin: 22px 0 10px;
+        font-size: clamp(1.5rem, 2.3vw, 1.95rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+      }
+
+      .activity-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .activity-action {
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 22px;
+        color: var(--navy);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .activity-arrow {
+        font-size: 1.2rem;
+        transition: transform 180ms ease;
+      }
+
+      .activity-card:hover .activity-arrow {
+        transform: translateX(5px);
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 42px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .logo-placeholder-mark {
+        display: grid;
+        width: 58px;
+        height: 58px;
+        place-items: center;
+        border: 2px dashed #9b9388;
+        color: #81796f;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .footer-logo > span:last-child {
+        display: grid;
+        gap: 4px;
+      }
+
+      .footer-logo strong {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .footer-logo small,
+      .footer-meta {
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .footer-meta {
+        text-align: right;
+      }
+
+      .footer-meta p {
+        margin: 0 0 7px;
+      }
+
+      .footer-meta a {
+        color: var(--navy);
+        font-weight: 700;
+      }
+
+      .interior-page {
+        min-height: 100vh;
+        background:
+          linear-gradient(90deg, var(--navy) 0 10px, transparent 10px),
+          var(--paper);
+      }
+
+      .interior-nav,
+      .interior-hero,
+      .resource-panel,
+      .copyright-header,
+      .copyright-content {
+        width: min(1040px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .interior-nav {
+        display: flex;
+        min-height: 88px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .wordmark-dark {
+        color: var(--navy);
+      }
+
+      .wordmark-dark .wordmark-mark {
+        border-color: var(--navy);
+        color: var(--navy);
+      }
+
+      .interior-nav-link {
+        color: var(--navy);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .interior-hero {
+        display: grid;
+        grid-template-columns: 1fr 150px;
+        gap: 70px;
+        align-items: center;
+        padding: 96px 0 72px;
+      }
+
+      .interior-heading h1,
+      .copyright-header h1 {
+        margin: 0;
+        font-size: clamp(3.2rem, 7vw, 6rem);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        line-height: 0.95;
+      }
+
+      .interior-heading > p:last-child {
+        max-width: 690px;
+        margin: 26px 0 0;
+        color: var(--muted);
+        font-size: 1.15rem;
+        line-height: 1.65;
+      }
+
+      .interior-icon {
+        display: grid;
+        width: 138px;
+        height: 138px;
+        place-items: center;
+        background: var(--navy);
+        color: var(--cream);
+        clip-path: polygon(3% 4%, 94% 0, 100% 94%, 8% 100%);
+        font-size: 2.2rem;
+        font-weight: 800;
+      }
+
+      .resource-panel,
+      .copyright-content {
+        padding: 54px;
+        border-top: 8px solid var(--red);
+        background: var(--cream);
+      }
+
+      .status-label {
+        margin: 0 0 16px;
+        color: var(--red);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .resource-panel h2 {
+        margin: 0 0 16px;
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      .resource-panel > p:not(.status-label) {
+        max-width: 700px;
+        margin: 0;
+        color: #49515a;
+        line-height: 1.7;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 42px;
+        color: var(--navy);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .copyright-header {
+        padding: 92px 0 58px;
+      }
+
+      .copyright-content {
+        max-width: 860px;
+        padding: 46px 50px 64px;
+        border-top-color: var(--navy);
+      }
+
+      .copyright-content section + section {
+        margin-top: 36px;
+        padding-top: 36px;
+        border-top: 1px solid rgb(17 24 33 / 16%);
+      }
+
+      .copyright-content h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-size: 1.15rem;
+      }
+
+      .copyright-content p {
+        margin: 0;
+        line-height: 1.75;
+      }
+
+      .copyright-content a:not(.back-link) {
+        color: var(--navy);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .interior-hero {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .activity-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .activity-card {
+          min-height: 310px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .site-nav,
+        .hero-grid,
+        .activities,
+        .site-footer,
+        .interior-nav,
+        .interior-hero,
+        .resource-panel,
+        .copyright-header,
+        .copyright-content {
+          width: min(100% - 32px, var(--content-width));
+        }
+
+        .hero-grid {
+          min-height: 300px;
+          padding: 36px 0 42px;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.6rem, 13vw, 4rem);
+        }
+
+        .hero h1 span {
+          margin-top: 8px;
+        }
+
+        .activities {
+          padding: 46px 0 64px;
+        }
+
+        .activity-card {
+          padding: 26px;
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .footer-meta {
+          text-align: left;
+        }
+
+        .interior-hero {
+          padding: 70px 0 54px;
+        }
+
+        .interior-icon {
+          width: 84px;
+          height: 84px;
+          font-size: 1.4rem;
+        }
+
+        .resource-panel,
+        .copyright-content {
+          padding: 36px 26px 44px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell" data-view="home">
+      <header class="hero">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#home" class="wordmark" aria-label="Web resource home">
+            <span class="wordmark-mark" aria-hidden="true">WR</span>
+            <span>Web Resource</span>
+          </a>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Third Edition</p>
+            <h1>
+              Contemporary Leadership
+              <span>in Sport Organizations</span>
+            </h1>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="activities" aria-labelledby="activities-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow eyebrow-dark">Learning Activities</p>
+              <h2 id="activities-title">Choose a resource</h2>
+            </div>
+          </div>
+
+          <div class="activity-grid">
+            <a href="#case-studies" class="activity-card">
+              <div class="card-topline">
+                <span class="activity-number">01</span>
+              </div>
+              <div>
+                <h3>Case Studies</h3>
+                <p>
+                  Examine real-world leadership challenges and connect course concepts to
+                  practice.
+                </p>
+              </div>
+              <span class="activity-action">
+                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
+
+            <a href="#branching-scenarios" class="activity-card">
+              <div class="card-topline">
+                <span class="activity-number">02</span>
+              </div>
+              <div>
+                <h3>Branching Scenarios</h3>
+                <p>
+                  Make leadership decisions, follow the consequences, and explore alternate
+                  paths.
+                </p>
+              </div>
+              <span class="activity-action">
+                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
+
+            <a href="#assessments" class="activity-card">
+              <div class="card-topline">
+                <span class="activity-number">03</span>
+              </div>
+              <div>
+                <h3>Assessments</h3>
+                <p>
+                  Check your understanding and reinforce the ideas presented throughout the
+                  text.
+                </p>
+              </div>
+              <span class="activity-action">
+                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-logo" aria-label="Publisher logo placeholder">
+          <span class="logo-placeholder-mark" aria-hidden="true">LOGO</span>
+          <span>
+            <strong>Logo space</strong>
+            <small>Replace this placeholder with the publisher logo</small>
+          </span>
+        </div>
+        <div class="footer-meta">
+          <p>Contemporary Leadership in Sport Organizations, 3rd Edition</p>
+          <a href="#copyright">Copyright &amp; permissions</a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="interior-page" data-view="case-studies" hidden>
+      <nav class="interior-nav" aria-label="Page navigation">
+        <a href="#home" class="wordmark wordmark-dark">
+          <span class="wordmark-mark" aria-hidden="true">WR</span>
+          <span>Web Resource</span>
+        </a>
+        <a href="#home" class="interior-nav-link">Home</a>
+      </nav>
+      <section class="interior-hero">
+        <div class="interior-heading">
+          <p class="eyebrow eyebrow-dark">Learning Activity 01</p>
+          <h1>Case Studies</h1>
+          <p>
+            Apply contemporary leadership concepts to realistic challenges from across the
+            sport industry.
+          </p>
+        </div>
+        <span class="interior-icon" aria-hidden="true">CS</span>
+      </section>
+      <section class="resource-panel">
+        <p class="status-label">Resource area</p>
+        <h2>Ready for your case study content</h2>
+        <p>Add your case study links, files, or embedded learning activities here.</p>
+        <a href="#home" class="back-link">← Back to all resources</a>
+      </section>
+    </div>
+
+    <div class="interior-page" data-view="branching-scenarios" hidden>
+      <nav class="interior-nav" aria-label="Page navigation">
+        <a href="#home" class="wordmark wordmark-dark">
+          <span class="wordmark-mark" aria-hidden="true">WR</span>
+          <span>Web Resource</span>
+        </a>
+        <a href="#home" class="interior-nav-link">Home</a>
+      </nav>
+      <section class="interior-hero">
+        <div class="interior-heading">
+          <p class="eyebrow eyebrow-dark">Learning Activity 02</p>
+          <h1>Branching Scenarios</h1>
+          <p>
+            Choose a leadership response, examine its impact, and reconsider the path you might
+            take.
+          </p>
+        </div>
+        <span class="interior-icon" aria-hidden="true">BS</span>
+      </section>
+      <section class="resource-panel">
+        <p class="status-label">Resource area</p>
+        <h2>Ready for your scenario content</h2>
+        <p>Add your branching scenario links or embedded learning experiences here.</p>
+        <a href="#home" class="back-link">← Back to all resources</a>
+      </section>
+    </div>
+
+    <div class="interior-page" data-view="assessments" hidden>
+      <nav class="interior-nav" aria-label="Page navigation">
+        <a href="#home" class="wordmark wordmark-dark">
+          <span class="wordmark-mark" aria-hidden="true">WR</span>
+          <span>Web Resource</span>
+        </a>
+        <a href="#home" class="interior-nav-link">Home</a>
+      </nav>
+      <section class="interior-hero">
+        <div class="interior-heading">
+          <p class="eyebrow eyebrow-dark">Learning Activity 03</p>
+          <h1>Assessments</h1>
+          <p>
+            Check your understanding and identify the leadership ideas that deserve another
+            look.
+          </p>
+        </div>
+        <span class="interior-icon" aria-hidden="true">A</span>
+      </section>
+      <section class="resource-panel">
+        <p class="status-label">Resource area</p>
+        <h2>Ready for your assessment content</h2>
+        <p>Add your quiz links, downloadable assessments, or embedded activities here.</p>
+        <a href="#home" class="back-link">← Back to all resources</a>
+      </section>
+    </div>
+
+    <div class="interior-page" data-view="copyright" hidden>
+      <nav class="interior-nav" aria-label="Page navigation">
+        <a href="#home" class="wordmark wordmark-dark">
+          <span class="wordmark-mark" aria-hidden="true">WR</span>
+          <span>Web Resource</span>
+        </a>
+        <a href="#home" class="interior-nav-link">Home</a>
+      </nav>
+      <header class="copyright-header">
+        <p class="eyebrow eyebrow-dark">Copyright &amp; Permissions</p>
+        <h1>Use these resources responsibly.</h1>
+      </header>
+      <article class="copyright-content">
+        <section>
+          <h2>Copyright notice</h2>
+          <p>
+            Copyright © 2027 by David Scott and Mark LaSota. Copyright © 2022, 2014 by David
+            Scott. All rights reserved.
+          </p>
+        </section>
+        <section>
+          <h2>Permissions</h2>
+          <p>
+            These web resources accompany <em>Contemporary Leadership in Sport Organizations,
+            Third Edition</em>. They may not be reproduced, distributed, or republished without
+            written permission from the publisher, except as allowed by applicable law.
+          </p>
+        </section>
+        <section>
+          <h2>Permission requests</h2>
+          <p>
+            For permission to reuse content published by Human Kinetics, contact
+            <a href="mailto:permissions@hkusa.com">permissions@hkusa.com</a>.
+          </p>
+        </section>
+        <a href="#home" class="back-link">← Back to web resource</a>
+      </article>
+    </div>
+
+    <script>
+      (function () {
+        const validViews = new Set([
+          'home',
+          'case-studies',
+          'branching-scenarios',
+          'assessments',
+          'copyright',
+        ]);
+
+        function showView() {
+          const requestedView = window.location.hash.slice(1) || 'home';
+          const activeView = validViews.has(requestedView) ? requestedView : 'home';
+
+          document.querySelectorAll('[data-view]').forEach(function (view) {
+            view.hidden = view.dataset.view !== activeView;
+          });
+
+          document.title =
+            activeView === 'home'
+              ? 'Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource'
+              : document.querySelector('[data-view="' + activeView + '"] h1').textContent +
+                ' | Contemporary Leadership Web Resource';
+
+          window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('hashchange', showView);
+        showView();
+      })();
+    </script>
+  </body>
+</html>
