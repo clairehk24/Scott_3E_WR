@@ -589,6 +589,191 @@
         text-align: center;
       }
 
+      .worksheet-toolbar {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 22px;
+        margin: 30px 0 8px;
+        padding: 22px;
+        border: 1px solid var(--border);
+        background: var(--background);
+      }
+
+      .learner-meta {
+        display: grid;
+        flex: 1;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 14px;
+      }
+
+      .form-label,
+      .response-label {
+        display: grid;
+        gap: 7px;
+        color: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .form-input,
+      .response-area {
+        width: 100%;
+        border: 1px solid #aeb6bf;
+        border-radius: 0;
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .form-input {
+        min-height: 44px;
+        padding: 10px 12px;
+      }
+
+      .response-block {
+        margin-top: 22px;
+      }
+
+      .response-area {
+        min-height: 132px;
+        overflow: hidden;
+        padding: 13px 14px;
+        line-height: 1.55;
+        resize: vertical;
+      }
+
+      .form-input:focus,
+      .response-area:focus {
+        border-color: var(--navy);
+        outline: 3px solid rgb(14 166 223 / 30%);
+        outline-offset: 1px;
+      }
+
+      .print-button {
+        min-height: 46px;
+        padding: 11px 18px;
+        border: 1px solid var(--navy);
+        background: var(--navy);
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.88rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .print-button:hover {
+        background: var(--navy-deep);
+      }
+
+      .print-button:focus-visible {
+        outline: 3px solid var(--sky);
+        outline-offset: 3px;
+      }
+
+      .worksheet-note {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
+      .interactive-block {
+        margin-top: 24px;
+        padding: 22px;
+        border-left: 5px solid var(--sky);
+        background: #f4f8fb;
+      }
+
+      .interactive-block h4:first-child {
+        margin-top: 0;
+      }
+
+      .choice-group {
+        margin: 20px 0 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .choice-group legend {
+        margin-bottom: 10px;
+        color: var(--ink);
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .choice-options {
+        display: grid;
+        gap: 8px;
+      }
+
+      .choice-option {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 11px 12px;
+        border: 1px solid var(--border);
+        background: #fff;
+        color: #37414b;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      .choice-option:hover {
+        border-color: var(--navy);
+      }
+
+      .choice-option input {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+        margin: 2px 0 0;
+        accent-color: var(--navy);
+      }
+
+      .question-response {
+        margin: 10px 0 20px;
+      }
+
+      .question-response .response-area {
+        min-height: 94px;
+      }
+
+      .rubric-grid {
+        display: grid;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .rubric-row {
+        padding: 14px;
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+
+      .rubric-row > span {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 800;
+      }
+
+      .rubric-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+      }
+
+      .rubric-options label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
       .status-label {
         margin: 0 0 16px;
         color: var(--red);
@@ -771,6 +956,75 @@
 
         .rating-scale {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .worksheet-toolbar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .learner-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .print-button {
+          width: 100%;
+        }
+      }
+
+      @media print {
+        @page {
+          margin: 0.65in;
+        }
+
+        body {
+          background: #fff;
+        }
+
+        body * {
+          visibility: hidden;
+        }
+
+        #assessment-detail,
+        #assessment-detail * {
+          visibility: visible;
+        }
+
+        #assessment-detail {
+          position: absolute;
+          inset: 0 auto auto 0;
+          width: 100%;
+          padding: 0;
+          border: 0;
+          box-shadow: none;
+        }
+
+        .print-button,
+        .worksheet-note {
+          display: none;
+        }
+
+        .worksheet-toolbar,
+        .interactive-block,
+        .choice-option,
+        .rubric-row,
+        .rating-scale li {
+          background: #fff;
+          break-inside: avoid;
+        }
+
+        .assignment {
+          break-inside: auto;
+        }
+
+        .response-area {
+          min-height: 90px;
+          resize: none;
+        }
+
+        .assignment a {
+          color: #000;
+          text-decoration: none;
         }
       }
 
@@ -974,6 +1228,22 @@
         <article class="assessment-detail" id="assessment-detail" role="tabpanel" tabindex="0" aria-live="polite">
           <p class="chapter-kicker" id="assessment-kicker">Chapter 1</p>
           <h2 id="assessment-title">Chapter 1 Assignments</h2>
+          <div class="worksheet-toolbar">
+            <div>
+              <div class="learner-meta">
+                <label class="form-label">
+                  Learner name
+                  <input class="form-input" type="text" autocomplete="name" data-answer-id="learner-name" />
+                </label>
+                <label class="form-label">
+                  Date
+                  <input class="form-input" type="date" data-answer-id="learner-date" />
+                </label>
+              </div>
+              <p class="worksheet-note">Your responses are kept while this page remains open.</p>
+            </div>
+            <button class="print-button" id="print-assessment" type="button">Print this chapter</button>
+          </div>
           <div class="assignment-list" id="assignment-list"></div>
         </article>
       </section>
@@ -1126,6 +1396,311 @@
           },
         };
 
+        const learnerAnswers = {};
+        let activeChapter = 1;
+        let prePrintTitle = '';
+
+        function createElement(tagName, className, textContent) {
+          const element = document.createElement(tagName);
+          if (className) element.className = className;
+          if (textContent) element.textContent = textContent;
+          return element;
+        }
+
+        function createTextarea(answerId, labelText, placeholderText) {
+          const block = createElement('div', 'response-block');
+          const label = createElement('label', 'response-label', labelText);
+          const textarea = createElement('textarea', 'response-area');
+
+          textarea.dataset.answerId = answerId;
+          textarea.rows = 5;
+          textarea.placeholder = placeholderText || 'Type your response here.';
+          label.appendChild(textarea);
+          block.appendChild(label);
+          return block;
+        }
+
+        function createChoiceGroup(answerId, legendText, options, type) {
+          const fieldset = createElement('fieldset', 'choice-group');
+          const legend = createElement('legend', '', legendText);
+          const choices = createElement('div', 'choice-options');
+
+          fieldset.appendChild(legend);
+          options.forEach(function (option, index) {
+            const label = createElement('label', 'choice-option');
+            const input = document.createElement('input');
+            const span = createElement('span', '', option);
+
+            input.type = type || 'radio';
+            input.value = option;
+            input.dataset.answerId =
+              input.type === 'checkbox' ? answerId + '-' + index : answerId;
+            input.name =
+              input.type === 'checkbox'
+                ? 'answer-' + activeChapter + '-' + answerId + '-' + index
+                : 'answer-' + activeChapter + '-' + answerId;
+            label.appendChild(input);
+            label.appendChild(span);
+            choices.appendChild(label);
+          });
+
+          fieldset.appendChild(choices);
+          return fieldset;
+        }
+
+        function createRubric(answerId, criteria) {
+          const wrapper = createElement('div', 'rubric-grid');
+          const ratings = ['Excellent', 'Good', 'Average', 'Needs improvement'];
+
+          criteria.forEach(function (criterion, criterionIndex) {
+            const row = createElement('div', 'rubric-row');
+            const heading = createElement('span', '', criterion);
+            const options = createElement('div', 'rubric-options');
+
+            row.appendChild(heading);
+            ratings.forEach(function (rating) {
+              const label = document.createElement('label');
+              const input = document.createElement('input');
+              input.type = 'radio';
+              input.name =
+                'answer-' + activeChapter + '-' + answerId + '-' + criterionIndex;
+              input.value = rating;
+              input.dataset.answerId = answerId + '-' + criterionIndex;
+              label.appendChild(input);
+              label.appendChild(document.createTextNode(rating));
+              options.appendChild(label);
+            });
+            row.appendChild(options);
+            wrapper.appendChild(row);
+          });
+
+          return wrapper;
+        }
+
+        function addQuestionResponses(list, answerIdPrefix) {
+          Array.from(list.children).forEach(function (item, index) {
+            const response = createTextarea(
+              answerIdPrefix + '-' + index,
+              'Your response',
+              'Type your answer to this question.',
+            );
+            response.classList.add('question-response');
+            item.appendChild(response);
+          });
+        }
+
+        function enhanceRatingScales(root) {
+          root.querySelectorAll('.rating-scale').forEach(function (scale, scaleIndex) {
+            const prompt = scale.previousElementSibling;
+            scale.setAttribute('role', 'radiogroup');
+            scale.setAttribute(
+              'aria-label',
+              prompt ? prompt.textContent.replace(':', '').trim() : 'Rating scale',
+            );
+            Array.from(scale.children).forEach(function (item) {
+              const optionText = item.textContent.trim();
+              const label = createElement('label', 'choice-option');
+              const input = document.createElement('input');
+              input.type = 'radio';
+              input.name = 'answer-2-rating-' + scaleIndex;
+              input.value = optionText;
+              input.dataset.answerId = 'rating-' + scaleIndex;
+              label.appendChild(input);
+              label.appendChild(createElement('span', '', optionText));
+              item.textContent = '';
+              item.appendChild(label);
+            });
+          });
+        }
+
+        function enhanceChapterInteractions(chapterNumber) {
+          const root = document.getElementById('assignment-list');
+          const assignments = Array.from(root.querySelectorAll('.assignment'));
+
+          if (chapterNumber === 1) {
+            assignments.forEach(function (assignment, index) {
+              assignment.appendChild(
+                createTextarea(
+                  'assignment-' + index,
+                  index === 0 ? 'Traditional and contemporary leadership response' : 'Theory-to-practice response',
+                ),
+              );
+            });
+          } else if (chapterNumber === 2) {
+            const questionLists = root.querySelectorAll('ul:not(.rating-scale)');
+            questionLists.forEach(function (list, index) {
+              addQuestionResponses(list, 'reflection-' + index);
+            });
+            enhanceRatingScales(root);
+            assignments[0].appendChild(
+              createTextarea('improvement-plan', 'Personal improvement plan'),
+            );
+          } else if (chapterNumber === 3) {
+            const lab = createElement('div', 'interactive-block');
+            lab.appendChild(createElement('h4', '', 'Complete the Simulation Lab'));
+            lab.appendChild(
+              createChoiceGroup(
+                'role',
+                'Select your assigned role',
+                [
+                  'General manager',
+                  'Athletic director',
+                  'Coach',
+                  'Athlete',
+                  'Event manager',
+                  'Facility supervisor',
+                  'Marketing coordinator',
+                  'Fan engagement staff',
+                  'Compliance officer',
+                ],
+                'radio',
+              ),
+            );
+            lab.appendChild(
+              createChoiceGroup(
+                'scenario',
+                'Select the scenario completed',
+                [
+                  'Athlete Discipline and Public Pressure',
+                  'Staff Conflict During Event Operations',
+                  'Coach-Athlete Miscommunication',
+                  'Budget Cuts and Employee Morale',
+                ],
+                'radio',
+              ),
+            );
+            lab.appendChild(
+              createChoiceGroup(
+                'ei-behaviors',
+                'Check the EI behaviors demonstrated',
+                [
+                  'Naming emotions',
+                  'Pausing before responding',
+                  'Paraphrasing and active listening',
+                  'Asking perspective-based questions',
+                  'Maintaining a calm tone under tension',
+                  'Offering solutions without dismissing emotions',
+                ],
+                'checkbox',
+              ),
+            );
+            lab.appendChild(createElement('h4', '', 'Peer Observation Rubric'));
+            lab.appendChild(
+              createRubric('rubric', [
+                'Emotional control',
+                'Listening and empathy',
+                'Conflict response',
+                'Communication clarity',
+                'Respect and professionalism',
+              ]),
+            );
+            lab.appendChild(
+              createTextarea(
+                'leader-reflection',
+                'Leader reflection',
+                'Reflect on your emotional triggers, decisions, and improvement plan.',
+              ),
+            );
+            assignments[0].appendChild(lab);
+          } else if (chapterNumber === 4) {
+            const questionList = root.querySelector('ul');
+            if (questionList) addQuestionResponses(questionList, 'culture-plan');
+          } else if (chapterNumber === 5) {
+            const lists = root.querySelectorAll('ul');
+            const interaction = createElement('div', 'interactive-block');
+            interaction.appendChild(createElement('h4', '', 'Build Your Strategic Framework'));
+            interaction.appendChild(
+              createChoiceGroup(
+                'scenario',
+                'Select one scenario',
+                Array.from(lists[0].children).map(function (item) {
+                  return item.textContent.trim();
+                }),
+                'radio',
+              ),
+            );
+            interaction.appendChild(
+              createChoiceGroup(
+                'portfolio-sections',
+                'Track the sections you have completed',
+                Array.from(lists[1].children).map(function (item) {
+                  return item.textContent.trim();
+                }),
+                'checkbox',
+              ),
+            );
+            interaction.appendChild(
+              createTextarea('strategic-framework', 'Vision and strategic leadership framework'),
+            );
+            assignments[0].appendChild(interaction);
+          } else if (chapterNumber === 6) {
+            assignments[0].appendChild(
+              createTextarea(
+                'problem-solving-strategy',
+                'Problem-solving and decision-making strategy',
+              ),
+            );
+          } else if (chapterNumber === 7) {
+            assignments[0].appendChild(
+              createTextarea('video-response', 'Video notes and discussion response'),
+            );
+            assignments[1].appendChild(
+              createTextarea('change-plan', 'Change, turnaround, or crisis plan'),
+            );
+          } else if (chapterNumber === 8) {
+            assignments[0].appendChild(
+              createTextarea('organization-analysis', 'Organization analysis and examples'),
+            );
+          } else if (chapterNumber === 9) {
+            const interaction = createElement('div', 'interactive-block');
+            interaction.appendChild(
+              createChoiceGroup(
+                'video-choice',
+                'Select the video reviewed',
+                [
+                  '5 Ways to Build a Global Sporting Brand',
+                  'Esports Is Growing Into a $1 Billion Industry | CNBC Sports',
+                ],
+                'radio',
+              ),
+            );
+            interaction.appendChild(createTextarea('video-summary', 'One-page summary or discussion notes'));
+            assignments[0].appendChild(interaction);
+            assignments[1].appendChild(
+              createTextarea('global-project-plan', 'Leadership project plan'),
+            );
+          } else if (chapterNumber === 10) {
+            assignments[0].appendChild(
+              createTextarea('leadership-development', 'Leadership development reflection'),
+            );
+            assignments[1].appendChild(
+              createTextarea('case-study', 'Leadership development case study'),
+            );
+          }
+        }
+
+        function autoSizeTextarea(textarea) {
+          textarea.style.height = 'auto';
+          textarea.style.height = Math.max(132, textarea.scrollHeight + 2) + 'px';
+        }
+
+        function restoreChapterAnswers(chapterNumber) {
+          const chapterAnswers = learnerAnswers[chapterNumber] || {};
+          document
+            .querySelectorAll('#assignment-list [data-answer-id]')
+            .forEach(function (control) {
+              const savedValue = chapterAnswers[control.dataset.answerId];
+              if (control.type === 'radio') {
+                control.checked = savedValue === control.value;
+              } else if (control.type === 'checkbox') {
+                control.checked = savedValue === true;
+              } else if (savedValue !== undefined) {
+                control.value = savedValue;
+              }
+              if (control.tagName === 'TEXTAREA') autoSizeTextarea(control);
+            });
+        }
+
         const validViews = new Set([
           'home',
           'case-studies',
@@ -1138,9 +1713,12 @@
           const chapter = assessmentData[chapterNumber] || assessmentData[1];
           const buttons = Array.from(document.querySelectorAll('.chapter-button'));
 
+          activeChapter = chapterNumber;
           document.getElementById('assessment-kicker').textContent = 'Chapter ' + chapterNumber;
           document.getElementById('assessment-title').textContent = chapter.title;
           document.getElementById('assignment-list').innerHTML = chapter.content;
+          enhanceChapterInteractions(chapterNumber);
+          restoreChapterAnswers(chapterNumber);
           document.getElementById('assessment-detail').setAttribute(
             'aria-labelledby',
             'chapter-tab-' + chapterNumber,
@@ -1204,6 +1782,35 @@
             buttons[nextIndex].click();
             buttons[nextIndex].focus();
           });
+        });
+
+        document
+          .getElementById('assessment-detail')
+          .addEventListener('input', function (event) {
+            const control = event.target.closest('[data-answer-id]');
+            if (!control) return;
+
+            if (control.closest('#assignment-list')) {
+              learnerAnswers[activeChapter] = learnerAnswers[activeChapter] || {};
+              learnerAnswers[activeChapter][control.dataset.answerId] =
+                control.type === 'checkbox' ? control.checked : control.value;
+            } else {
+              learnerAnswers.meta = learnerAnswers.meta || {};
+              learnerAnswers.meta[control.dataset.answerId] = control.value;
+            }
+
+            if (control.tagName === 'TEXTAREA') autoSizeTextarea(control);
+          });
+
+        document.getElementById('print-assessment').addEventListener('click', function () {
+          document.querySelectorAll('#assessment-detail textarea').forEach(autoSizeTextarea);
+          prePrintTitle = document.title;
+          document.title = 'Chapter ' + activeChapter + ' Assessment Responses';
+          window.print();
+        });
+
+        window.addEventListener('afterprint', function () {
+          if (prePrintTitle) document.title = prePrintTitle;
         });
 
         window.addEventListener('hashchange', showView);
