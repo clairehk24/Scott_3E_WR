@@ -404,10 +404,189 @@
       }
 
       .resource-panel,
+      .assessment-workspace,
       .copyright-content {
         padding: 54px;
         border-top: 8px solid var(--red);
         background: var(--cream);
+      }
+
+      .assessment-workspace {
+        display: grid;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 54px;
+        align-items: start;
+        margin-bottom: 72px;
+        padding: 0;
+        border-top: 0;
+        background: transparent;
+      }
+
+      .chapter-nav {
+        position: sticky;
+        top: 24px;
+        padding: 24px;
+        border-top: 7px solid var(--red);
+        background: var(--cream);
+      }
+
+      .chapter-nav-label {
+        margin: 0 0 16px;
+        color: var(--red);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .chapter-buttons {
+        display: grid;
+        gap: 8px;
+      }
+
+      .chapter-button {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 13px 14px;
+        border: 1px solid rgb(11 71 141 / 22%);
+        background: rgb(255 255 255 / 46%);
+        color: var(--navy);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.92rem;
+        font-weight: 800;
+        text-align: left;
+        transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+      }
+
+      .chapter-button::after {
+        content: '\2192';
+        font-size: 1.05rem;
+      }
+
+      .chapter-button:hover {
+        border-color: var(--navy);
+        background: #fff;
+      }
+
+      .chapter-button[aria-selected='true'] {
+        border-color: var(--navy);
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .chapter-button:focus-visible {
+        outline: 3px solid var(--sky);
+        outline-offset: 3px;
+      }
+
+      .assessment-detail {
+        min-width: 0;
+        padding: 42px 46px 52px;
+        border-top: 7px solid var(--navy);
+        background: #fff;
+        box-shadow: 0 18px 44px rgb(25 38 53 / 8%);
+      }
+
+      .chapter-kicker {
+        margin: 0 0 10px;
+        color: var(--red);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+      }
+
+      .assessment-detail h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+
+      .assignment-list {
+        display: grid;
+        gap: 38px;
+        margin-top: 38px;
+      }
+
+      .assignment + .assignment {
+        padding-top: 38px;
+        border-top: 1px solid var(--border);
+      }
+
+      .assignment h3 {
+        margin: 0 0 14px;
+        color: var(--ink);
+        font-size: 1.35rem;
+        letter-spacing: -0.025em;
+      }
+
+      .assignment h4 {
+        margin: 26px 0 10px;
+        color: var(--navy);
+        font-size: 1rem;
+      }
+
+      .assignment p,
+      .assignment li {
+        color: #424c56;
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .assignment p {
+        margin: 0 0 14px;
+      }
+
+      .assignment p:last-child {
+        margin-bottom: 0;
+      }
+
+      .assignment ul,
+      .assignment ol {
+        margin: 12px 0 18px;
+        padding-left: 24px;
+      }
+
+      .assignment li + li {
+        margin-top: 7px;
+      }
+
+      .assignment a {
+        color: var(--navy);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: var(--sky);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      .rating-scale {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin: 12px 0 22px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .rating-scale li {
+        display: grid;
+        min-height: 72px;
+        place-items: center;
+        margin: 0;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background: var(--background);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.35;
+        text-align: center;
       }
 
       .status-label {
@@ -492,6 +671,29 @@
         .activity-card {
           min-height: 310px;
         }
+
+        .assessment-workspace {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .chapter-nav {
+          position: static;
+        }
+
+        .chapter-buttons {
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .chapter-button {
+          justify-content: center;
+          padding-inline: 8px;
+          text-align: center;
+        }
+
+        .chapter-button::after {
+          display: none;
+        }
       }
 
       @media (max-width: 680px) {
@@ -548,8 +750,27 @@
         }
 
         .resource-panel,
+        .assessment-detail,
         .copyright-content {
           padding: 36px 26px 44px;
+        }
+
+        .assessment-workspace {
+          width: min(100% - 32px, var(--content-width));
+          margin-bottom: 54px;
+        }
+
+        .chapter-nav {
+          width: auto;
+          padding: 20px;
+        }
+
+        .chapter-buttons {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .rating-scale {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
@@ -727,18 +948,38 @@
           <p class="eyebrow eyebrow-dark">Learning Activity 03</p>
           <h1>Assessments</h1>
           <p>
-            Check your understanding and identify the leadership ideas that deserve another
-            look.
+            Select a chapter to review its applied leadership assignments and Game Plan
+            activities.
           </p>
         </div>
         <span class="interior-icon" aria-hidden="true">A</span>
       </section>
-      <section class="resource-panel">
-        <p class="status-label">Resource area</p>
-        <h2>Ready for your assessment content</h2>
-        <p>Add your quiz links, downloadable assessments, or embedded activities here.</p>
-        <a href="#home" class="back-link">← Back to all resources</a>
+      <section class="assessment-workspace" aria-label="Chapter assessments">
+        <aside class="chapter-nav">
+          <p class="chapter-nav-label">Choose a chapter</p>
+          <div class="chapter-buttons" role="tablist" aria-label="Assessment chapters">
+            <button class="chapter-button" type="button" role="tab" aria-selected="true" data-chapter="1">Chapter 1</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="2">Chapter 2</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="3">Chapter 3</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="4">Chapter 4</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="5">Chapter 5</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="6">Chapter 6</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="7">Chapter 7</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="8">Chapter 8</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="9">Chapter 9</button>
+            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="10">Chapter 10</button>
+          </div>
+        </aside>
+
+        <article class="assessment-detail" id="assessment-detail" role="tabpanel" tabindex="0" aria-live="polite">
+          <p class="chapter-kicker" id="assessment-kicker">Chapter 1</p>
+          <h2 id="assessment-title">Chapter 1 Assignments</h2>
+          <div class="assignment-list" id="assignment-list"></div>
+        </article>
       </section>
+      <div class="interior-nav" aria-label="Assessment footer navigation">
+        <a href="#home" class="back-link">&larr; Back to all resources</a>
+      </div>
     </div>
 
     <div class="interior-page" data-view="copyright" hidden>
@@ -782,6 +1023,109 @@
 
     <script>
       (function () {
+        const assessmentData = {
+          1: {
+            title: 'Chapter 1 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment 1</h3>',
+              '<p>After reading and discussing the section on Traditional Versus Contemporary Leadership, identify and evaluate a current sport-related event or issue in the news and consider how leaders might respond using a traditional approach and then using a contemporary approach. The instructor will inform you if this will be a class discussion or will be submitted to the instructor through a written assignment.</p></section>',
+              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
+              '<p>With a partner or in a small group, analyze and evaluate the leadership theories presented in chapter 1. Using in-class or online discussion, come up with an example of how each theory applies in a sport organization context. Discuss with your partner or group the connections between theory and practice illustrated by this example. After completing this activity, choose a current sport organization issue from any sport media (e.g., daily newspaper, television news or sports broadcast, online sports media) and create ideas for how one or more theories presented in this chapter could form the basis for an intervention or solution.</p></section>',
+            ].join(''),
+          },
+          2: {
+            title: 'Chapter 2 Assignment',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p>Reflect on your leadership experiences at this point in your life. If you have not been in a leadership role, put yourself in the role of a leader you have observed. Using the questions listed below, rate your performance (or that of the leader you have chosen) using the three Rs discussed in this chapter. Remember that your answers may vary greatly from those of others, depending on the sport organization context with which you are most familiar.</p>',
+              '<h4>Results</h4><ul><li>What are the most important tangible organizational performance outcomes that have occurred under your leadership?</li><li>Which stakeholders have benefited from these results? In what ways?</li></ul>',
+              '<p><strong>Rate these results:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
+              '<h4>Relationships</h4><ul><li>In what ways have you demonstrated principles of relationship building among those you interact with regularly?</li><li>Who has most benefited from your actions?</li></ul>',
+              '<p><strong>Rate your interpersonal relationship-building skills:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
+              '<h4>Responsibilities</h4><ul><li>In what ways have you demonstrated professionalism and ethical responsibility?</li><li>Who has recognized or acknowledged you for these behaviors and actions?</li></ul>',
+              '<p><strong>Rate your performance as a professional and ethical leader:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
+              '<p>After completing the audit, develop a personal improvement plan that addresses any areas requiring improvement and brings your performance more in line with both your expectations and those of stakeholders.</p></section>',
+            ].join(''),
+          },
+          3: {
+            title: 'Chapter 3 Assignment',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p><strong>Applied Leadership Assignment: Emotional Intelligence in Sport Leadership Lab</strong></p>',
+              '<h4>Lead Like a Pro: Emotional Intelligence in Sport Organizations</h4>',
+              '<p>This assignment helps students build practical emotional intelligence skills required in sport settings such as athletic departments, event management, team leadership, sport marketing, coaching, and facility operations.</p>',
+              '<p>This assignment is best executed as an in-class simulation or synchronous online exercise. If it is a purely asynchronous online class, it could be modified to require students to answer what they “would do” in the situations that follow. The simulation activity focuses on the five EI core areas: self-awareness, self-management, social awareness (empathy), relationship management, and responsible decision making.</p>',
+              '<p>In this simulation, students ultimately will:</p><ul><li>Identify their emotional triggers and behavioral tendencies in leadership situations.</li><li>Demonstrate self-regulation under pressure in sport workplace scenarios.</li><li>Practice empathy and perspective-taking in conflict situations.</li><li>Use emotional awareness to improve communication and decision making.</li><li>Develop an actionable EI improvement plan based on evidence and reflection.</li></ul>',
+              '<h4>Sport Leadership Simulation Lab</h4><p>Students complete at least one or two simulations, if class time allows, in class or recorded. Each simulation assigns roles such as general manager, athletic director, coach, athlete, event manager, facility supervisor, marketing coordinator, fan engagement staff, or compliance officer.</p>',
+              '<h4>Example Simulation Options</h4><ol><li><strong>Athlete Discipline and Public Pressure:</strong> A star athlete violates team rules days before a major game. Social media is blowing up.</li><li><strong>Staff Conflict During Event Operations:</strong> Two staff members argue mid-event, causing delays and tension in front of spectators.</li><li><strong>Coach-Athlete Miscommunication:</strong> A player claims a coach is “targeting them” and treating them unfairly.</li><li><strong>Budget Cuts and Employee Morale:</strong> As a sport organization leader, you announce budget cuts that include layoffs and salary reductions. Overall, the response in the organization is negative and emotionally charged.</li></ol>',
+              '<h4>EI Challenge Requirement</h4><p>During each scenario, students are tasked with demonstrating at least three EI behaviors:</p><ul><li>Naming emotions (“I can tell you’re frustrated . . .”)</li><li>Pausing before responding</li><li>Paraphrasing and active listening</li><li>Asking perspective-based questions</li><li>Maintaining a calm tone under tension</li><li>Offering solutions without dismissing emotions</li></ul>',
+              '<h4>Peer Observation Rubric</h4><p>Other students observe the simulation and score the leader as excellent, good, average, or needs improvement in the following EI behaviors:</p><ul><li>Emotional control</li><li>Listening and empathy</li><li>Conflict response</li><li>Communication clarity</li><li>Respect and professionalism</li></ul>',
+              '<h4>Assignment Deliverables</h4><ul><li>Role-play participation</li><li>Leader reflection (brief paper or in-class reflection)</li><li>Completed peer evaluation rubric for each simulation</li></ul></section>',
+            ].join(''),
+          },
+          4: {
+            title: 'Chapter 4 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p>Assume that you have just become the chief administrator or leader of a sport organization of your choice. Drawing on recommendations for building a culture of success presented in the chapter, develop a draft plan that you would implement over the next several months. The plan should either strengthen the organization’s existing culture or initiate a cultural transformation.</p>',
+              '<p>Consider the following questions as you develop your plan:</p><ul><li>What would you focus on first?</li><li>What key values would you build on or introduce within the organization?</li><li>Who would you include in the culture-development or change process?</li><li>How would you embed the desired cultural elements within the organization?</li><li>How would you determine whether you were making progress?</li></ul></section>',
+            ].join(''),
+          },
+          5: {
+            title: 'Chapter 5 Assignment',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p>Using concepts presented in this chapter, develop the initial framework for a vision and strategic leadership approach addressing one of the following scenarios:</p><ul><li>Start-up of a new sport-related venture in a city of your choice (e.g., new team, facility, event)</li><li>Development of a strategic plan for an existing sport program or athletic department (e.g., school district, college or university, youth sport)</li><li>Creation of a business or development plan for a sport-related product</li></ul>',
+              '<h4>Planning Document or Electronic Portfolio</h4><p>Include:</p><ul><li>Introduction</li><li>Core values</li><li>SWOT analysis</li><li>Vision</li><li>Mission</li><li>Goals</li><li>Strategic priorities</li><li>Performance indicators</li><li>Actions</li><li>Evaluation</li></ul></section>',
+            ].join(''),
+          },
+          6: {
+            title: 'Chapter 6 Assignment',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p>For this activity, identify a specific complex problem from one of the problem areas identified in this chapter (e.g., legal, political, socio-cultural, technological) or from your own experience that you would like to use as the focus for developing a problem-solving strategy. Utilize one or more of the approaches to problem-solving, decision making, and conflict resolution presented in the chapter to address the issue. Finally, employ the Vroom-Yetton-Jago decision model to determine the decision-making process you would use in the organization.</p></section>',
+            ].join(''),
+          },
+          7: {
+            title: 'Chapter 7 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment 1</h3>',
+              '<p>Review the following two videos and then participate in an online chat forum or in-class discussion regarding how the key points in these videos can help increase the chance for success for leading organizational change.</p>',
+              '<h4>General Motivational Video About Leading Change</h4><p><a href="https://www.youtube.com/watch?v=kMh6y5trP_g" target="_blank" rel="noopener noreferrer">BIG CHANGE—Motivational Leadership Video</a></p>',
+              '<h4>The Appreciative Inquiry Approach to Leading Change</h4><p><a href="https://www.youtube.com/watch?v=OYvCAlU7VKY" target="_blank" rel="noopener noreferrer">5D Model of Appreciative Inquiry CAI</a></p></section>',
+              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
+              '<p>Work individually or with a partner or small group to create a change, turnaround, or crisis plan for a sport organization of your choice. Develop this plan and prepare a presentation that you would give to a board of directors or strategic planning leadership team. Use concepts, theories, and models presented in this chapter as well as any other resources that you find as support for your presentation.</p></section>',
+            ].join(''),
+          },
+          8: {
+            title: 'Chapter 8 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
+              '<p>Individually or in a small group, identify a sport team or organization composed of many diverse individuals (considering several or all of the dimensions in Table 8.1) where the leaders have done an excellent job in leading their organization. The assignment is to write a paper or prepare a digital presentation or infographic about the organization with examples of specific actions, decisions, and strategies used by leaders to achieve success through motivation and unified purpose. The instructor will provide directions on how to complete and submit this assignment.</p></section>',
+            ].join(''),
+          },
+          9: {
+            title: 'Chapter 9 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment 1</h3>',
+              '<p>Choose one of the following two videos to review and write a one-page summary of the key points, or have an in-class discussion with other students choosing the same video.</p><ul><li><a href="https://www.youtube.com/watch?v=stIyLyUIfRo" target="_blank" rel="noopener noreferrer">5 Ways to Build a Global Sporting Brand</a></li><li><a href="https://www.youtube.com/watch?v=e0hlP84HeMU" target="_blank" rel="noopener noreferrer">Esports Is Growing Into a $1 Billion Industry | CNBC Sports</a></li></ul></section>',
+              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
+              '<p>Assume that you have just been hired as the new executive director of marketing and sales for an extreme sport equipment company located in your home country. You have been assigned a role to direct the expansion of the business into another country. The country you select for this activity should be one for which you have minimal knowledge of the cultural values, norms, and business practices. You have been given authority to hire an assistant director and a marketing staff to execute the new business plan in this country. You have to evaluate the foreign market in the country, introduce the company products, establish a market presence, and work to set and achieve sales goals appropriate to the situation.</p>',
+              '<p>Prepare a leadership project plan that includes:</p><ul><li>A demographic and psychographic analysis of the country selected.</li><li>An analysis of the nine cultural dimensions recognized by GLOBE Project (see Table 9.3). Identify the approaches to business that will be most appropriate in the cultural context of the country.</li><li>A plan for the type or types of individuals, relative to leadership attributes and skills, you will want to hire to your team. Indicate specific positions and whether you will plan to hire people from your home country, the country in which you will be doing business, or both. Refer to the Six Dimensions and Profiles of Leader Behaviors sidebar for information on the six global leadership dimensions identified by the GLOBE Project study.</li><li>List and explain the three to five most critical elements of leadership necessary to meet the goals of this project.</li></ul></section>',
+            ].join(''),
+          },
+          10: {
+            title: 'Chapter 10 Assignments',
+            content: [
+              '<section class="assignment"><h3>Assignment 1</h3>',
+              '<p>Watch the video below and summarize key points you believe could be important to your own leadership development. Share in a class discussion or with your instructor as a submitted assignment.</p>',
+              '<p><a href="https://www.youtube.com/watch?v=GnTTRgcz55g" target="_blank" rel="noopener noreferrer">Leadership Frameworks: From Sports Coaching and Executive Coaching</a></p></section>',
+              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
+              '<p>Select a sport organization of any type or level to which you have reasonable access. Conduct a small individual or group case study to determine the status of leadership development in that organization. This might involve meeting with a senior leader in the organization if you can gain access to the individual. In this activity, try to identify the formal and informal means by which leadership development, succession planning, or both currently occur. If it appears that there is no plan or that the plan needs improvement, determine how you would improve leadership learning and succession planning for the organization. Present your results to your instructor. If appropriate, you might discuss the feasibility, strengths, and weaknesses of your ideas with the leader of the organization.</p></section>',
+            ].join(''),
+          },
+        };
+
         const validViews = new Set([
           'home',
           'case-studies',
@@ -790,9 +1134,32 @@
           'copyright',
         ]);
 
+        function renderAssessmentChapter(chapterNumber) {
+          const chapter = assessmentData[chapterNumber] || assessmentData[1];
+          const buttons = Array.from(document.querySelectorAll('.chapter-button'));
+
+          document.getElementById('assessment-kicker').textContent = 'Chapter ' + chapterNumber;
+          document.getElementById('assessment-title').textContent = chapter.title;
+          document.getElementById('assignment-list').innerHTML = chapter.content;
+          document.getElementById('assessment-detail').setAttribute(
+            'aria-labelledby',
+            'chapter-tab-' + chapterNumber,
+          );
+
+          buttons.forEach(function (button) {
+            const isActive = Number(button.dataset.chapter) === chapterNumber;
+            button.id = 'chapter-tab-' + button.dataset.chapter;
+            button.setAttribute('aria-selected', String(isActive));
+            button.tabIndex = isActive ? 0 : -1;
+          });
+        }
+
         function showView() {
-          const requestedView = window.location.hash.slice(1) || 'home';
+          const routeParts = (window.location.hash.slice(1) || 'home').split('/');
+          const requestedView = routeParts[0];
           const activeView = validViews.has(requestedView) ? requestedView : 'home';
+          const chapterMatch = (routeParts[1] || '').match(/^chapter-(10|[1-9])$/);
+          const selectedChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
 
           document.querySelectorAll('[data-view]').forEach(function (view) {
             view.hidden = view.dataset.view !== activeView;
@@ -804,8 +1171,40 @@
               : document.querySelector('[data-view="' + activeView + '"] h1').textContent +
                 ' | Contemporary Leadership Web Resource';
 
+          if (activeView === 'assessments') {
+            renderAssessmentChapter(selectedChapter);
+          }
+
           window.scrollTo(0, 0);
         }
+
+        document.querySelectorAll('.chapter-button').forEach(function (button) {
+          button.addEventListener('click', function () {
+            window.location.hash = 'assessments/chapter-' + button.dataset.chapter;
+          });
+
+          button.addEventListener('keydown', function (event) {
+            const buttons = Array.from(document.querySelectorAll('.chapter-button'));
+            const currentIndex = buttons.indexOf(button);
+            let nextIndex = currentIndex;
+
+            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+              nextIndex = (currentIndex + 1) % buttons.length;
+            } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+              nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+            } else if (event.key === 'Home') {
+              nextIndex = 0;
+            } else if (event.key === 'End') {
+              nextIndex = buttons.length - 1;
+            } else {
+              return;
+            }
+
+            event.preventDefault();
+            buttons[nextIndex].click();
+            buttons[nextIndex].focus();
+          });
+        });
 
         window.addEventListener('hashchange', showView);
         showView();
