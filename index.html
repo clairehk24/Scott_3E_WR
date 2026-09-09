@@ -93,6 +93,11 @@
         letter-spacing: 0.09em;
         text-transform: uppercase;
       }
+      .brand-logo {
+        display: block;
+        width: auto;
+        height: 25px;
+      }
       .hero-grid {
         display: grid;
         min-height: 139px;
@@ -224,6 +229,9 @@
         font-size: 0.8rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+      }
+      .footer-logo .brand-logo {
+        height: 34px;
       }
       .footer-meta {
         color: var(--muted);
@@ -739,6 +747,14 @@
         text-decoration: underline;
         text-underline-offset: 3px;
       }
+      .copyright-download-note {
+        margin-bottom: 16px !important;
+        color: var(--muted);
+      }
+      .placeholder-download-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.58;
+      }
       @media (max-width: 900px) {
         .activity-grid {
           grid-template-columns: 1fr;
@@ -948,7 +964,7 @@
         </section>
       </main>
       <footer class="site-footer">
-        <div class="footer-logo"><strong>Human Kinetics</strong></div>
+        <div class="footer-logo"><img class="brand-logo" src="Assets/HK%20logo%20horizontal%204C.png" alt="Human Kinetics" /></div>
         <div class="footer-meta">
           <p>Contemporary Leadership in Sport Organizations, 3rd Edition</p>
           <a href="#copyright">Copyright &amp; permissions</a>
@@ -1025,6 +1041,11 @@
             <a href="mailto:permissions@hkusa.com">permissions@hkusa.com</a>
             .
           </p>
+        </section>
+        <section>
+          <h2>Copyright &amp; permissions document</h2>
+          <p class="copyright-download-note">The downloadable copyright and permissions document will be available here.</p>
+          <button class="secondary-button placeholder-download-button" type="button" disabled>Download document—coming soon</button>
         </section>
         <a href="#home" class="back-link">← Back to web resource</a>
       </article>

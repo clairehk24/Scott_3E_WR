@@ -59,8 +59,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; colo
 
 /* ---------- Simple internal topbar (case study / scenario / assessment / hub pages) ---------- */
 .topbar { background: var(--navy-700); border-top: 5px solid var(--navy-900); padding: 16px clamp(20px, 4vw, 56px); display: flex; align-items: center; justify-content: space-between; }
-.topbar .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.wr-mark { width: 30px; height: 30px; border: 2px solid #fff; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: #fff; font: 700 11px var(--font-body); }
+.topbar .brand { display: flex; align-items: center; text-decoration: none; }
 .topbar .brand-label { color: #fff; font: 700 13px/1.2 var(--font-body); letter-spacing: .08em; text-transform: uppercase; }
 .topbar nav a { color: rgba(255,255,255,.85); font: 600 13px var(--font-body); }
 .topbar nav a:hover { color: #fff; }
@@ -210,11 +209,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; colo
 .page-nav a { color: var(--ink-400); display: inline-flex; align-items: center; gap: 6px; }
 .page-nav a:hover { color: var(--navy-700); }
 
-/* ---------- Footer (matches the comp: dashed logo placeholder + edition + copyright) ---------- */
+/* ---------- Footer ---------- */
 .site-footer { max-width: var(--container-max); margin: 0 auto; padding: 28px clamp(20px, 5vw, 64px) 56px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.logo-placeholder { display: flex; align-items: center; gap: 14px; }
-.logo-placeholder .box { width: 52px; height: 52px; border: 1.5px dashed var(--ink-subtle); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--ink-subtle); font: 700 10px var(--font-body); text-align: center; }
-.logo-placeholder .label { font-weight: 700; font-size: 13.5px; color: var(--ink-900); }
-.logo-placeholder .caption { font-size: 12.5px; color: var(--ink-subtle); font-style: italic; }
+.publisher-logo img { display: block; width: auto; height: 34px; }
 .footer-meta { text-align: right; font-size: 13px; color: var(--ink-600); }
 .footer-meta a { color: var(--navy-700); font-weight: 700; }
