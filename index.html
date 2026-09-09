@@ -282,6 +282,9 @@
         margin: 11px 0 0;
         color: var(--muted);
       }
+      .interior-heading > p.case-study-directions:last-child {
+        max-width: none;
+      }
       .resource-panel,
       .copyright-content {
         padding: 42px;
@@ -371,16 +374,132 @@
         text-transform: uppercase;
       }
       .study-card h2 {
-        max-width: 830px;
+        max-width: 940px;
         margin: 0;
         font-size: clamp(1.65rem, 3vw, 2.45rem);
         letter-spacing: -0.035em;
         line-height: 1.1;
       }
       .study-intro {
-        max-width: 860px;
+        width: 100%;
+        max-width: 940px;
         margin: 15px 0 0;
         color: #3e4852;
+      }
+      .study-intro p {
+        margin: 0 0 13px;
+      }
+      .study-intro p:last-child {
+        margin-bottom: 0;
+      }
+      .word-download {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        margin-top: 22px;
+        padding: 16px 18px;
+        border-left: 4px solid var(--red);
+        background: var(--cream);
+      }
+      .word-download p {
+        margin: 0;
+      }
+      .word-download p:first-child {
+        color: var(--deep);
+        font-weight: 800;
+      }
+      .word-download p:last-child {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .word-download-button {
+        flex: 0 0 auto;
+        justify-content: center;
+        white-space: nowrap;
+      }
+      .chapter-five-directions {
+        margin-bottom: 28px !important;
+      }
+      .manuscript-subsection {
+        margin-top: 28px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+      .manuscript-subsection h3 {
+        margin: 0 0 10px;
+        color: var(--deep);
+        font-size: 1.2rem;
+      }
+      .definition-list {
+        margin: 0 0 20px 1.5rem;
+        padding-left: 1.1rem;
+      }
+      .example-heading,
+      .critique-heading {
+        color: var(--deep);
+        font-weight: 800;
+      }
+      .example-heading {
+        margin: 18px 0 8px !important;
+      }
+      .example-text {
+        margin-left: 1rem !important;
+        padding-left: 1rem;
+        border-left: 3px solid var(--cream);
+      }
+      .critique-heading {
+        margin: 22px 0 8px !important;
+      }
+      .critique-list {
+        margin: 0 0 24px 2rem;
+        padding-left: 1.2rem;
+      }
+      .critique-list li {
+        margin: 0.35rem 0;
+        padding-left: 0.35rem;
+      }
+      .chapter-six-summary {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .chapter-six-summary p {
+        margin: 0;
+        padding: 15px 17px;
+        border-left: 3px solid var(--red);
+        background: var(--cream);
+      }
+      .chapter-six-situations,
+      .chapter-six-leaders {
+        display: grid;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+      }
+      .chapter-six-situations {
+        margin: 22px 0 0;
+      }
+      .chapter-six-situations li {
+        padding: 14px 17px;
+        border-left: 3px solid var(--navy);
+        background: #f8f9fa;
+      }
+      .chapter-six-leaders {
+        margin: 14px 0 0 1rem;
+      }
+      .chapter-six-leaders li {
+        padding-left: 14px;
+        border-left: 2px solid var(--border);
+      }
+      .chapter-six-decision {
+        margin: 26px 0 0 !important;
+        padding: 17px 19px;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--red);
+        background: var(--cream);
       }
       .study-section {
         margin-top: 30px;
@@ -391,6 +510,11 @@
         margin: 0 0 12px;
         color: var(--deep);
         font-size: 1.22rem;
+      }
+      .study-section h4 {
+        margin: 26px 0 10px;
+        color: var(--deep);
+        font-size: 1.05rem;
       }
       .study-section p {
         margin: 0 0 13px;
@@ -413,11 +537,6 @@
         color: var(--muted);
         font-size: 0.9rem;
       }
-      .identity-fields {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 18px;
-      }
       .field {
         margin-top: 22px;
       }
@@ -436,7 +555,6 @@
         font-size: 0.9rem;
       }
       input[type="text"],
-      input[type="date"],
       input[type="number"],
       textarea {
         width: 100%;
@@ -461,6 +579,9 @@
       }
       .question-number {
         color: var(--red);
+      }
+      .question-details {
+        margin: 10px 0 12px;
       }
       .component-list {
         display: grid;
@@ -678,7 +799,6 @@
         .chapter-buttons {
           grid-template-columns: 1fr 1fr;
         }
-        .identity-fields,
         .component-item {
           grid-template-columns: 1fr;
         }
@@ -692,6 +812,27 @@
           width: 100%;
           margin-left: 0;
         }
+        .critique-list {
+          margin-left: 1.25rem;
+        }
+        .example-text {
+          margin-left: 0 !important;
+        }
+        .chapter-six-summary {
+          grid-template-columns: 1fr;
+        }
+        .chapter-six-leaders {
+          margin-left: 0;
+        }
+        .word-download {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 13px;
+        }
+        .word-download-button {
+          width: 100%;
+          white-space: normal;
+        }
       }
       @media print {
         body {
@@ -704,6 +845,7 @@
         .interior-nav,
         .interior-hero,
         .chapter-picker,
+        .word-download,
         .action-bar,
         .privacy-note,
         .back-link,
@@ -822,7 +964,7 @@
         <div class="interior-heading">
           <p class="eyebrow eyebrow-dark">Step 02</p>
           <h1>Case Studies</h1>
-          <p>Choose your chapter after completing its branching scenario. Enter your responses, then print or download a PDF copy.</p>
+          <p class="case-study-directions">Choose your chapter after completing its branching scenario. Enter your responses, then print or download a PDF copy.</p>
         </div>
       </section>
       <main class="case-study-shell">
@@ -887,9 +1029,10 @@
         <a href="#home" class="back-link">← Back to web resource</a>
       </article>
     </div>
+    <script src="case-studies-data.js"></script>
     <script>
       (function () {
-        const scrumSteps = [
+        const legacyScrumSteps = [
           "Assign scrum roles.",
           "Conduct a sprint planning meeting.",
           "Define the sprint goal.",
@@ -901,7 +1044,7 @@
           "Conduct a final readiness check before the event.",
           "Conduct a hotwash or after-action review.",
         ];
-        const studies = [
+        const legacyStudies = [
           {
             chapter: 1,
             title: "Agile Leadership Scenario Activity",
@@ -1025,6 +1168,20 @@
             ],
           },
         ];
+        const scrumSteps = window.caseStudyScrumSteps;
+        const studies = window.caseStudiesData;
+        const sourceDocuments = {
+          1: "source files/Case Studies/CLSO_3E_HKP_chap1_CSA.docx",
+          2: "source files/Case Studies/CLSO3E_HKP__chap2_CS.docx",
+          3: "source files/Case Studies/CLSO3E_HKP_chap3_SA.docx",
+          4: "source files/Case Studies/CLSO3E_HKP_chap4_CS.docx",
+          5: "source files/Case Studies/CLSO3E_HKP_chap5_ACT.docx",
+          6: "source files/Case Studies/CLSO3E_HKP_chap6_CS.docx",
+          7: "source files/Case Studies/CLSO3E_HKP_chap7_CS.docx",
+          8: "source files/Case Studies/CLSO3E_HKP_chap8_CS.docx",
+          9: "source files/Case Studies/CLSO3E_HKP_chap9_CS.docx",
+          10: "source files/Case Studies/CLSO3E_HKP_chap10_CS.docx",
+        };
         const storageKey = "clso3e-case-study-responses-v1";
         let saved = loadSaved(),
           activeChapter = 1,
@@ -1096,6 +1253,120 @@
             "</textarea></div>"
           );
         }
+        function questionMarkup(chapter, question, index, data) {
+          const item = typeof question === "string" ? { prompt: question } : question;
+          const key = "q" + index;
+          const details = item.details ? '<ul class="question-details">' + item.details.map((detail) => "<li>" + esc(detail) + "</li>").join("") + "</ul>" : "";
+          return (
+            (item.section ? "<h4>" + esc(item.section) + "</h4>" : "") +
+            '<div class="field"><label for="' +
+            fieldId(chapter, key) +
+            '"><span class="question-number">' +
+            (index + 1) +
+            ".</span> " +
+            esc(item.prompt) +
+            "</label>" +
+            details +
+            '<textarea id="' +
+            fieldId(chapter, key) +
+            '" data-answer-key="' +
+            key +
+            '">' +
+            esc(data[key]) +
+            "</textarea></div>"
+          );
+        }
+        function emphasizeLead(text) {
+          const colon = text.indexOf(":");
+          if (colon < 0) return esc(text);
+          return "<strong>" + esc(text.slice(0, colon + 1)) + "</strong>" + esc(text.slice(colon + 1));
+        }
+        function critiqueList(paragraphs) {
+          return '<ol class="critique-list">' + paragraphs.map((paragraph) => "<li>" + esc(paragraph.replace(/^\d+\.\s*/, "")) + "</li>").join("") + "</ol>";
+        }
+        function renderChapterFiveIntroduction(study) {
+          const paragraphs = study.intro;
+          return (
+            '<div class="study-intro chapter-five-intro">' +
+            '<p class="chapter-five-directions">' +
+            emphasizeLead(paragraphs[0]) +
+            "</p>" +
+            '<section class="manuscript-subsection"><h3>' +
+            esc(paragraphs[1]) +
+            "</h3>" +
+            '<ul class="definition-list"><li>' +
+            esc(paragraphs[2]) +
+            "</li></ul>" +
+            '<p class="example-heading">' +
+            esc(paragraphs[3]) +
+            "</p>" +
+            '<p class="example-text">' +
+            emphasizeLead(paragraphs[4]) +
+            "</p>" +
+            '<p class="example-text">' +
+            emphasizeLead(paragraphs[5]) +
+            "</p>" +
+            '<p class="critique-heading">' +
+            esc(paragraphs[6]) +
+            "</p>" +
+            critiqueList(paragraphs.slice(7, 12)) +
+            "</section>" +
+            '<section class="manuscript-subsection"><h3>' +
+            esc(paragraphs[12]) +
+            "</h3>" +
+            '<ul class="definition-list"><li>' +
+            esc(paragraphs[13]) +
+            "</li></ul>" +
+            '<p class="example-heading">' +
+            esc(paragraphs[14]) +
+            "</p>" +
+            '<p class="example-text">' +
+            emphasizeLead(paragraphs[15]) +
+            "</p>" +
+            '<p class="example-text">' +
+            emphasizeLead(paragraphs[16]) +
+            "</p>" +
+            '<p class="critique-heading">' +
+            esc(paragraphs[17]) +
+            "</p>" +
+            critiqueList(paragraphs.slice(18, 27)) +
+            "</section></div>"
+          );
+        }
+        function renderChapterSixIntroduction(study) {
+          const paragraphs = study.intro;
+          return (
+            '<div class="study-intro chapter-six-intro">' +
+            '<div class="chapter-six-summary"><p>' +
+            emphasizeLead(paragraphs[0]) +
+            "</p><p>" +
+            emphasizeLead(paragraphs[1]) +
+            "</p></div>" +
+            '<ul class="chapter-six-situations">' +
+            paragraphs
+              .slice(2, 6)
+              .map((paragraph) => "<li>" + emphasizeLead(paragraph) + "</li>")
+              .join("") +
+            "</ul>" +
+            '<section class="manuscript-subsection"><h3>' +
+            esc(paragraphs[6]) +
+            "</h3>" +
+            '<ul class="chapter-six-leaders">' +
+            paragraphs
+              .slice(7, 12)
+              .map((paragraph) => "<li>" + emphasizeLead(paragraph) + "</li>")
+              .join("") +
+            "</ul></section>" +
+            '<p class="chapter-six-decision">' +
+            emphasizeLead(paragraphs[12]) +
+            "</p></div>"
+          );
+        }
+        function renderIntroduction(study) {
+          if (study.chapter === 5) return renderChapterFiveIntroduction(study);
+          if (study.chapter === 6) return renderChapterSixIntroduction(study);
+          return '<div class="study-intro">' + study.intro.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>";
+        }
         function renderButtons() {
           document.getElementById("chapter-buttons").innerHTML = studies
             .map((s) => '<button class="chapter-button" type="button" data-chapter="' + s.chapter + '" aria-current="' + (s.chapter === activeChapter) + '">Chapter ' + s.chapter + "</button>")
@@ -1138,15 +1409,15 @@
           activeChapter = chapter;
           const study = studies[chapter - 1],
             data = chapterData(chapter);
+          const wordDownload =
+            '<aside class="word-download"><div><p>Prefer the Word version?</p><p>Download this chapter’s case study to complete it outside the webpage.</p></div><a class="external-link word-download-button" href="' +
+            esc(sourceDocuments[chapter]) +
+            '" download>Download Word document</a></aside>';
           const link = study.link
-            ? '<section class="study-section"><h3>Before you respond</h3><a class="external-link" href="' +
-              study.link.url +
-              '" target="_blank" rel="noopener noreferrer">' +
-              study.link.label +
-              ' ↗</a><p class="external-note">The resource opens in a new tab. Return here when you are ready to respond.</p></section>'
+            ? '<section class="study-section"><a class="external-link" href="' + study.link.url + '" target="_blank" rel="noopener noreferrer">' + esc(study.link.label) + "</a></section>"
             : "";
           let activity = "";
-          if (study.type === "order") activity = '<section class="study-section"><h3>Arrange the process</h3><p>' + study.instructions + "</p>" + orderMarkup(data) + "</section>";
+          if (study.type === "order") activity = '<section class="study-section">' + orderMarkup(data) + "</section>";
           else if (study.statementFields)
             activity =
               '<section class="study-section"><h3>Your organization</h3>' +
@@ -1190,25 +1461,21 @@
             const score = study.score
               ? '<section class="study-section"><h3>Your self-assessment result</h3>' + input(chapter, "score", "Score from the external self-assessment", data.score, "number") + "</section>"
               : "";
-            activity =
-              score +
-              '<section class="study-section"><h3>Your responses</h3>' +
-              study.questions.map((q, i) => textarea(chapter, "q" + i, '<span class="question-number">' + (i + 1) + ".</span> " + q, data["q" + i])).join("") +
-              "</section>";
+            activity = score;
+            if (study.questions.length) {
+              activity += '<section class="study-section"><h3>Discussion Questions</h3>' + study.questions.map((q, i) => questionMarkup(chapter, q, i, data)).join("") + "</section>";
+            }
           }
+          const introduction = renderIntroduction(study);
           document.getElementById("study-card").innerHTML =
-            '<p class="study-kicker">Chapter ' +
-            chapter +
-            " case study</p><h2>" +
-            study.title +
-            '</h2><p class="study-intro">' +
-            study.intro +
-            "</p>" +
+            '<p class="study-kicker">' +
+            esc(study.heading) +
+            "</p><h2>" +
+            esc(study.title) +
+            "</h2>" +
+            wordDownload +
+            introduction +
             link +
-            '<section class="study-section"><h3>Learner information</h3><div class="identity-fields">' +
-            input(chapter, "learnerName", "Learner name", data.learnerName) +
-            input(chapter, "date", "Date", data.date, "date") +
-            "</div></section>" +
             activity +
             '<div class="action-bar"><button type="button" class="primary-button" id="download-pdf">Download answers as PDF</button><button type="button" class="secondary-button" id="print-answers">Print answers</button><span class="save-status" id="save-status">Saved on this device</span><button type="button" class="text-button" id="clear-answers">Clear this chapter</button></div><p class="privacy-note">Your responses stay in this browser unless you print or download them.</p>';
           renderButtons();
@@ -1277,18 +1544,9 @@
           renderStudy(activeChapter);
         }
         function responseLines(study, data) {
-          const lines = [
-            "Contemporary Leadership in Sport Organizations, Third Edition",
-            "Chapter " + study.chapter + " Case Study",
-            study.title,
-            "",
-            "Learner: " + (data.learnerName || ""),
-            "Date: " + (data.date || ""),
-            "",
-            "CASE STUDY",
-            study.intro,
-            "",
-          ];
+          const lines = ["Contemporary Leadership in Sport Organizations, Third Edition", study.heading, study.title, "", "CASE STUDY"];
+          study.intro.forEach((paragraph) => lines.push(paragraph, ""));
+          if (study.link) lines.push(study.link.label, study.link.url, "");
           if (study.type === "order") {
             lines.push("ARRANGED SCRUM PROCESS");
             (data.order || []).forEach((step, i) => lines.push(i + 1 + ". " + scrumSteps[step]));
@@ -1300,7 +1558,13 @@
             study.missionComponents.forEach((x, i) => lines.push("", x + ":", data["missionComponent" + i] || ""));
           } else {
             if (study.score) lines.push("SELF-ASSESSMENT SCORE", data.score || "", "");
-            study.questions.forEach((q, i) => lines.push(i + 1 + ". " + q, "Response:", data["q" + i] || "", ""));
+            study.questions.forEach((question, i) => {
+              const item = typeof question === "string" ? { prompt: question } : question;
+              if (item.section) lines.push(item.section);
+              lines.push(i + 1 + ". " + item.prompt);
+              if (item.details) item.details.forEach((detail) => lines.push("- " + detail));
+              lines.push("Response:", data["q" + i] || "", "");
+            });
           }
           return lines;
         }
