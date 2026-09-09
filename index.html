@@ -55,7 +55,7 @@
 
       .hero {
         position: relative;
-        min-height: 330px;
+        min-height: 238px;
         overflow: hidden;
         background: var(--navy);
         color: #fff;
@@ -84,7 +84,7 @@
 
       .site-nav {
         display: flex;
-        min-height: 64px;
+        min-height: 56px;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid rgb(255 255 255 / 24%);
@@ -93,22 +93,10 @@
       .wordmark {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
         font-size: 0.9rem;
         font-weight: 700;
         letter-spacing: 0.09em;
         text-transform: uppercase;
-      }
-
-      .wordmark-mark {
-        display: grid;
-        width: 36px;
-        height: 36px;
-        place-items: center;
-        border: 2px solid var(--cream);
-        color: var(--cream);
-        font-size: 0.66rem;
-        letter-spacing: 0;
       }
 
       .nav-link {
@@ -125,10 +113,10 @@
 
       .hero-grid {
         display: grid;
-        min-height: 256px;
+        min-height: 172px;
         grid-template-columns: minmax(0, 1fr);
         align-items: center;
-        padding: 30px 0 38px;
+        padding: 24px 0 30px;
       }
 
       .hero-copy {
@@ -147,7 +135,7 @@
       .hero h1 {
         max-width: 900px;
         margin: 0;
-        font-size: clamp(2.4rem, 4.7vw, 4.5rem);
+        font-size: clamp(2.2rem, 4vw, 3.7rem);
         font-weight: 800;
         letter-spacing: -0.055em;
         line-height: 0.98;
@@ -178,9 +166,16 @@
         line-height: 1;
       }
 
+      .section-heading > div > p:last-child {
+        max-width: 650px;
+        margin: 12px 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
       .activity-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px;
       }
 
@@ -199,10 +194,6 @@
 
       .activity-card:nth-child(2) {
         border-top-color: var(--red);
-      }
-
-      .activity-card:nth-child(3) {
-        border-top-color: var(--sky);
       }
 
       .activity-card:hover {
@@ -283,18 +274,6 @@
         gap: 14px;
       }
 
-      .logo-placeholder-mark {
-        display: grid;
-        width: 58px;
-        height: 58px;
-        place-items: center;
-        border: 2px dashed #9b9388;
-        color: #81796f;
-        font-size: 0.66rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-      }
-
       .footer-logo > span:last-child {
         display: grid;
         gap: 4px;
@@ -343,18 +322,13 @@
 
       .interior-nav {
         display: flex;
-        min-height: 88px;
+        min-height: 64px;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid var(--border);
       }
 
       .wordmark-dark {
-        color: var(--navy);
-      }
-
-      .wordmark-dark .wordmark-mark {
-        border-color: var(--navy);
         color: var(--navy);
       }
 
@@ -368,16 +342,16 @@
 
       .interior-hero {
         display: grid;
-        grid-template-columns: 1fr 150px;
-        gap: 70px;
+        grid-template-columns: 1fr;
+        gap: 0;
         align-items: center;
-        padding: 96px 0 72px;
+        padding: 44px 0 34px;
       }
 
       .interior-heading h1,
       .copyright-header h1 {
         margin: 0;
-        font-size: clamp(3.2rem, 7vw, 6rem);
+        font-size: clamp(2.35rem, 5vw, 4rem);
         font-weight: 800;
         letter-spacing: -0.06em;
         line-height: 0.95;
@@ -385,396 +359,20 @@
 
       .interior-heading > p:last-child {
         max-width: 690px;
-        margin: 26px 0 0;
+        margin: 15px 0 0;
         color: var(--muted);
-        font-size: 1.15rem;
+        font-size: 1rem;
         line-height: 1.65;
       }
 
-      .interior-icon {
-        display: grid;
-        width: 138px;
-        height: 138px;
-        place-items: center;
-        background: var(--navy);
-        color: var(--cream);
-        clip-path: polygon(3% 4%, 94% 0, 100% 94%, 8% 100%);
-        font-size: 2.2rem;
-        font-weight: 800;
-      }
-
       .resource-panel,
-      .assessment-workspace,
       .copyright-content {
-        padding: 54px;
+        padding: 42px;
         border-top: 8px solid var(--red);
         background: var(--cream);
       }
 
-      .assessment-workspace {
-        display: grid;
-        grid-template-columns: 230px minmax(0, 1fr);
-        gap: 54px;
-        align-items: start;
-        margin-bottom: 72px;
-        padding: 0;
-        border-top: 0;
-        background: transparent;
-      }
-
-      .chapter-nav {
-        position: sticky;
-        top: 24px;
-        padding: 24px;
-        border-top: 7px solid var(--red);
-        background: var(--cream);
-      }
-
-      .chapter-nav-label {
-        margin: 0 0 16px;
-        color: var(--red);
-        font-size: 0.75rem;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .chapter-buttons {
-        display: grid;
-        gap: 8px;
-      }
-
-      .chapter-button {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 13px 14px;
-        border: 1px solid rgb(11 71 141 / 22%);
-        background: rgb(255 255 255 / 46%);
-        color: var(--navy);
-        cursor: pointer;
-        font: inherit;
-        font-size: 0.92rem;
-        font-weight: 800;
-        text-align: left;
-        transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-      }
-
-      .chapter-button::after {
-        content: '\2192';
-        font-size: 1.05rem;
-      }
-
-      .chapter-button:hover {
-        border-color: var(--navy);
-        background: #fff;
-      }
-
-      .chapter-button[aria-selected='true'] {
-        border-color: var(--navy);
-        background: var(--navy);
-        color: #fff;
-      }
-
-      .chapter-button:focus-visible {
-        outline: 3px solid var(--sky);
-        outline-offset: 3px;
-      }
-
-      .assessment-detail {
-        min-width: 0;
-        padding: 42px 46px 52px;
-        border-top: 7px solid var(--navy);
-        background: #fff;
-        box-shadow: 0 18px 44px rgb(25 38 53 / 8%);
-      }
-
-      .chapter-kicker {
-        margin: 0 0 10px;
-        color: var(--red);
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.17em;
-        text-transform: uppercase;
-      }
-
-      .assessment-detail h2 {
-        margin: 0;
-        color: var(--navy);
-        font-size: clamp(2rem, 4vw, 3.25rem);
-        letter-spacing: -0.045em;
-        line-height: 1;
-      }
-
-      .assignment-list {
-        display: grid;
-        gap: 38px;
-        margin-top: 38px;
-      }
-
-      .assignment + .assignment {
-        padding-top: 38px;
-        border-top: 1px solid var(--border);
-      }
-
-      .assignment h3 {
-        margin: 0 0 14px;
-        color: var(--ink);
-        font-size: 1.35rem;
-        letter-spacing: -0.025em;
-      }
-
-      .assignment h4 {
-        margin: 26px 0 10px;
-        color: var(--navy);
-        font-size: 1rem;
-      }
-
-      .assignment p,
-      .assignment li {
-        color: #424c56;
-        font-size: 1rem;
-        line-height: 1.72;
-      }
-
-      .assignment p {
-        margin: 0 0 14px;
-      }
-
-      .assignment p:last-child {
-        margin-bottom: 0;
-      }
-
-      .assignment ul,
-      .assignment ol {
-        margin: 12px 0 18px;
-        padding-left: 24px;
-      }
-
-      .assignment li + li {
-        margin-top: 7px;
-      }
-
-      .assignment a {
-        color: var(--navy);
-        font-weight: 700;
-        text-decoration: underline;
-        text-decoration-color: var(--sky);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
-      }
-
-      .rating-scale {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 8px;
-        margin: 12px 0 22px;
-        padding: 0;
-        list-style: none;
-      }
-
-      .rating-scale li {
-        display: grid;
-        min-height: 72px;
-        place-items: center;
-        margin: 0;
-        padding: 10px;
-        border: 1px solid var(--border);
-        background: var(--background);
-        font-size: 0.88rem;
-        font-weight: 700;
-        line-height: 1.35;
-        text-align: center;
-      }
-
-      .worksheet-toolbar {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 22px;
-        margin: 30px 0 8px;
-        padding: 22px;
-        border: 1px solid var(--border);
-        background: var(--background);
-      }
-
-      .learner-meta {
-        display: grid;
-        flex: 1;
-        grid-template-columns: minmax(0, 1fr) 180px;
-        gap: 14px;
-      }
-
-      .form-label,
-      .response-label {
-        display: grid;
-        gap: 7px;
-        color: var(--ink);
-        font-size: 0.9rem;
-        font-weight: 800;
-      }
-
-      .form-input,
-      .response-area {
-        width: 100%;
-        border: 1px solid #aeb6bf;
-        border-radius: 0;
-        background: #fff;
-        color: var(--ink);
-        font: inherit;
-      }
-
-      .form-input {
-        min-height: 44px;
-        padding: 10px 12px;
-      }
-
-      .response-block {
-        margin-top: 22px;
-      }
-
-      .response-area {
-        min-height: 132px;
-        overflow: hidden;
-        padding: 13px 14px;
-        line-height: 1.55;
-        resize: vertical;
-      }
-
-      .form-input:focus,
-      .response-area:focus {
-        border-color: var(--navy);
-        outline: 3px solid rgb(14 166 223 / 30%);
-        outline-offset: 1px;
-      }
-
-      .print-button {
-        min-height: 46px;
-        padding: 11px 18px;
-        border: 1px solid var(--navy);
-        background: var(--navy);
-        color: #fff;
-        cursor: pointer;
-        font: inherit;
-        font-size: 0.88rem;
-        font-weight: 800;
-        white-space: nowrap;
-      }
-
-      .print-button:hover {
-        background: var(--navy-deep);
-      }
-
-      .print-button:focus-visible {
-        outline: 3px solid var(--sky);
-        outline-offset: 3px;
-      }
-
-      .worksheet-note {
-        margin: 8px 0 0;
-        color: var(--muted);
-        font-size: 0.82rem;
-        line-height: 1.5;
-      }
-
-      .interactive-block {
-        margin-top: 24px;
-        padding: 22px;
-        border-left: 5px solid var(--sky);
-        background: #f4f8fb;
-      }
-
-      .interactive-block h4:first-child {
-        margin-top: 0;
-      }
-
-      .choice-group {
-        margin: 20px 0 0;
-        padding: 0;
-        border: 0;
-      }
-
-      .choice-group legend {
-        margin-bottom: 10px;
-        color: var(--ink);
-        font-size: 0.95rem;
-        font-weight: 800;
-      }
-
-      .choice-options {
-        display: grid;
-        gap: 8px;
-      }
-
-      .choice-option {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 11px 12px;
-        border: 1px solid var(--border);
-        background: #fff;
-        color: #37414b;
-        cursor: pointer;
-        font-size: 0.95rem;
-        font-weight: 600;
-        line-height: 1.45;
-      }
-
-      .choice-option:hover {
-        border-color: var(--navy);
-      }
-
-      .choice-option input {
-        width: 18px;
-        height: 18px;
-        flex: 0 0 auto;
-        margin: 2px 0 0;
-        accent-color: var(--navy);
-      }
-
-      .question-response {
-        margin: 10px 0 20px;
-      }
-
-      .question-response .response-area {
-        min-height: 94px;
-      }
-
-      .rubric-grid {
-        display: grid;
-        gap: 14px;
-        margin-top: 16px;
-      }
-
-      .rubric-row {
-        padding: 14px;
-        border: 1px solid var(--border);
-        background: #fff;
-      }
-
-      .rubric-row > span {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: 800;
-      }
-
-      .rubric-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 18px;
-      }
-
-      .rubric-options label {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        font-size: 0.9rem;
-      }
-
-      .status-label {
+     .status-label {
         margin: 0 0 16px;
         color: var(--red);
         font-size: 0.75rem;
@@ -809,7 +407,7 @@
       }
 
       .copyright-header {
-        padding: 92px 0 58px;
+        padding: 44px 0 34px;
       }
 
       .copyright-content {
@@ -854,30 +452,7 @@
         }
 
         .activity-card {
-          min-height: 310px;
-        }
-
-        .assessment-workspace {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .chapter-nav {
-          position: static;
-        }
-
-        .chapter-buttons {
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-        }
-
-        .chapter-button {
-          justify-content: center;
-          padding-inline: 8px;
-          text-align: center;
-        }
-
-        .chapter-button::after {
-          display: none;
+          min-height: 250px;
         }
       }
 
@@ -895,12 +470,12 @@
         }
 
         .hero-grid {
-          min-height: 300px;
-          padding: 36px 0 42px;
+          min-height: 190px;
+          padding: 28px 0 34px;
         }
 
         .hero h1 {
-          font-size: clamp(2.6rem, 13vw, 4rem);
+          font-size: clamp(2.15rem, 11vw, 3.25rem);
         }
 
         .hero h1 span {
@@ -925,110 +500,16 @@
         }
 
         .interior-hero {
-          padding: 70px 0 54px;
-        }
-
-        .interior-icon {
-          width: 84px;
-          height: 84px;
-          font-size: 1.4rem;
+          padding: 36px 0 28px;
         }
 
         .resource-panel,
-        .assessment-detail,
         .copyright-content {
           padding: 36px 26px 44px;
         }
-
-        .assessment-workspace {
-          width: min(100% - 32px, var(--content-width));
-          margin-bottom: 54px;
-        }
-
-        .chapter-nav {
-          width: auto;
-          padding: 20px;
-        }
-
-        .chapter-buttons {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .rating-scale {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .worksheet-toolbar {
-          align-items: stretch;
-          flex-direction: column;
-        }
-
-        .learner-meta {
-          grid-template-columns: 1fr;
-        }
-
-        .print-button {
-          width: 100%;
-        }
       }
 
-      @media print {
-        @page {
-          margin: 0.65in;
-        }
-
-        body {
-          background: #fff;
-        }
-
-        body * {
-          visibility: hidden;
-        }
-
-        #assessment-detail,
-        #assessment-detail * {
-          visibility: visible;
-        }
-
-        #assessment-detail {
-          position: absolute;
-          inset: 0 auto auto 0;
-          width: 100%;
-          padding: 0;
-          border: 0;
-          box-shadow: none;
-        }
-
-        .print-button,
-        .worksheet-note {
-          display: none;
-        }
-
-        .worksheet-toolbar,
-        .interactive-block,
-        .choice-option,
-        .rubric-row,
-        .rating-scale li {
-          background: #fff;
-          break-inside: avoid;
-        }
-
-        .assignment {
-          break-inside: auto;
-        }
-
-        .response-area {
-          min-height: 90px;
-          resize: none;
-        }
-
-        .assignment a {
-          color: #000;
-          text-decoration: none;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
+     @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
         *::after {
@@ -1043,7 +524,6 @@
       <header class="hero">
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#home" class="wordmark" aria-label="Web resource home">
-            <span class="wordmark-mark" aria-hidden="true">WR</span>
             <span>Web Resource</span>
           </a>
         </nav>
@@ -1064,36 +544,21 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow eyebrow-dark">Learning Activities</p>
-              <h2 id="activities-title">Choose a resource</h2>
+              <h2 id="activities-title">Complete each chapter in order</h2>
+              <p>Begin with the branching scenario, then move to the associated case study.</p>
             </div>
           </div>
 
           <div class="activity-grid">
-            <a href="#case-studies" class="activity-card">
-              <div class="card-topline">
-                <span class="activity-number">01</span>
-              </div>
-              <div>
-                <h3>Case Studies</h3>
-                <p>
-                  Examine real-world leadership challenges and connect course concepts to
-                  practice.
-                </p>
-              </div>
-              <span class="activity-action">
-                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
-              </span>
-            </a>
-
             <a href="#branching-scenarios" class="activity-card">
               <div class="card-topline">
-                <span class="activity-number">02</span>
+                <span class="activity-number">Step 01</span>
               </div>
               <div>
                 <h3>Branching Scenarios</h3>
                 <p>
                   Make leadership decisions, follow the consequences, and explore alternate
-                  paths.
+                  paths before moving to the case study.
                 </p>
               </div>
               <span class="activity-action">
@@ -1101,31 +566,30 @@
               </span>
             </a>
 
-            <a href="#assessments" class="activity-card">
+            <a href="#case-studies" class="activity-card">
               <div class="card-topline">
-                <span class="activity-number">03</span>
+                <span class="activity-number">Step 02</span>
               </div>
               <div>
-                <h3>Assessments</h3>
+                <h3>Case Studies</h3>
                 <p>
-                  Check your understanding and reinforce the ideas presented throughout the
-                  text.
+                  After completing the scenario, examine the associated leadership challenge
+                  and connect course concepts to practice.
                 </p>
               </div>
               <span class="activity-action">
                 Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
               </span>
             </a>
+
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <div class="footer-logo" aria-label="Publisher logo placeholder">
-          <span class="logo-placeholder-mark" aria-hidden="true">LOGO</span>
+        <div class="footer-logo" aria-label="Publisher">
           <span>
-            <strong>Logo space</strong>
-            <small>Replace this placeholder with the publisher logo</small>
+            <strong>Human Kinetics</strong>
           </span>
         </div>
         <div class="footer-meta">
@@ -1138,21 +602,19 @@
     <div class="interior-page" data-view="case-studies" hidden>
       <nav class="interior-nav" aria-label="Page navigation">
         <a href="#home" class="wordmark wordmark-dark">
-          <span class="wordmark-mark" aria-hidden="true">WR</span>
           <span>Web Resource</span>
         </a>
         <a href="#home" class="interior-nav-link">Home</a>
       </nav>
       <section class="interior-hero">
         <div class="interior-heading">
-          <p class="eyebrow eyebrow-dark">Learning Activity 01</p>
+          <p class="eyebrow eyebrow-dark">Step 02</p>
           <h1>Case Studies</h1>
           <p>
-            Apply contemporary leadership concepts to realistic challenges from across the
-            sport industry.
+            After completing the matching branching scenario, apply contemporary leadership
+            concepts to a realistic challenge from the sport industry.
           </p>
         </div>
-        <span class="interior-icon" aria-hidden="true">CS</span>
       </section>
       <section class="resource-panel">
         <p class="status-label">Resource area</p>
@@ -1165,21 +627,19 @@
     <div class="interior-page" data-view="branching-scenarios" hidden>
       <nav class="interior-nav" aria-label="Page navigation">
         <a href="#home" class="wordmark wordmark-dark">
-          <span class="wordmark-mark" aria-hidden="true">WR</span>
           <span>Web Resource</span>
         </a>
         <a href="#home" class="interior-nav-link">Home</a>
       </nav>
       <section class="interior-hero">
         <div class="interior-heading">
-          <p class="eyebrow eyebrow-dark">Learning Activity 02</p>
+          <p class="eyebrow eyebrow-dark">Step 01</p>
           <h1>Branching Scenarios</h1>
           <p>
-            Choose a leadership response, examine its impact, and reconsider the path you might
-            take.
+            Begin with the scenario for your chapter. Choose a leadership response, examine
+            its impact, and explore alternate paths.
           </p>
         </div>
-        <span class="interior-icon" aria-hidden="true">BS</span>
       </section>
       <section class="resource-panel">
         <p class="status-label">Resource area</p>
@@ -1189,73 +649,9 @@
       </section>
     </div>
 
-    <div class="interior-page" data-view="assessments" hidden>
+   <div class="interior-page" data-view="copyright" hidden>
       <nav class="interior-nav" aria-label="Page navigation">
         <a href="#home" class="wordmark wordmark-dark">
-          <span class="wordmark-mark" aria-hidden="true">WR</span>
-          <span>Web Resource</span>
-        </a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
-      <section class="interior-hero">
-        <div class="interior-heading">
-          <p class="eyebrow eyebrow-dark">Learning Activity 03</p>
-          <h1>Assessments</h1>
-          <p>
-            Select a chapter to review its applied leadership assignments and Game Plan
-            activities.
-          </p>
-        </div>
-        <span class="interior-icon" aria-hidden="true">A</span>
-      </section>
-      <section class="assessment-workspace" aria-label="Chapter assessments">
-        <aside class="chapter-nav">
-          <p class="chapter-nav-label">Choose a chapter</p>
-          <div class="chapter-buttons" role="tablist" aria-label="Assessment chapters">
-            <button class="chapter-button" type="button" role="tab" aria-selected="true" data-chapter="1">Chapter 1</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="2">Chapter 2</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="3">Chapter 3</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="4">Chapter 4</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="5">Chapter 5</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="6">Chapter 6</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="7">Chapter 7</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="8">Chapter 8</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="9">Chapter 9</button>
-            <button class="chapter-button" type="button" role="tab" aria-selected="false" data-chapter="10">Chapter 10</button>
-          </div>
-        </aside>
-
-        <article class="assessment-detail" id="assessment-detail" role="tabpanel" tabindex="0" aria-live="polite">
-          <p class="chapter-kicker" id="assessment-kicker">Chapter 1</p>
-          <h2 id="assessment-title">Chapter 1 Assignments</h2>
-          <div class="worksheet-toolbar">
-            <div>
-              <div class="learner-meta">
-                <label class="form-label">
-                  Learner name
-                  <input class="form-input" type="text" autocomplete="name" data-answer-id="learner-name" />
-                </label>
-                <label class="form-label">
-                  Date
-                  <input class="form-input" type="date" data-answer-id="learner-date" />
-                </label>
-              </div>
-              <p class="worksheet-note">Your responses are kept while this page remains open.</p>
-            </div>
-            <button class="print-button" id="print-assessment" type="button">Print this chapter</button>
-          </div>
-          <div class="assignment-list" id="assignment-list"></div>
-        </article>
-      </section>
-      <div class="interior-nav" aria-label="Assessment footer navigation">
-        <a href="#home" class="back-link">&larr; Back to all resources</a>
-      </div>
-    </div>
-
-    <div class="interior-page" data-view="copyright" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">
-          <span class="wordmark-mark" aria-hidden="true">WR</span>
           <span>Web Resource</span>
         </a>
         <a href="#home" class="interior-nav-link">Home</a>
@@ -1293,451 +689,16 @@
 
     <script>
       (function () {
-        const assessmentData = {
-          1: {
-            title: 'Chapter 1 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment 1</h3>',
-              '<p>After reading and discussing the section on Traditional Versus Contemporary Leadership, identify and evaluate a current sport-related event or issue in the news and consider how leaders might respond using a traditional approach and then using a contemporary approach. The instructor will inform you if this will be a class discussion or will be submitted to the instructor through a written assignment.</p></section>',
-              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
-              '<p>With a partner or in a small group, analyze and evaluate the leadership theories presented in chapter 1. Using in-class or online discussion, come up with an example of how each theory applies in a sport organization context. Discuss with your partner or group the connections between theory and practice illustrated by this example. After completing this activity, choose a current sport organization issue from any sport media (e.g., daily newspaper, television news or sports broadcast, online sports media) and create ideas for how one or more theories presented in this chapter could form the basis for an intervention or solution.</p></section>',
-            ].join(''),
-          },
-          2: {
-            title: 'Chapter 2 Assignment',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p>Reflect on your leadership experiences at this point in your life. If you have not been in a leadership role, put yourself in the role of a leader you have observed. Using the questions listed below, rate your performance (or that of the leader you have chosen) using the three Rs discussed in this chapter. Remember that your answers may vary greatly from those of others, depending on the sport organization context with which you are most familiar.</p>',
-              '<h4>Results</h4><ul><li>What are the most important tangible organizational performance outcomes that have occurred under your leadership?</li><li>Which stakeholders have benefited from these results? In what ways?</li></ul>',
-              '<p><strong>Rate these results:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
-              '<h4>Relationships</h4><ul><li>In what ways have you demonstrated principles of relationship building among those you interact with regularly?</li><li>Who has most benefited from your actions?</li></ul>',
-              '<p><strong>Rate your interpersonal relationship-building skills:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
-              '<h4>Responsibilities</h4><ul><li>In what ways have you demonstrated professionalism and ethical responsibility?</li><li>Who has recognized or acknowledged you for these behaviors and actions?</li></ul>',
-              '<p><strong>Rate your performance as a professional and ethical leader:</strong></p><ul class="rating-scale"><li>Not at all significant</li><li>Fairly significant</li><li>Significant</li><li>Very significant</li></ul>',
-              '<p>After completing the audit, develop a personal improvement plan that addresses any areas requiring improvement and brings your performance more in line with both your expectations and those of stakeholders.</p></section>',
-            ].join(''),
-          },
-          3: {
-            title: 'Chapter 3 Assignment',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p><strong>Applied Leadership Assignment: Emotional Intelligence in Sport Leadership Lab</strong></p>',
-              '<h4>Lead Like a Pro: Emotional Intelligence in Sport Organizations</h4>',
-              '<p>This assignment helps students build practical emotional intelligence skills required in sport settings such as athletic departments, event management, team leadership, sport marketing, coaching, and facility operations.</p>',
-              '<p>This assignment is best executed as an in-class simulation or synchronous online exercise. If it is a purely asynchronous online class, it could be modified to require students to answer what they “would do” in the situations that follow. The simulation activity focuses on the five EI core areas: self-awareness, self-management, social awareness (empathy), relationship management, and responsible decision making.</p>',
-              '<p>In this simulation, students ultimately will:</p><ul><li>Identify their emotional triggers and behavioral tendencies in leadership situations.</li><li>Demonstrate self-regulation under pressure in sport workplace scenarios.</li><li>Practice empathy and perspective-taking in conflict situations.</li><li>Use emotional awareness to improve communication and decision making.</li><li>Develop an actionable EI improvement plan based on evidence and reflection.</li></ul>',
-              '<h4>Sport Leadership Simulation Lab</h4><p>Students complete at least one or two simulations, if class time allows, in class or recorded. Each simulation assigns roles such as general manager, athletic director, coach, athlete, event manager, facility supervisor, marketing coordinator, fan engagement staff, or compliance officer.</p>',
-              '<h4>Example Simulation Options</h4><ol><li><strong>Athlete Discipline and Public Pressure:</strong> A star athlete violates team rules days before a major game. Social media is blowing up.</li><li><strong>Staff Conflict During Event Operations:</strong> Two staff members argue mid-event, causing delays and tension in front of spectators.</li><li><strong>Coach-Athlete Miscommunication:</strong> A player claims a coach is “targeting them” and treating them unfairly.</li><li><strong>Budget Cuts and Employee Morale:</strong> As a sport organization leader, you announce budget cuts that include layoffs and salary reductions. Overall, the response in the organization is negative and emotionally charged.</li></ol>',
-              '<h4>EI Challenge Requirement</h4><p>During each scenario, students are tasked with demonstrating at least three EI behaviors:</p><ul><li>Naming emotions (“I can tell you’re frustrated . . .”)</li><li>Pausing before responding</li><li>Paraphrasing and active listening</li><li>Asking perspective-based questions</li><li>Maintaining a calm tone under tension</li><li>Offering solutions without dismissing emotions</li></ul>',
-              '<h4>Peer Observation Rubric</h4><p>Other students observe the simulation and score the leader as excellent, good, average, or needs improvement in the following EI behaviors:</p><ul><li>Emotional control</li><li>Listening and empathy</li><li>Conflict response</li><li>Communication clarity</li><li>Respect and professionalism</li></ul>',
-              '<h4>Assignment Deliverables</h4><ul><li>Role-play participation</li><li>Leader reflection (brief paper or in-class reflection)</li><li>Completed peer evaluation rubric for each simulation</li></ul></section>',
-            ].join(''),
-          },
-          4: {
-            title: 'Chapter 4 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p>Assume that you have just become the chief administrator or leader of a sport organization of your choice. Drawing on recommendations for building a culture of success presented in the chapter, develop a draft plan that you would implement over the next several months. The plan should either strengthen the organization’s existing culture or initiate a cultural transformation.</p>',
-              '<p>Consider the following questions as you develop your plan:</p><ul><li>What would you focus on first?</li><li>What key values would you build on or introduce within the organization?</li><li>Who would you include in the culture-development or change process?</li><li>How would you embed the desired cultural elements within the organization?</li><li>How would you determine whether you were making progress?</li></ul></section>',
-            ].join(''),
-          },
-          5: {
-            title: 'Chapter 5 Assignment',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p>Using concepts presented in this chapter, develop the initial framework for a vision and strategic leadership approach addressing one of the following scenarios:</p><ul><li>Start-up of a new sport-related venture in a city of your choice (e.g., new team, facility, event)</li><li>Development of a strategic plan for an existing sport program or athletic department (e.g., school district, college or university, youth sport)</li><li>Creation of a business or development plan for a sport-related product</li></ul>',
-              '<h4>Planning Document or Electronic Portfolio</h4><p>Include:</p><ul><li>Introduction</li><li>Core values</li><li>SWOT analysis</li><li>Vision</li><li>Mission</li><li>Goals</li><li>Strategic priorities</li><li>Performance indicators</li><li>Actions</li><li>Evaluation</li></ul></section>',
-            ].join(''),
-          },
-          6: {
-            title: 'Chapter 6 Assignment',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p>For this activity, identify a specific complex problem from one of the problem areas identified in this chapter (e.g., legal, political, socio-cultural, technological) or from your own experience that you would like to use as the focus for developing a problem-solving strategy. Utilize one or more of the approaches to problem-solving, decision making, and conflict resolution presented in the chapter to address the issue. Finally, employ the Vroom-Yetton-Jago decision model to determine the decision-making process you would use in the organization.</p></section>',
-            ].join(''),
-          },
-          7: {
-            title: 'Chapter 7 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment 1</h3>',
-              '<p>Review the following two videos and then participate in an online chat forum or in-class discussion regarding how the key points in these videos can help increase the chance for success for leading organizational change.</p>',
-              '<h4>General Motivational Video About Leading Change</h4><p><a href="https://www.youtube.com/watch?v=kMh6y5trP_g" target="_blank" rel="noopener noreferrer">BIG CHANGE—Motivational Leadership Video</a></p>',
-              '<h4>The Appreciative Inquiry Approach to Leading Change</h4><p><a href="https://www.youtube.com/watch?v=OYvCAlU7VKY" target="_blank" rel="noopener noreferrer">5D Model of Appreciative Inquiry CAI</a></p></section>',
-              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
-              '<p>Work individually or with a partner or small group to create a change, turnaround, or crisis plan for a sport organization of your choice. Develop this plan and prepare a presentation that you would give to a board of directors or strategic planning leadership team. Use concepts, theories, and models presented in this chapter as well as any other resources that you find as support for your presentation.</p></section>',
-            ].join(''),
-          },
-          8: {
-            title: 'Chapter 8 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment: Game Plan Activity</h3>',
-              '<p>Individually or in a small group, identify a sport team or organization composed of many diverse individuals (considering several or all of the dimensions in Table 8.1) where the leaders have done an excellent job in leading their organization. The assignment is to write a paper or prepare a digital presentation or infographic about the organization with examples of specific actions, decisions, and strategies used by leaders to achieve success through motivation and unified purpose. The instructor will provide directions on how to complete and submit this assignment.</p></section>',
-            ].join(''),
-          },
-          9: {
-            title: 'Chapter 9 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment 1</h3>',
-              '<p>Choose one of the following two videos to review and write a one-page summary of the key points, or have an in-class discussion with other students choosing the same video.</p><ul><li><a href="https://www.youtube.com/watch?v=stIyLyUIfRo" target="_blank" rel="noopener noreferrer">5 Ways to Build a Global Sporting Brand</a></li><li><a href="https://www.youtube.com/watch?v=e0hlP84HeMU" target="_blank" rel="noopener noreferrer">Esports Is Growing Into a $1 Billion Industry | CNBC Sports</a></li></ul></section>',
-              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
-              '<p>Assume that you have just been hired as the new executive director of marketing and sales for an extreme sport equipment company located in your home country. You have been assigned a role to direct the expansion of the business into another country. The country you select for this activity should be one for which you have minimal knowledge of the cultural values, norms, and business practices. You have been given authority to hire an assistant director and a marketing staff to execute the new business plan in this country. You have to evaluate the foreign market in the country, introduce the company products, establish a market presence, and work to set and achieve sales goals appropriate to the situation.</p>',
-              '<p>Prepare a leadership project plan that includes:</p><ul><li>A demographic and psychographic analysis of the country selected.</li><li>An analysis of the nine cultural dimensions recognized by GLOBE Project (see Table 9.3). Identify the approaches to business that will be most appropriate in the cultural context of the country.</li><li>A plan for the type or types of individuals, relative to leadership attributes and skills, you will want to hire to your team. Indicate specific positions and whether you will plan to hire people from your home country, the country in which you will be doing business, or both. Refer to the Six Dimensions and Profiles of Leader Behaviors sidebar for information on the six global leadership dimensions identified by the GLOBE Project study.</li><li>List and explain the three to five most critical elements of leadership necessary to meet the goals of this project.</li></ul></section>',
-            ].join(''),
-          },
-          10: {
-            title: 'Chapter 10 Assignments',
-            content: [
-              '<section class="assignment"><h3>Assignment 1</h3>',
-              '<p>Watch the video below and summarize key points you believe could be important to your own leadership development. Share in a class discussion or with your instructor as a submitted assignment.</p>',
-              '<p><a href="https://www.youtube.com/watch?v=GnTTRgcz55g" target="_blank" rel="noopener noreferrer">Leadership Frameworks: From Sports Coaching and Executive Coaching</a></p></section>',
-              '<section class="assignment"><h3>Assignment 2: Game Plan Activity</h3>',
-              '<p>Select a sport organization of any type or level to which you have reasonable access. Conduct a small individual or group case study to determine the status of leadership development in that organization. This might involve meeting with a senior leader in the organization if you can gain access to the individual. In this activity, try to identify the formal and informal means by which leadership development, succession planning, or both currently occur. If it appears that there is no plan or that the plan needs improvement, determine how you would improve leadership learning and succession planning for the organization. Present your results to your instructor. If appropriate, you might discuss the feasibility, strengths, and weaknesses of your ideas with the leader of the organization.</p></section>',
-            ].join(''),
-          },
-        };
-
-        const learnerAnswers = {};
-        let activeChapter = 1;
-        let prePrintTitle = '';
-
-        function createElement(tagName, className, textContent) {
-          const element = document.createElement(tagName);
-          if (className) element.className = className;
-          if (textContent) element.textContent = textContent;
-          return element;
-        }
-
-        function createTextarea(answerId, labelText, placeholderText) {
-          const block = createElement('div', 'response-block');
-          const label = createElement('label', 'response-label', labelText);
-          const textarea = createElement('textarea', 'response-area');
-
-          textarea.dataset.answerId = answerId;
-          textarea.rows = 5;
-          textarea.placeholder = placeholderText || 'Type your response here.';
-          label.appendChild(textarea);
-          block.appendChild(label);
-          return block;
-        }
-
-        function createChoiceGroup(answerId, legendText, options, type) {
-          const fieldset = createElement('fieldset', 'choice-group');
-          const legend = createElement('legend', '', legendText);
-          const choices = createElement('div', 'choice-options');
-
-          fieldset.appendChild(legend);
-          options.forEach(function (option, index) {
-            const label = createElement('label', 'choice-option');
-            const input = document.createElement('input');
-            const span = createElement('span', '', option);
-
-            input.type = type || 'radio';
-            input.value = option;
-            input.dataset.answerId =
-              input.type === 'checkbox' ? answerId + '-' + index : answerId;
-            input.name =
-              input.type === 'checkbox'
-                ? 'answer-' + activeChapter + '-' + answerId + '-' + index
-                : 'answer-' + activeChapter + '-' + answerId;
-            label.appendChild(input);
-            label.appendChild(span);
-            choices.appendChild(label);
-          });
-
-          fieldset.appendChild(choices);
-          return fieldset;
-        }
-
-        function createRubric(answerId, criteria) {
-          const wrapper = createElement('div', 'rubric-grid');
-          const ratings = ['Excellent', 'Good', 'Average', 'Needs improvement'];
-
-          criteria.forEach(function (criterion, criterionIndex) {
-            const row = createElement('div', 'rubric-row');
-            const heading = createElement('span', '', criterion);
-            const options = createElement('div', 'rubric-options');
-
-            row.appendChild(heading);
-            ratings.forEach(function (rating) {
-              const label = document.createElement('label');
-              const input = document.createElement('input');
-              input.type = 'radio';
-              input.name =
-                'answer-' + activeChapter + '-' + answerId + '-' + criterionIndex;
-              input.value = rating;
-              input.dataset.answerId = answerId + '-' + criterionIndex;
-              label.appendChild(input);
-              label.appendChild(document.createTextNode(rating));
-              options.appendChild(label);
-            });
-            row.appendChild(options);
-            wrapper.appendChild(row);
-          });
-
-          return wrapper;
-        }
-
-        function addQuestionResponses(list, answerIdPrefix) {
-          Array.from(list.children).forEach(function (item, index) {
-            const response = createTextarea(
-              answerIdPrefix + '-' + index,
-              'Your response',
-              'Type your answer to this question.',
-            );
-            response.classList.add('question-response');
-            item.appendChild(response);
-          });
-        }
-
-        function enhanceRatingScales(root) {
-          root.querySelectorAll('.rating-scale').forEach(function (scale, scaleIndex) {
-            const prompt = scale.previousElementSibling;
-            scale.setAttribute('role', 'radiogroup');
-            scale.setAttribute(
-              'aria-label',
-              prompt ? prompt.textContent.replace(':', '').trim() : 'Rating scale',
-            );
-            Array.from(scale.children).forEach(function (item) {
-              const optionText = item.textContent.trim();
-              const label = createElement('label', 'choice-option');
-              const input = document.createElement('input');
-              input.type = 'radio';
-              input.name = 'answer-2-rating-' + scaleIndex;
-              input.value = optionText;
-              input.dataset.answerId = 'rating-' + scaleIndex;
-              label.appendChild(input);
-              label.appendChild(createElement('span', '', optionText));
-              item.textContent = '';
-              item.appendChild(label);
-            });
-          });
-        }
-
-        function enhanceChapterInteractions(chapterNumber) {
-          const root = document.getElementById('assignment-list');
-          const assignments = Array.from(root.querySelectorAll('.assignment'));
-
-          if (chapterNumber === 1) {
-            assignments.forEach(function (assignment, index) {
-              assignment.appendChild(
-                createTextarea(
-                  'assignment-' + index,
-                  index === 0 ? 'Traditional and contemporary leadership response' : 'Theory-to-practice response',
-                ),
-              );
-            });
-          } else if (chapterNumber === 2) {
-            const questionLists = root.querySelectorAll('ul:not(.rating-scale)');
-            questionLists.forEach(function (list, index) {
-              addQuestionResponses(list, 'reflection-' + index);
-            });
-            enhanceRatingScales(root);
-            assignments[0].appendChild(
-              createTextarea('improvement-plan', 'Personal improvement plan'),
-            );
-          } else if (chapterNumber === 3) {
-            const lab = createElement('div', 'interactive-block');
-            lab.appendChild(createElement('h4', '', 'Complete the Simulation Lab'));
-            lab.appendChild(
-              createChoiceGroup(
-                'role',
-                'Select your assigned role',
-                [
-                  'General manager',
-                  'Athletic director',
-                  'Coach',
-                  'Athlete',
-                  'Event manager',
-                  'Facility supervisor',
-                  'Marketing coordinator',
-                  'Fan engagement staff',
-                  'Compliance officer',
-                ],
-                'radio',
-              ),
-            );
-            lab.appendChild(
-              createChoiceGroup(
-                'scenario',
-                'Select the scenario completed',
-                [
-                  'Athlete Discipline and Public Pressure',
-                  'Staff Conflict During Event Operations',
-                  'Coach-Athlete Miscommunication',
-                  'Budget Cuts and Employee Morale',
-                ],
-                'radio',
-              ),
-            );
-            lab.appendChild(
-              createChoiceGroup(
-                'ei-behaviors',
-                'Check the EI behaviors demonstrated',
-                [
-                  'Naming emotions',
-                  'Pausing before responding',
-                  'Paraphrasing and active listening',
-                  'Asking perspective-based questions',
-                  'Maintaining a calm tone under tension',
-                  'Offering solutions without dismissing emotions',
-                ],
-                'checkbox',
-              ),
-            );
-            lab.appendChild(createElement('h4', '', 'Peer Observation Rubric'));
-            lab.appendChild(
-              createRubric('rubric', [
-                'Emotional control',
-                'Listening and empathy',
-                'Conflict response',
-                'Communication clarity',
-                'Respect and professionalism',
-              ]),
-            );
-            lab.appendChild(
-              createTextarea(
-                'leader-reflection',
-                'Leader reflection',
-                'Reflect on your emotional triggers, decisions, and improvement plan.',
-              ),
-            );
-            assignments[0].appendChild(lab);
-          } else if (chapterNumber === 4) {
-            const questionList = root.querySelector('ul');
-            if (questionList) addQuestionResponses(questionList, 'culture-plan');
-          } else if (chapterNumber === 5) {
-            const lists = root.querySelectorAll('ul');
-            const interaction = createElement('div', 'interactive-block');
-            interaction.appendChild(createElement('h4', '', 'Build Your Strategic Framework'));
-            interaction.appendChild(
-              createChoiceGroup(
-                'scenario',
-                'Select one scenario',
-                Array.from(lists[0].children).map(function (item) {
-                  return item.textContent.trim();
-                }),
-                'radio',
-              ),
-            );
-            interaction.appendChild(
-              createChoiceGroup(
-                'portfolio-sections',
-                'Track the sections you have completed',
-                Array.from(lists[1].children).map(function (item) {
-                  return item.textContent.trim();
-                }),
-                'checkbox',
-              ),
-            );
-            interaction.appendChild(
-              createTextarea('strategic-framework', 'Vision and strategic leadership framework'),
-            );
-            assignments[0].appendChild(interaction);
-          } else if (chapterNumber === 6) {
-            assignments[0].appendChild(
-              createTextarea(
-                'problem-solving-strategy',
-                'Problem-solving and decision-making strategy',
-              ),
-            );
-          } else if (chapterNumber === 7) {
-            assignments[0].appendChild(
-              createTextarea('video-response', 'Video notes and discussion response'),
-            );
-            assignments[1].appendChild(
-              createTextarea('change-plan', 'Change, turnaround, or crisis plan'),
-            );
-          } else if (chapterNumber === 8) {
-            assignments[0].appendChild(
-              createTextarea('organization-analysis', 'Organization analysis and examples'),
-            );
-          } else if (chapterNumber === 9) {
-            const interaction = createElement('div', 'interactive-block');
-            interaction.appendChild(
-              createChoiceGroup(
-                'video-choice',
-                'Select the video reviewed',
-                [
-                  '5 Ways to Build a Global Sporting Brand',
-                  'Esports Is Growing Into a $1 Billion Industry | CNBC Sports',
-                ],
-                'radio',
-              ),
-            );
-            interaction.appendChild(createTextarea('video-summary', 'One-page summary or discussion notes'));
-            assignments[0].appendChild(interaction);
-            assignments[1].appendChild(
-              createTextarea('global-project-plan', 'Leadership project plan'),
-            );
-          } else if (chapterNumber === 10) {
-            assignments[0].appendChild(
-              createTextarea('leadership-development', 'Leadership development reflection'),
-            );
-            assignments[1].appendChild(
-              createTextarea('case-study', 'Leadership development case study'),
-            );
-          }
-        }
-
-        function autoSizeTextarea(textarea) {
-          textarea.style.height = 'auto';
-          textarea.style.height = Math.max(132, textarea.scrollHeight + 2) + 'px';
-        }
-
-        function restoreChapterAnswers(chapterNumber) {
-          const chapterAnswers = learnerAnswers[chapterNumber] || {};
-          document
-            .querySelectorAll('#assignment-list [data-answer-id]')
-            .forEach(function (control) {
-              const savedValue = chapterAnswers[control.dataset.answerId];
-              if (control.type === 'radio') {
-                control.checked = savedValue === control.value;
-              } else if (control.type === 'checkbox') {
-                control.checked = savedValue === true;
-              } else if (savedValue !== undefined) {
-                control.value = savedValue;
-              }
-              if (control.tagName === 'TEXTAREA') autoSizeTextarea(control);
-            });
-        }
-
         const validViews = new Set([
           'home',
           'case-studies',
           'branching-scenarios',
-          'assessments',
           'copyright',
         ]);
 
-        function renderAssessmentChapter(chapterNumber) {
-          const chapter = assessmentData[chapterNumber] || assessmentData[1];
-          const buttons = Array.from(document.querySelectorAll('.chapter-button'));
-
-          activeChapter = chapterNumber;
-          document.getElementById('assessment-kicker').textContent = 'Chapter ' + chapterNumber;
-          document.getElementById('assessment-title').textContent = chapter.title;
-          document.getElementById('assignment-list').innerHTML = chapter.content;
-          enhanceChapterInteractions(chapterNumber);
-          restoreChapterAnswers(chapterNumber);
-          document.getElementById('assessment-detail').setAttribute(
-            'aria-labelledby',
-            'chapter-tab-' + chapterNumber,
-          );
-
-          buttons.forEach(function (button) {
-            const isActive = Number(button.dataset.chapter) === chapterNumber;
-            button.id = 'chapter-tab-' + button.dataset.chapter;
-            button.setAttribute('aria-selected', String(isActive));
-            button.tabIndex = isActive ? 0 : -1;
-          });
-        }
-
         function showView() {
-          const routeParts = (window.location.hash.slice(1) || 'home').split('/');
-          const requestedView = routeParts[0];
+          const requestedView = window.location.hash.slice(1) || 'home';
           const activeView = validViews.has(requestedView) ? requestedView : 'home';
-          const chapterMatch = (routeParts[1] || '').match(/^chapter-(10|[1-9])$/);
-          const selectedChapter = chapterMatch ? Number(chapterMatch[1]) : 1;
 
           document.querySelectorAll('[data-view]').forEach(function (view) {
             view.hidden = view.dataset.view !== activeView;
@@ -1749,73 +710,12 @@
               : document.querySelector('[data-view="' + activeView + '"] h1').textContent +
                 ' | Contemporary Leadership Web Resource';
 
-          if (activeView === 'assessments') {
-            renderAssessmentChapter(selectedChapter);
-          }
-
           window.scrollTo(0, 0);
         }
-
-        document.querySelectorAll('.chapter-button').forEach(function (button) {
-          button.addEventListener('click', function () {
-            window.location.hash = 'assessments/chapter-' + button.dataset.chapter;
-          });
-
-          button.addEventListener('keydown', function (event) {
-            const buttons = Array.from(document.querySelectorAll('.chapter-button'));
-            const currentIndex = buttons.indexOf(button);
-            let nextIndex = currentIndex;
-
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-              nextIndex = (currentIndex + 1) % buttons.length;
-            } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-              nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-            } else if (event.key === 'Home') {
-              nextIndex = 0;
-            } else if (event.key === 'End') {
-              nextIndex = buttons.length - 1;
-            } else {
-              return;
-            }
-
-            event.preventDefault();
-            buttons[nextIndex].click();
-            buttons[nextIndex].focus();
-          });
-        });
-
-        document
-          .getElementById('assessment-detail')
-          .addEventListener('input', function (event) {
-            const control = event.target.closest('[data-answer-id]');
-            if (!control) return;
-
-            if (control.closest('#assignment-list')) {
-              learnerAnswers[activeChapter] = learnerAnswers[activeChapter] || {};
-              learnerAnswers[activeChapter][control.dataset.answerId] =
-                control.type === 'checkbox' ? control.checked : control.value;
-            } else {
-              learnerAnswers.meta = learnerAnswers.meta || {};
-              learnerAnswers.meta[control.dataset.answerId] = control.value;
-            }
-
-            if (control.tagName === 'TEXTAREA') autoSizeTextarea(control);
-          });
-
-        document.getElementById('print-assessment').addEventListener('click', function () {
-          document.querySelectorAll('#assessment-detail textarea').forEach(autoSizeTextarea);
-          prePrintTitle = document.title;
-          document.title = 'Chapter ' + activeChapter + ' Assessment Responses';
-          window.print();
-        });
-
-        window.addEventListener('afterprint', function () {
-          if (prePrintTitle) document.title = prePrintTitle;
-        });
 
         window.addEventListener('hashchange', showView);
         showView();
       })();
     </script>
-  </body>
+ </body>
 </html>
