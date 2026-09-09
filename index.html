@@ -1,721 +1,83 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Web resource for Contemporary Leadership in Sport Organizations, 3rd Edition."
-    />
-    <title>Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource</title>
-    <style>
-      :root {
-        --navy: #0b478d;
-        --navy-deep: #073971;
-        --cream: #f6e8c9;
-        --paper: #fffdf8;
-        --background: #f8f4eb;
-        --red: #af3b55;
-        --sky: #0ea6df;
-        --ink: #111821;
-        --muted: #5f6872;
-        --border: #d8d1c5;
-        --content-width: 1180px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        min-width: 320px;
-        margin: 0;
-        background: var(--background);
-        color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
-        text-rendering: optimizeLegibility;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      [hidden] {
-        display: none !important;
-      }
-
-      .page-shell {
-        min-height: 100vh;
-      }
-
-      .hero {
-        position: relative;
-        min-height: 238px;
-        overflow: hidden;
-        background: var(--navy);
-        color: #fff;
-      }
-
-      .hero::after {
-        position: absolute;
-        inset: auto 0 0;
-        height: 10px;
-        background: linear-gradient(
-          90deg,
-          var(--cream) 0 68%,
-          var(--red) 68% 85%,
-          var(--sky) 85%
-        );
-        content: '';
-      }
-
-      .site-nav,
-      .hero-grid,
-      .activities,
-      .site-footer {
-        width: min(var(--content-width), calc(100% - 48px));
-        margin-inline: auto;
-      }
-
-      .site-nav {
-        display: flex;
-        min-height: 56px;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid rgb(255 255 255 / 24%);
-      }
-
-      .wordmark {
-        display: inline-flex;
-        align-items: center;
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        text-transform: uppercase;
-      }
-
-      .nav-link {
-        padding: 10px 0;
-        border-bottom: 2px solid transparent;
-        font-size: 0.9rem;
-        font-weight: 700;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus-visible {
-        border-color: var(--cream);
-      }
-
-      .hero-grid {
-        display: grid;
-        min-height: 172px;
-        grid-template-columns: minmax(0, 1fr);
-        align-items: center;
-        padding: 24px 0 30px;
-      }
-
-      .hero-copy {
-        max-width: 850px;
-      }
-
-      .eyebrow {
-        margin: 0 0 12px;
-        color: var(--cream);
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.34em;
-        text-transform: uppercase;
-      }
-
-      .hero h1 {
-        max-width: 900px;
-        margin: 0;
-        font-size: clamp(2.2rem, 4vw, 3.7rem);
-        font-weight: 800;
-        letter-spacing: -0.055em;
-        line-height: 0.98;
-      }
-
-      .hero h1 span {
-        display: block;
-      }
-
-      .activities {
-        padding: 38px 0 64px;
-      }
-
-      .section-heading {
-        margin-bottom: 24px;
-      }
-
-      .eyebrow-dark {
-        margin-bottom: 12px;
-        color: var(--red);
-      }
-
-      .section-heading h2 {
-        margin: 0;
-        font-size: clamp(1.9rem, 3vw, 2.65rem);
-        font-weight: 800;
-        letter-spacing: -0.045em;
-        line-height: 1;
-      }
-
-      .section-heading > div > p:last-child {
-        max-width: 650px;
-        margin: 12px 0 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .activity-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-      }
-
-      .activity-card {
-        display: flex;
-        min-height: 270px;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 24px;
-        border: 1px solid var(--border);
-        border-top: 7px solid var(--navy);
-        background: var(--paper);
-        box-shadow: 0 14px 38px rgb(25 38 53 / 7%);
-        transition: transform 180ms ease, box-shadow 180ms ease;
-      }
-
-      .activity-card:nth-child(2) {
-        border-top-color: var(--red);
-      }
-
-      .activity-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 22px 46px rgb(25 38 53 / 14%);
-      }
-
-      .activity-card:focus-visible,
-      .back-link:focus-visible {
-        outline: 3px solid var(--navy);
-        outline-offset: 4px;
-      }
-
-      .card-topline,
-      .activity-action {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .card-topline {
-        justify-content: flex-end;
-      }
-
-      .activity-number {
-        color: #a89f91;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-      }
-
-      .activity-card h3 {
-        margin: 22px 0 10px;
-        font-size: clamp(1.5rem, 2.3vw, 1.95rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.05;
-      }
-
-      .activity-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .activity-action {
-        justify-content: flex-start;
-        gap: 12px;
-        margin-top: 22px;
-        color: var(--navy);
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .activity-arrow {
-        font-size: 1.2rem;
-        transition: transform 180ms ease;
-      }
-
-      .activity-card:hover .activity-arrow {
-        transform: translateX(5px);
-      }
-
-      .site-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        padding: 42px 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .footer-logo {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-      }
-
-      .footer-logo > span:last-child {
-        display: grid;
-        gap: 4px;
-      }
-
-      .footer-logo strong {
-        font-size: 0.8rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .footer-logo small,
-      .footer-meta {
-        color: var(--muted);
-        font-size: 0.78rem;
-      }
-
-      .footer-meta {
-        text-align: right;
-      }
-
-      .footer-meta p {
-        margin: 0 0 7px;
-      }
-
-      .footer-meta a {
-        color: var(--navy);
-        font-weight: 700;
-      }
-
-      .interior-page {
-        min-height: 100vh;
-        background:
-          linear-gradient(90deg, var(--navy) 0 10px, transparent 10px),
-          var(--paper);
-      }
-
-      .interior-nav,
-      .interior-hero,
-      .resource-panel,
-      .copyright-header,
-      .copyright-content {
-        width: min(1040px, calc(100% - 48px));
-        margin-inline: auto;
-      }
-
-      .interior-nav {
-        display: flex;
-        min-height: 64px;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .wordmark-dark {
-        color: var(--navy);
-      }
-
-      .interior-nav-link {
-        color: var(--navy);
-        font-size: 0.84rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .interior-hero {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0;
-        align-items: center;
-        padding: 44px 0 34px;
-      }
-
-      .interior-heading h1,
-      .copyright-header h1 {
-        margin: 0;
-        font-size: clamp(2.35rem, 5vw, 4rem);
-        font-weight: 800;
-        letter-spacing: -0.06em;
-        line-height: 0.95;
-      }
-
-      .interior-heading > p:last-child {
-        max-width: 690px;
-        margin: 15px 0 0;
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .resource-panel,
-      .copyright-content {
-        padding: 42px;
-        border-top: 8px solid var(--red);
-        background: var(--cream);
-      }
-
-     .status-label {
-        margin: 0 0 16px;
-        color: var(--red);
-        font-size: 0.75rem;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-
-      .resource-panel h2 {
-        margin: 0 0 16px;
-        font-size: clamp(1.9rem, 4vw, 3rem);
-        letter-spacing: -0.04em;
-      }
-
-      .resource-panel > p:not(.status-label) {
-        max-width: 700px;
-        margin: 0;
-        color: #49515a;
-        line-height: 1.7;
-      }
-
-      .back-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 42px;
-        color: var(--navy);
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .copyright-header {
-        padding: 44px 0 34px;
-      }
-
-      .copyright-content {
-        max-width: 860px;
-        padding: 46px 50px 64px;
-        border-top-color: var(--navy);
-      }
-
-      .copyright-content section + section {
-        margin-top: 36px;
-        padding-top: 36px;
-        border-top: 1px solid rgb(17 24 33 / 16%);
-      }
-
-      .copyright-content h2 {
-        margin: 0 0 12px;
-        color: var(--navy);
-        font-size: 1.15rem;
-      }
-
-      .copyright-content p {
-        margin: 0;
-        line-height: 1.75;
-      }
-
-      .copyright-content a:not(.back-link) {
-        color: var(--navy);
-        font-weight: 700;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-
-      @media (max-width: 900px) {
-        .hero-grid,
-        .interior-hero {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-
-        .activity-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .activity-card {
-          min-height: 250px;
-        }
-      }
-
-      @media (max-width: 680px) {
-        .site-nav,
-        .hero-grid,
-        .activities,
-        .site-footer,
-        .interior-nav,
-        .interior-hero,
-        .resource-panel,
-        .copyright-header,
-        .copyright-content {
-          width: min(100% - 32px, var(--content-width));
-        }
-
-        .hero-grid {
-          min-height: 190px;
-          padding: 28px 0 34px;
-        }
-
-        .hero h1 {
-          font-size: clamp(2.15rem, 11vw, 3.25rem);
-        }
-
-        .hero h1 span {
-          margin-top: 8px;
-        }
-
-        .activities {
-          padding: 46px 0 64px;
-        }
-
-        .activity-card {
-          padding: 26px;
-        }
-
-        .site-footer {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .footer-meta {
-          text-align: left;
-        }
-
-        .interior-hero {
-          padding: 36px 0 28px;
-        }
-
-        .resource-panel,
-        .copyright-content {
-          padding: 36px 26px 44px;
-        }
-      }
-
-     @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page-shell" data-view="home">
-      <header class="hero">
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#home" class="wordmark" aria-label="Web resource home">
-            <span>Web Resource</span>
-          </a>
-        </nav>
-
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Third Edition</p>
-            <h1>
-              Contemporary Leadership
-              <span>in Sport Organizations</span>
-            </h1>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section class="activities" aria-labelledby="activities-title">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow eyebrow-dark">Learning Activities</p>
-              <h2 id="activities-title">Complete each chapter in order</h2>
-              <p>Begin with the branching scenario, then move to the associated case study.</p>
-            </div>
-          </div>
-
-          <div class="activity-grid">
-            <a href="#branching-scenarios" class="activity-card">
-              <div class="card-topline">
-                <span class="activity-number">Step 01</span>
-              </div>
-              <div>
-                <h3>Branching Scenarios</h3>
-                <p>
-                  Make leadership decisions, follow the consequences, and explore alternate
-                  paths before moving to the case study.
-                </p>
-              </div>
-              <span class="activity-action">
-                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
-              </span>
-            </a>
-
-            <a href="#case-studies" class="activity-card">
-              <div class="card-topline">
-                <span class="activity-number">Step 02</span>
-              </div>
-              <div>
-                <h3>Case Studies</h3>
-                <p>
-                  After completing the scenario, examine the associated leadership challenge
-                  and connect course concepts to practice.
-                </p>
-              </div>
-              <span class="activity-action">
-                Explore resources <span class="activity-arrow" aria-hidden="true">→</span>
-              </span>
-            </a>
-
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="footer-logo" aria-label="Publisher">
-          <span>
-            <strong>Human Kinetics</strong>
-          </span>
-        </div>
-        <div class="footer-meta">
-          <p>Contemporary Leadership in Sport Organizations, 3rd Edition</p>
-          <a href="#copyright">Copyright &amp; permissions</a>
-        </div>
-      </footer>
-    </div>
-
-    <div class="interior-page" data-view="case-studies" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">
-          <span>Web Resource</span>
-        </a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
-      <section class="interior-hero">
-        <div class="interior-heading">
-          <p class="eyebrow eyebrow-dark">Step 02</p>
-          <h1>Case Studies</h1>
-          <p>
-            After completing the matching branching scenario, apply contemporary leadership
-            concepts to a realistic challenge from the sport industry.
-          </p>
-        </div>
-      </section>
-      <section class="resource-panel">
-        <p class="status-label">Resource area</p>
-        <h2>Ready for your case study content</h2>
-        <p>Add your case study links, files, or embedded learning activities here.</p>
-        <a href="#home" class="back-link">← Back to all resources</a>
-      </section>
-    </div>
-
-    <div class="interior-page" data-view="branching-scenarios" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">
-          <span>Web Resource</span>
-        </a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
-      <section class="interior-hero">
-        <div class="interior-heading">
-          <p class="eyebrow eyebrow-dark">Step 01</p>
-          <h1>Branching Scenarios</h1>
-          <p>
-            Begin with the scenario for your chapter. Choose a leadership response, examine
-            its impact, and explore alternate paths.
-          </p>
-        </div>
-      </section>
-      <section class="resource-panel">
-        <p class="status-label">Resource area</p>
-        <h2>Ready for your scenario content</h2>
-        <p>Add your branching scenario links or embedded learning experiences here.</p>
-        <a href="#home" class="back-link">← Back to all resources</a>
-      </section>
-    </div>
-
-   <div class="interior-page" data-view="copyright" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">
-          <span>Web Resource</span>
-        </a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
-      <header class="copyright-header">
-        <p class="eyebrow eyebrow-dark">Copyright &amp; Permissions</p>
-        <h1>Use these resources responsibly.</h1>
-      </header>
-      <article class="copyright-content">
-        <section>
-          <h2>Copyright notice</h2>
-          <p>
-            Copyright © 2027 by David Scott and Mark LaSota. Copyright © 2022, 2014 by David
-            Scott. All rights reserved.
-          </p>
-        </section>
-        <section>
-          <h2>Permissions</h2>
-          <p>
-            These web resources accompany <em>Contemporary Leadership in Sport Organizations,
-            Third Edition</em>. They may not be reproduced, distributed, or republished without
-            written permission from the publisher, except as allowed by applicable law.
-          </p>
-        </section>
-        <section>
-          <h2>Permission requests</h2>
-          <p>
-            For permission to reuse content published by Human Kinetics, contact
-            <a href="mailto:permissions@hkusa.com">permissions@hkusa.com</a>.
-          </p>
-        </section>
-        <a href="#home" class="back-link">← Back to web resource</a>
-      </article>
-    </div>
-
-    <script>
-      (function () {
-        const validViews = new Set([
-          'home',
-          'case-studies',
-          'branching-scenarios',
-          'copyright',
-        ]);
-
-        function showView() {
-          const requestedView = window.location.hash.slice(1) || 'home';
-          const activeView = validViews.has(requestedView) ? requestedView : 'home';
-
-          document.querySelectorAll('[data-view]').forEach(function (view) {
-            view.hidden = view.dataset.view !== activeView;
-          });
-
-          document.title =
-            activeView === 'home'
-              ? 'Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource'
-              : document.querySelector('[data-view="' + activeView + '"] h1').textContent +
-                ' | Contemporary Leadership Web Resource';
-
-          window.scrollTo(0, 0);
-        }
-
-        window.addEventListener('hashchange', showView);
-        showView();
-      })();
-    </script>
- </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learning activities for Contemporary Leadership in Sport Organizations, 3rd Edition.">
+  <title>Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource</title>
+  <style>
+    :root{--navy:#0b478d;--deep:#073971;--cream:#f6e8c9;--paper:#fffdf8;--bg:#f8f4eb;--red:#af3b55;--sky:#0b8fbe;--ink:#111821;--muted:#5f6872;--border:#d8d1c5;--good:#24734a;--bad:#a3263d;--wide:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{min-width:320px;margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;text-rendering:optimizeLegibility}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}[hidden]{display:none!important}.page-shell,.interior-page{min-height:100vh}
+    .hero{position:relative;min-height:198px;overflow:hidden;background:var(--navy);color:#fff}.hero:after{position:absolute;inset:auto 0 0;height:9px;background:linear-gradient(90deg,var(--cream) 0 68%,var(--red) 68% 85%,var(--sky) 85%);content:""}.site-nav,.hero-grid,.activities,.site-footer{width:min(var(--wide),calc(100% - 48px));margin-inline:auto}.site-nav{display:flex;min-height:50px;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff3d}.wordmark{display:inline-flex;align-items:center;font-size:.9rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.hero-grid{display:grid;min-height:139px;align-items:center;padding:18px 0 25px}.eyebrow{margin:0 0 9px;color:var(--cream);font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase}.hero h1{max-width:900px;margin:0;font-size:clamp(2rem,3.7vw,3.35rem);font-weight:800;letter-spacing:-.05em;line-height:1}.hero h1 span{display:block}
+    .activities{padding:38px 0 64px}.section-heading{margin-bottom:24px}.eyebrow-dark{margin-bottom:10px;color:var(--red)}.section-heading h2{margin:0;font-size:clamp(1.9rem,3vw,2.65rem);font-weight:800;letter-spacing:-.045em;line-height:1}.section-heading p:last-child{max-width:650px;margin:12px 0 0;color:var(--muted)}.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.activity-card{display:flex;min-height:250px;flex-direction:column;justify-content:space-between;padding:24px;border:1px solid var(--border);border-top:7px solid var(--navy);background:var(--paper);box-shadow:0 14px 38px #19263512;transition:transform 180ms ease,box-shadow 180ms ease}.activity-card:nth-child(2){border-top-color:var(--red)}.activity-card:hover{transform:translateY(-5px);box-shadow:0 22px 46px #19263524}.activity-card:focus-visible,.back-link:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,.external-link:focus-visible{outline:3px solid var(--sky);outline-offset:3px}.card-topline{display:flex;justify-content:flex-end}.activity-number{color:#80786c;font-size:.8rem;font-weight:700;letter-spacing:.16em}.activity-card h3{margin:22px 0 10px;font-size:clamp(1.5rem,2.3vw,1.95rem);line-height:1.05}.activity-card p{margin:0;color:var(--muted)}.activity-action{display:flex;align-items:center;gap:12px;margin-top:22px;color:var(--navy);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.activity-arrow{font-size:1.2rem;transition:transform 180ms ease}.activity-card:hover .activity-arrow{transform:translateX(5px)}
+    .site-footer{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:38px 0;border-top:1px solid var(--border)}.footer-logo strong{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}.footer-meta{color:var(--muted);font-size:.78rem;text-align:right}.footer-meta p{margin:0 0 7px}.footer-meta a{color:var(--navy);font-weight:700}
+    .interior-page{background:linear-gradient(90deg,var(--navy) 0 8px,transparent 8px),var(--paper)}.interior-nav,.interior-hero,.resource-panel,.case-study-shell,.copyright-header,.copyright-content{width:min(1080px,calc(100% - 48px));margin-inline:auto}.interior-nav{display:flex;min-height:54px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}.wordmark-dark,.interior-nav-link{color:var(--navy)}.interior-nav-link{font-size:.84rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.interior-hero{padding:27px 0 22px}.interior-heading h1,.copyright-header h1{margin:0;font-size:clamp(2.15rem,4.6vw,3.45rem);font-weight:800;letter-spacing:-.055em;line-height:.96}.interior-heading>p:last-child{max-width:730px;margin:11px 0 0;color:var(--muted)}.resource-panel,.copyright-content{padding:42px;border-top:8px solid var(--red);background:var(--cream)}.status-label{margin:0 0 13px;color:var(--red);font-size:.75rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.resource-panel h2{margin:0 0 16px;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.04em}.resource-panel>p:not(.status-label){max-width:700px;margin:0;color:#49515a}.back-link{display:inline-flex;align-items:center;gap:10px;margin-top:38px;color:var(--navy);font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .case-study-shell{padding-bottom:64px}.chapter-picker{padding:22px;border-top:7px solid var(--red);background:var(--cream)}.chapter-picker h2{margin:0 0 5px;font-size:1.25rem}.chapter-picker>p{margin:0 0 16px;color:#545049}.chapter-buttons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.chapter-button{min-height:48px;padding:10px 8px;border:2px solid transparent;background:#fff;color:var(--navy);font-weight:800}.chapter-button:hover{border-color:var(--navy)}.chapter-button[aria-current=true]{border-color:var(--navy);background:var(--navy);color:#fff}
+    .study-card{margin-top:22px;padding:34px clamp(22px,4vw,48px) 42px;border:1px solid var(--border);border-top:7px solid var(--navy);background:#fff;box-shadow:0 15px 36px #19263514}.study-kicker{margin:0 0 6px;color:var(--red);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.study-card h2{max-width:830px;margin:0;font-size:clamp(1.65rem,3vw,2.45rem);letter-spacing:-.035em;line-height:1.1}.study-intro{max-width:860px;margin:15px 0 0;color:#3e4852}.study-section{margin-top:30px;padding-top:28px;border-top:1px solid var(--border)}.study-section h3{margin:0 0 12px;color:var(--deep);font-size:1.22rem}.study-section p{margin:0 0 13px}.external-link{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border:2px solid var(--navy);color:var(--navy);font-weight:800}.external-link:hover{background:var(--navy);color:#fff}.external-note{margin-top:9px!important;color:var(--muted);font-size:.9rem}.identity-fields{display:grid;grid-template-columns:2fr 1fr;gap:18px}.field{margin-top:22px}.field:first-child{margin-top:0}.field label{display:block;margin-bottom:7px;font-weight:800}.field-hint{display:block;margin:-2px 0 8px;color:var(--muted);font-size:.9rem}input[type=text],input[type=date],input[type=number],textarea{width:100%;border:1px solid #aab1b8;border-radius:0;background:#fffefb;color:var(--ink)}input{min-height:47px;padding:10px 12px}textarea{min-height:142px;padding:13px;line-height:1.55;resize:vertical}input:focus,textarea:focus{border-color:var(--navy)}.question-number{color:var(--red)}.component-list{display:grid;gap:13px;margin-top:16px}.component-item{display:grid;grid-template-columns:minmax(160px,.45fr) 1fr;gap:14px;align-items:center}.component-item strong{color:var(--deep)}.component-item input{min-width:0}
+    .order-list{display:grid;gap:10px;margin:18px 0;padding:0;list-style:none;counter-reset:item}.order-item{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--border);background:var(--paper);counter-increment:item}.order-item:before{display:grid;width:34px;height:34px;place-items:center;background:var(--navy);color:#fff;font-weight:800;content:counter(item)}.order-controls{display:flex;gap:7px}.move-button{width:40px;height:40px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-size:1.15rem;font-weight:800}.move-button:hover:not(:disabled){background:var(--navy);color:#fff}.move-button:disabled{cursor:not-allowed;opacity:.35}.feedback{margin:14px 0 0;padding:12px 14px;border-left:5px solid var(--navy);background:#edf4fb;font-weight:700}.feedback.success{border-color:var(--good);background:#edf8f1;color:var(--good)}.feedback.error{border-color:var(--bad);background:#fff0f2;color:var(--bad)}
+    .action-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;padding-top:25px;border-top:1px solid var(--border)}.primary-button,.secondary-button,.text-button{min-height:47px;padding:10px 17px;border:2px solid var(--navy);font-weight:800}.primary-button{background:var(--navy);color:#fff}.primary-button:hover{background:var(--deep)}.secondary-button{background:#fff;color:var(--navy)}.secondary-button:hover{background:#edf4fb}.text-button{margin-left:auto;border-color:transparent;background:transparent;color:var(--bad)}.save-status{align-self:center;color:var(--muted);font-size:.88rem}.privacy-note{margin:12px 0 0;color:var(--muted);font-size:.86rem}
+    .copyright-header{padding:35px 0 27px}.copyright-content{max-width:860px;padding:46px 50px 64px;border-top-color:var(--navy)}.copyright-content section+section{margin-top:36px;padding-top:36px;border-top:1px solid #11182129}.copyright-content h2{margin:0 0 12px;color:var(--navy);font-size:1.15rem}.copyright-content p{margin:0}.copyright-content a:not(.back-link){color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:900px){.activity-grid{grid-template-columns:1fr}.activity-card{min-height:230px}.chapter-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.site-nav,.hero-grid,.activities,.site-footer,.interior-nav,.interior-hero,.resource-panel,.case-study-shell,.copyright-header,.copyright-content{width:min(100% - 30px,var(--wide))}.hero-grid{min-height:150px;padding:22px 0 29px}.hero h1{font-size:clamp(2rem,10vw,3rem)}.hero h1 span{margin-top:5px}.activities{padding:36px 0 54px}.activity-card{padding:24px}.site-footer{align-items:flex-start;flex-direction:column}.footer-meta{text-align:left}.interior-hero{padding:24px 0 20px}.resource-panel,.copyright-content{padding:34px 24px 42px}.chapter-picker{padding:18px}.chapter-buttons{grid-template-columns:1fr 1fr}.identity-fields,.component-item{grid-template-columns:1fr}.order-item{grid-template-columns:38px 1fr}.order-controls{grid-column:2}.text-button{width:100%;margin-left:0}}
+    @media print{body{background:#fff;font-size:11pt}.interior-page{background:#fff}.interior-nav,.interior-hero,.chapter-picker,.action-bar,.privacy-note,.back-link,.external-note{display:none!important}[data-view]:not([data-view=case-studies]){display:none!important}[data-view=case-studies]{display:block!important}.case-study-shell{width:100%;padding:0}.study-card{margin:0;padding:0;border:0;box-shadow:none}.study-card h2{font-size:20pt}.study-section{break-inside:avoid}input,textarea{border:1px solid #777!important;background:#fff!important}textarea{min-height:90px}.move-button{display:none}.order-item{grid-template-columns:32px 1fr;break-inside:avoid}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="page-shell" data-view="home">
+    <header class="hero"><nav class="site-nav" aria-label="Primary navigation"><a href="#home" class="wordmark">Web Resource</a></nav><div class="hero-grid"><div><p class="eyebrow">Third Edition</p><h1>Contemporary Leadership <span>in Sport Organizations</span></h1></div></div></header>
+    <main><section class="activities" aria-labelledby="activities-title"><div class="section-heading"><p class="eyebrow eyebrow-dark">Learning Activities</p><h2 id="activities-title">Complete each chapter in order</h2><p>Begin with the branching scenario, then move to the associated case study.</p></div><div class="activity-grid"><a href="#branching-scenarios" class="activity-card"><div class="card-topline"><span class="activity-number">Step 01</span></div><div><h3>Branching Scenarios</h3><p>Make leadership decisions, follow the consequences, and explore alternate paths before moving to the case study.</p></div><span class="activity-action">Explore resources <span class="activity-arrow" aria-hidden="true">→</span></span></a><a href="#case-studies" class="activity-card"><div class="card-topline"><span class="activity-number">Step 02</span></div><div><h3>Case Studies</h3><p>After completing the scenario, examine the associated leadership challenge and connect course concepts to practice.</p></div><span class="activity-action">Start case studies <span class="activity-arrow" aria-hidden="true">→</span></span></a></div></section></main>
+    <footer class="site-footer"><div class="footer-logo"><strong>Human Kinetics</strong></div><div class="footer-meta"><p>Contemporary Leadership in Sport Organizations, 3rd Edition</p><a href="#copyright">Copyright &amp; permissions</a></div></footer>
+  </div>
+  <div class="interior-page" data-view="case-studies" hidden><nav class="interior-nav" aria-label="Page navigation"><a href="#home" class="wordmark wordmark-dark">Web Resource</a><a href="#home" class="interior-nav-link">Home</a></nav><section class="interior-hero"><div class="interior-heading"><p class="eyebrow eyebrow-dark">Step 02</p><h1>Case Studies</h1><p>Choose your chapter after completing its branching scenario. Enter your responses, then print or download a PDF copy.</p></div></section><main class="case-study-shell"><section class="chapter-picker" aria-labelledby="chapter-picker-title"><h2 id="chapter-picker-title">Choose a chapter</h2><p>Your answers are saved on this device as you work.</p><div class="chapter-buttons" id="chapter-buttons"></div></section><article class="study-card" id="study-card" aria-live="polite"></article><a href="#home" class="back-link">← Back to all resources</a></main></div>
+  <div class="interior-page" data-view="branching-scenarios" hidden><nav class="interior-nav" aria-label="Page navigation"><a href="#home" class="wordmark wordmark-dark">Web Resource</a><a href="#home" class="interior-nav-link">Home</a></nav><section class="interior-hero"><div class="interior-heading"><p class="eyebrow eyebrow-dark">Step 01</p><h1>Branching Scenarios</h1><p>Begin with the scenario for your chapter. Choose a leadership response, examine its impact, and explore alternate paths.</p></div></section><section class="resource-panel"><p class="status-label">Resource area</p><h2>Ready for your scenario content</h2><p>Add your branching scenario links or embedded learning experiences here.</p><a href="#home" class="back-link">← Back to all resources</a></section></div>
+  <div class="interior-page" data-view="copyright" hidden><nav class="interior-nav" aria-label="Page navigation"><a href="#home" class="wordmark wordmark-dark">Web Resource</a><a href="#home" class="interior-nav-link">Home</a></nav><header class="copyright-header"><p class="eyebrow eyebrow-dark">Copyright &amp; Permissions</p><h1>Use these resources responsibly.</h1></header><article class="copyright-content"><section><h2>Copyright notice</h2><p>Copyright © 2027 by David Scott and Mark LaSota. Copyright © 2022, 2014 by David Scott. All rights reserved.</p></section><section><h2>Permissions</h2><p>These web resources accompany <em>Contemporary Leadership in Sport Organizations, Third Edition</em>. They may not be reproduced, distributed, or republished without written permission from the publisher, except as allowed by applicable law.</p></section><section><h2>Permission requests</h2><p>For permission to reuse content published by Human Kinetics, contact <a href="mailto:permissions@hkusa.com">permissions@hkusa.com</a>.</p></section><a href="#home" class="back-link">← Back to web resource</a></article></div>
+  <script>
+  (function(){
+    const scrumSteps=['Assign scrum roles.','Conduct a sprint planning meeting.','Define the sprint goal.','Identify and prioritize the sprint process log.','Visualize work using a scrum planning board.','Empower operational teams to self-organize and plan.','Hold daily stand-up meetings.','Remove impediments and make rapid decisions.','Conduct a final readiness check before the event.','Conduct a hotwash or after-action review.'];
+    const studies=[
+      {chapter:1,title:'Agile Leadership Scenario Activity',intro:'You are the athletic director and Scrum Master for an NCAA Division I athletics department. A women’s basketball game has been moved to national television, changing the start time and increasing media attention and expected attendance. The department must coordinate safety, fan experience, and broadcast requirements on a compressed timeline.',instructions:'Arrange the Scrum processes in the correct order. Use the arrow buttons to move each step, then check your answer. You may retry as many times as needed.',type:'order'},
+      {chapter:2,title:'Leadership Tension Between Results and Relationship',intro:'Watch the selected scene from Remember the Titans, then consider the tension between achieving results and building relationships.',link:{label:'Watch the leadership video',url:'https://www.youtube.com/watch?v=0VZW54uJW4s'},questions:['In what ways does the video show the importance of—and tension between—results-oriented and relationship-oriented leadership?','Describe a personal experience in which a leader balanced these approaches well or allowed them to become unbalanced.','Which approach do you identify with most, and how can you manage both approaches effectively?']},
+      {chapter:3,title:'Emotional Intelligence Self-Assessment',intro:'Complete the Global Leadership Foundation emotional intelligence test. Answer all 40 questions and select “Score My Test” before recording your result and reflecting on the four emotional intelligence quadrants.',link:{label:'Open the external self-assessment',url:'https://tests.globalleadershipfoundation.com/geit/eitest.html'},score:true,questions:['What does your result suggest about your strengths across self-awareness, self-management, social awareness, and relationship management?','Which area would you most like to strengthen, and what is one action you can take?']},
+      {chapter:4,title:'Inheriting Success and Maintaining Culture',intro:'You have been appointed head coach of a highly successful women’s college basketball program. Your predecessor retired after building a strong culture and making 14 Final Four appearances, and will remain connected to the program as a special advisor.',questions:['How would you approach your role as the new leader of this successful program?','How would you honor the program’s legacy while establishing your own leadership identity?','What would you do to build trust with athletes, staff, alumni, and other stakeholders?','How would you sustain the program’s success and culture over time?']},
+      {chapter:5,title:'Creating Vision and Mission Statements for a Sport Organization',intro:'Choose a sport organization that provides products or services. Develop vision and mission statements, then examine whether they include the components described in the chapter.',statementFields:true,visionComponents:['Future-oriented','Inspiring and challenging','Motivating and memorable','Purpose-driven','Unique'],missionComponents:['Customers','Products or services','Markets','Technology','Survival, growth, and profitability','Philosophy','Distinctive competence','Public image','Employees']},
+      {chapter:6,title:'Complexity Risk and Decision Making',intro:'The hypothetical New Mexico Cougars of the United Football League face an injury crisis, financial strain, public-relations challenges, and the resignation of their general manager. Consider the perspectives of the CEO, head coach, interim general manager, public-relations director, and medical and performance team.',questions:['Roster: Should the team promote current players or acquire outside talent? Explain your rationale.','Roster: What short- and long-term tactics could protect performance and team cohesion?','Finances: How should the organization allocate its limited budget?','Finances: What new revenue streams could the organization pursue?','Management: How should the interim general manager motivate staff, maintain sponsor confidence, and stabilize operations?','Management: Should the team conduct an external search for a permanent general manager or promote from within? Why?','Public relations: How should the team respond publicly to the crisis?','Public relations: How should leaders communicate with players, fans, sponsors, and other stakeholders to reassure them?']},
+      {chapter:7,title:'Public Relations Crisis for an MLS Franchise',intro:'A Major League Soccer franchise faces allegations of sexual misconduct, harassment, a toxic workplace, ignored complaints, and retaliation. Develop a leadership response that addresses immediate harm and lasting organizational change.',questions:['What should organizational leaders do first in response to the allegations?','How should the organization address legal duties, ethical responsibilities, and MLS standards?','What changes to leadership, team culture, and operations are needed?','Should the organization commission an external investigation? How could that choice affect the legitimacy of its response?']},
+      {chapter:8,title:'Diversity Management',intro:'Watch the selected video, then connect its ideas about diversity management to sport leadership and your own experience.',link:{label:'Watch the diversity management video',url:'https://www.youtube.com/watch?v=CznqB2_j5L4'},questions:['How can the diversity-management ideas in the video be applied in a sport organization?','Describe a personal or observed experience that connects with the ideas in the video.','Which elements did you find most interesting or applicable, and why?']},
+      {chapter:9,title:'Cross-Cultural Leadership in International Soccer',intro:'A French manager takes charge of the Saudi national soccer team. He adapts to cultural expectations, builds trust, and helps the team defeat Argentina at the World Cup. Analyze the role of cultural competence in his leadership.',questions:['How did cultural competence contribute to the manager’s effectiveness?','What could a leader do to bridge cultural differences among athletes, staff, and stakeholders?','What risks arise when a leader fails to adapt to the cultural context?']},
+      {chapter:10,title:'Organizational Leadership with Nike Leaders and Executives',intro:'Watch the panel discussion with Nike leaders and executives. Apply ideas from the discussion to learning organizations and McCall’s five leadership demands.',link:{label:'Watch the leadership panel',url:'https://www.youtube.com/watch?v=GUC4OPWPUcs'},questions:['Identify three to five important points from the panel that could help you in a future leadership role.','Which learning-organization disciplines apply to the discussion, and why?','Give examples from the discussion that illustrate McCall’s five demands: setting direction, alignment, setting and living values, executive temperament, and growth of self and others.']}
+    ];
+    const storageKey='clso3e-case-study-responses-v1';let saved=loadSaved(),activeChapter=1,saveTimer;
+    function loadSaved(){try{return JSON.parse(localStorage.getItem(storageKey))||{}}catch(error){return{}}}
+    function chapterData(n){if(!saved[n])saved[n]={};return saved[n]}
+    function saveNow(){try{localStorage.setItem(storageKey,JSON.stringify(saved));const s=document.getElementById('save-status');if(s)s.textContent='Saved on this device'}catch(error){const s=document.getElementById('save-status');if(s)s.textContent='Unable to save on this device'}}
+    function queueSave(){const s=document.getElementById('save-status');if(s)s.textContent='Saving…';clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,250)}
+    function esc(v){return String(v||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+    function fieldId(c,k){return'ch'+c+'-'+k}
+    function input(c,k,label,value,type){return'<div class="field"><label for="'+fieldId(c,k)+'">'+label+'</label><input id="'+fieldId(c,k)+'" data-answer-key="'+k+'" type="'+(type||'text')+'" value="'+esc(value)+'"></div>'}
+    function textarea(c,k,label,value,hint){return'<div class="field"><label for="'+fieldId(c,k)+'">'+label+'</label>'+(hint?'<span class="field-hint">'+hint+'</span>':'')+'<textarea id="'+fieldId(c,k)+'" data-answer-key="'+k+'">'+esc(value)+'</textarea></div>'}
+    function renderButtons(){document.getElementById('chapter-buttons').innerHTML=studies.map(s=>'<button class="chapter-button" type="button" data-chapter="'+s.chapter+'" aria-current="'+(s.chapter===activeChapter)+'">Chapter '+s.chapter+'</button>').join('')}
+    function shuffled(){const a=scrumSteps.map((_,i)=>i);for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a.every((v,i)=>v===i)?a.reverse():a}
+    function orderMarkup(data){if(!Array.isArray(data.order)||data.order.length!==scrumSteps.length)data.order=shuffled();return'<ol class="order-list" id="order-list">'+data.order.map((step,pos)=>'<li class="order-item" data-step="'+step+'"><span>'+esc(scrumSteps[step])+'</span><span class="order-controls"><button type="button" class="move-button" data-move="up" aria-label="Move '+esc(scrumSteps[step])+' up" '+(pos===0?'disabled':'')+'>↑</button><button type="button" class="move-button" data-move="down" aria-label="Move '+esc(scrumSteps[step])+' down" '+(pos===data.order.length-1?'disabled':'')+'>↓</button></span></li>').join('')+'</ol><button type="button" class="primary-button" id="check-order">Check order</button><p class="feedback" id="order-feedback" aria-live="polite">Move the steps into order, then check your answer.</p>'}
+    function renderStudy(chapter){activeChapter=chapter;const study=studies[chapter-1],data=chapterData(chapter);const link=study.link?'<section class="study-section"><h3>Before you respond</h3><a class="external-link" href="'+study.link.url+'" target="_blank" rel="noopener noreferrer">'+study.link.label+' ↗</a><p class="external-note">The resource opens in a new tab. Return here when you are ready to respond.</p></section>':'';let activity='';
+      if(study.type==='order')activity='<section class="study-section"><h3>Arrange the process</h3><p>'+study.instructions+'</p>'+orderMarkup(data)+'</section>';
+      else if(study.statementFields)activity='<section class="study-section"><h3>Your organization</h3>'+input(chapter,'organization','Sport organization',data.organization)+'</section><section class="study-section"><h3>Vision statement</h3>'+textarea(chapter,'vision','Draft your vision statement',data.vision)+'<div class="component-list">'+study.visionComponents.map((x,i)=>'<div class="component-item"><strong>'+x+'</strong><input type="text" data-answer-key="visionComponent'+i+'" aria-label="How the vision addresses '+x+'" placeholder="How does your vision address this?" value="'+esc(data['visionComponent'+i])+'"></div>').join('')+'</div></section><section class="study-section"><h3>Mission statement</h3>'+textarea(chapter,'mission','Draft your mission statement',data.mission)+'<div class="component-list">'+study.missionComponents.map((x,i)=>'<div class="component-item"><strong>'+x+'</strong><input type="text" data-answer-key="missionComponent'+i+'" aria-label="How the mission addresses '+x+'" placeholder="How does your mission address this?" value="'+esc(data['missionComponent'+i])+'"></div>').join('')+'</div></section>';
+      else{const score=study.score?'<section class="study-section"><h3>Your self-assessment result</h3>'+input(chapter,'score','Score from the external self-assessment',data.score,'number')+'</section>':'';activity=score+'<section class="study-section"><h3>Your responses</h3>'+study.questions.map((q,i)=>textarea(chapter,'q'+i,'<span class="question-number">'+(i+1)+'.</span> '+q,data['q'+i])).join('')+'</section>'}
+      document.getElementById('study-card').innerHTML='<p class="study-kicker">Chapter '+chapter+' case study</p><h2>'+study.title+'</h2><p class="study-intro">'+study.intro+'</p>'+link+'<section class="study-section"><h3>Learner information</h3><div class="identity-fields">'+input(chapter,'learnerName','Learner name',data.learnerName)+input(chapter,'date','Date',data.date,'date')+'</div></section>'+activity+'<div class="action-bar"><button type="button" class="primary-button" id="download-pdf">Download answers as PDF</button><button type="button" class="secondary-button" id="print-answers">Print answers</button><span class="save-status" id="save-status">Saved on this device</span><button type="button" class="text-button" id="clear-answers">Clear this chapter</button></div><p class="privacy-note">Your responses stay in this browser unless you print or download them.</p>';
+      renderButtons();bindEvents();document.title='Chapter '+chapter+' Case Study | Contemporary Leadership Web Resource';if(study.type==='order'&&data.orderChecked){const f=document.getElementById('order-feedback');f.className='feedback '+(data.orderCorrect?'success':'error');f.textContent=data.orderCorrect?'Correct. The Scrum processes are in the right order.':'Not quite. Review the sequence, move any steps that need to change, and try again.'}}
+    function sizeTextarea(control){control.style.height='auto';control.style.height=Math.max(142,control.scrollHeight+2)+'px'}
+    function bindEvents(){document.querySelectorAll('#study-card [data-answer-key]').forEach(control=>{if(control.tagName==='TEXTAREA')sizeTextarea(control);control.addEventListener('input',()=>{chapterData(activeChapter)[control.dataset.answerKey]=control.value;if(control.tagName==='TEXTAREA')sizeTextarea(control);queueSave()})});const list=document.getElementById('order-list');if(list)list.addEventListener('click',moveItem);const check=document.getElementById('check-order');if(check)check.addEventListener('click',checkOrder);document.getElementById('download-pdf').addEventListener('click',downloadPdf);document.getElementById('print-answers').addEventListener('click',()=>{document.querySelectorAll('#study-card textarea').forEach(sizeTextarea);saveNow();window.print()});document.getElementById('clear-answers').addEventListener('click',clearChapter)}
+    function moveItem(event){const b=event.target.closest('[data-move]');if(!b)return;const step=Number(b.closest('.order-item').dataset.step),order=chapterData(1).order,index=order.indexOf(step),next=b.dataset.move==='up'?index-1:index+1;if(next<0||next>=order.length)return;[order[index],order[next]]=[order[next],order[index]];chapterData(1).orderChecked=false;saveNow();renderStudy(1);const moved=document.querySelector('.order-item[data-step="'+step+'"]');if(moved)moved.querySelector('[data-move="'+b.dataset.move+'"]').focus()}
+    function checkOrder(){const d=chapterData(1),correct=d.order.every((step,i)=>step===i);d.orderChecked=true;d.orderCorrect=correct;saveNow();const f=document.getElementById('order-feedback');f.className='feedback '+(correct?'success':'error');f.textContent=correct?'Correct. The Scrum processes are in the right order.':'Not quite. Review the sequence, move any steps that need to change, and try again.'}
+    function clearChapter(){if(!confirm('Clear all saved responses for Chapter '+activeChapter+'?'))return;saved[activeChapter]={};saveNow();renderStudy(activeChapter)}
+    function responseLines(study,data){const lines=['Contemporary Leadership in Sport Organizations, Third Edition','Chapter '+study.chapter+' Case Study',study.title,'','Learner: '+(data.learnerName||''),'Date: '+(data.date||''),'','CASE STUDY',study.intro,''];if(study.type==='order'){lines.push('ARRANGED SCRUM PROCESS');(data.order||[]).forEach((step,i)=>lines.push((i+1)+'. '+scrumSteps[step]));lines.push('','Correctness check: '+(data.orderChecked?(data.orderCorrect?'Correct':'Needs another attempt'):'Not checked'))}else if(study.statementFields){lines.push('SPORT ORGANIZATION',data.organization||'','','VISION STATEMENT',data.vision||'');study.visionComponents.forEach((x,i)=>lines.push('',x+':',data['visionComponent'+i]||''));lines.push('','MISSION STATEMENT',data.mission||'');study.missionComponents.forEach((x,i)=>lines.push('',x+':',data['missionComponent'+i]||''))}else{if(study.score)lines.push('SELF-ASSESSMENT SCORE',data.score||'','');study.questions.forEach((q,i)=>lines.push((i+1)+'. '+q,'Response:',data['q'+i]||'',''))}return lines}
+    function ascii(v){return String(v||'').replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/…/g,'...').replace(/[^\x20-\x7E]/g,' ')}
+    function wrap(text,max){const out=[];ascii(text).split(/\r?\n/).forEach(p=>{if(!p){out.push('');return}let line='';p.split(/\s+/).forEach(word=>{if(word.length>max){if(line){out.push(line);line=''}while(word.length>max){out.push(word.slice(0,max));word=word.slice(max)}}if(!line)line=word;else if((line+' '+word).length<=max)line+=' '+word;else{out.push(line);line=word}});if(line)out.push(line)});return out}
+    function pdfEsc(t){return t.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)')}
+    function buildPdf(lines){let wrapped=[];lines.forEach(line=>wrapped.push(...wrap(line,88)));const pages=[];while(wrapped.length)pages.push(wrapped.splice(0,49));if(!pages.length)pages.push(['']);const objects=[null],pageIds=[],contentIds=[],catalogId=1,pagesId=2,fontId=3;objects[catalogId]='<< /Type /Catalog /Pages '+pagesId+' 0 R >>';objects[fontId]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>';pages.forEach(page=>{const pageId=objects.length;objects.push('');pageIds.push(pageId);const content='BT\n/F1 11 Tf\n14 TL\n50 748 Td\n'+page.map((line,i)=>(i?'T*\n':'')+'('+pdfEsc(line)+') Tj').join('\n')+'\nET',contentId=objects.length;objects.push('<< /Length '+content.length+' >>\nstream\n'+content+'\nendstream');contentIds.push(contentId)});objects[pagesId]='<< /Type /Pages /Kids ['+pageIds.map(id=>id+' 0 R').join(' ')+'] /Count '+pageIds.length+' >>';pageIds.forEach((id,i)=>objects[id]='<< /Type /Page /Parent '+pagesId+' 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 '+fontId+' 0 R >> >> /Contents '+contentIds[i]+' 0 R >>');let pdf='%PDF-1.4\n';const offsets=[0];for(let i=1;i<objects.length;i++){offsets[i]=pdf.length;pdf+=i+' 0 obj\n'+objects[i]+'\nendobj\n'}const xref=pdf.length;pdf+='xref\n0 '+objects.length+'\n0000000000 65535 f \n';for(let i=1;i<objects.length;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';pdf+='trailer\n<< /Size '+objects.length+' /Root '+catalogId+' 0 R >>\nstartxref\n'+xref+'\n%%EOF';return new Blob([pdf],{type:'application/pdf'})}
+    function downloadPdf(){saveNow();const study=studies[activeChapter-1],blob=buildPdf(responseLines(study,chapterData(activeChapter))),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='chapter-'+activeChapter+'-case-study-answers.pdf';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+    document.getElementById('chapter-buttons').addEventListener('click',event=>{const b=event.target.closest('[data-chapter]');if(b)location.hash='case-studies/chapter-'+b.dataset.chapter});
+    function showView(){const route=location.hash.slice(1)||'home';let view=route.split('/')[0];if(!['home','case-studies','branching-scenarios','copyright'].includes(view))view='home';document.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==view);if(view==='case-studies'){const match=route.match(/^case-studies\/chapter-(\d+)$/),chapter=match?Math.min(10,Math.max(1,Number(match[1]))):1;renderStudy(chapter)}else document.title=view==='home'?'Contemporary Leadership in Sport Organizations, 3rd Edition | Web Resource':document.querySelector('[data-view="'+view+'"] h1').textContent+' | Contemporary Leadership Web Resource';scrollTo(0,0)}
+    addEventListener('hashchange',showView);showView();
+  })();
+  </script>
+</body>
 </html>
