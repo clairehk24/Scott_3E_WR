@@ -71,19 +71,11 @@
         background: linear-gradient(90deg, var(--cream) 0 68%, var(--red) 68% 85%, var(--sky) 85%);
         content: "";
       }
-      .site-nav,
       .hero-grid,
       .activities,
       .site-footer {
         width: min(var(--wide), calc(100% - 48px));
         margin-inline: auto;
-      }
-      .site-nav {
-        display: flex;
-        min-height: 50px;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #ffffff3d;
       }
       .wordmark {
         display: inline-flex;
@@ -767,7 +759,6 @@
         }
       }
       @media (max-width: 680px) {
-        .site-nav,
         .hero-grid,
         .activities,
         .site-footer,
@@ -919,7 +910,6 @@
   <body>
     <div class="page-shell" data-view="home">
       <header class="hero">
-        <nav class="site-nav" aria-label="Primary navigation"><a href="#home" class="wordmark">Web Resource</a></nav>
         <div class="hero-grid">
           <div>
             <p class="eyebrow">Third Edition</p>
