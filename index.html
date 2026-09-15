@@ -223,7 +223,7 @@
         text-transform: uppercase;
       }
       .footer-logo .brand-logo {
-        height: 34px;
+        height: 54px;
       }
       .footer-meta {
         color: var(--muted);
@@ -255,6 +255,28 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid var(--border);
+      }
+      .interior-home {
+        width: min(1080px, calc(100% - 48px));
+        margin: 0 auto;
+        padding-top: 24px;
+      }
+      .home-button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        padding: 9px 18px;
+        border: 2px solid var(--navy);
+        background: var(--paper);
+        color: var(--navy);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .home-button:hover {
+        background: var(--navy);
+        color: #fff;
       }
       .wordmark-dark,
       .interior-nav-link {
@@ -713,12 +735,15 @@
         font-size: 0.86rem;
       }
       .copyright-header {
-        padding: 35px 0 27px;
+        padding: 27px 0 22px;
       }
       .copyright-content {
-        max-width: 860px;
-        padding: 46px 50px 64px;
-        border-top-color: var(--navy);
+        max-width: 1080px;
+        padding: 42px;
+        border: 1px solid var(--border);
+        border-top: 7px solid var(--navy);
+        background: var(--paper);
+        box-shadow: 0 14px 38px #19263512;
       }
       .copyright-content section + section {
         margin-top: 36px;
@@ -928,14 +953,14 @@
             <p>Begin with the branching scenario, then move to the associated case study.</p>
           </div>
           <div class="activity-grid">
-            <a href="#branching-scenarios" class="activity-card">
+            <a href="source%20files/Branching%20Scenarios/branching-scenarios.html" class="activity-card">
               <div class="card-topline"><span class="activity-number">Step 01</span></div>
               <div>
                 <h3>Branching Scenarios</h3>
                 <p>Make leadership decisions, follow the consequences, and explore alternate paths before moving to the case study.</p>
               </div>
               <span class="activity-action">
-                Explore resources
+                Start branching scenarios
                 <span class="activity-arrow" aria-hidden="true">→</span>
               </span>
             </a>
@@ -962,10 +987,9 @@
       </footer>
     </div>
     <div class="interior-page" data-view="case-studies" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">Web Resource</a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
+      <div class="interior-home">
+        <a href="#home" class="home-button">&#8592; Home</a>
+      </div>
       <section class="interior-hero">
         <div class="interior-heading">
           <p class="eyebrow eyebrow-dark">Step 02</p>
@@ -1003,41 +1027,18 @@
       </section>
     </div>
     <div class="interior-page" data-view="copyright" hidden>
-      <nav class="interior-nav" aria-label="Page navigation">
-        <a href="#home" class="wordmark wordmark-dark">Web Resource</a>
-        <a href="#home" class="interior-nav-link">Home</a>
-      </nav>
+      <div class="interior-home">
+        <a href="#home" class="home-button">&#8592; Home</a>
+      </div>
       <header class="copyright-header">
         <p class="eyebrow eyebrow-dark">Copyright &amp; Permissions</p>
-        <h1>Use these resources responsibly.</h1>
       </header>
       <article class="copyright-content">
-        <section>
-          <h2>Copyright notice</h2>
-          <p>Copyright © 2027 by David Scott and Mark LaSota. Copyright © 2022, 2014 by David Scott. All rights reserved.</p>
-        </section>
-        <section>
-          <h2>Permissions</h2>
-          <p>
-            These web resources accompany
-            <em>Contemporary Leadership in Sport Organizations, Third Edition</em>
-            . They may not be reproduced, distributed, or republished without written permission from the publisher, except as allowed by applicable law.
-          </p>
-        </section>
-        <section>
-          <h2>Permission requests</h2>
-          <p>
-            For permission to reuse content published by Human Kinetics, contact
-            <a href="mailto:permissions@hkusa.com">permissions@hkusa.com</a>
-            .
-          </p>
-        </section>
         <section>
           <h2>Copyright &amp; permissions document</h2>
           <p class="copyright-download-note">The downloadable copyright and permissions document will be available here.</p>
           <button class="secondary-button placeholder-download-button" type="button" disabled>Download document—coming soon</button>
         </section>
-        <a href="#home" class="back-link">← Back to web resource</a>
       </article>
     </div>
     <script src="case-studies-data.js"></script>
