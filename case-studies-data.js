@@ -16,7 +16,7 @@
     {
       chapter: 1,
       heading: "Chapter 1",
-      title: "Case Study, Agile Leadership Scenario Activity",
+      title: "Agile Leadership Scenario Activity",
       intro: [
         "Scenario: You are the athletic director, acting as the Scrum Master, responsible for guiding your NCAA Division I athletic department staff through a recent, unexpected change.",
         "You received confirmation on a Monday morning that the upcoming women’s basketball game on Saturday has been selected for national television due to changes in conference standings. The game time is adjusted, media exposure will be significant, and attendance is expected to increase dramatically.",
@@ -27,7 +27,7 @@
     },
     {
       chapter: 2,
-      heading: "Chapter 2 Case Study",
+      heading: "Chapter 2",
       title: "Leadership Tension Between Results and Relationship",
       intro: ["Watch the video and then answer the following questions."],
       link: {
@@ -57,7 +57,7 @@
     {
       chapter: 4,
       heading: "Chapter 4",
-      title: "Case Study: Inheriting Success and Maintaining Culture",
+      title: "Inheriting Success and Maintaining Culture",
       intro: [
         "You have been hired as head coach of an ultra-successful women’s college basketball program. The team had 14 final four appearances under the guidance of the previous head coach, who retired and became a special advisor to the athletic director. The previous head coach brought structure, enforced accountability, and commanded respect—setting a high standard for leadership that the current coach now inherits. Therefore, you are walking into a role with high expectations, intense media scrutiny, and a locker room full of athletes who have only known success under your predecessor. While the program is not “broken,” you are expected to lead, evolve, and deliver—not simply maintain.",
       ],
@@ -71,7 +71,7 @@
     {
       chapter: 5,
       heading: "Chapter 5",
-      title: "Activity: Creating Vision and Mission Statement for a Sport Organization",
+      title: "Creating Vision and Mission Statement for a Sport Organization",
       intro: [
         "Directions: Choose an existing organization or company that offers sport-related products or services. Create both vision and mission statements. Make sure to apply the critique components to your statement as demonstrated in the following example of Southwest Airlines.",
         "What is a vision statement?",
@@ -124,7 +124,7 @@
     {
       chapter: 6,
       heading: "Chapter 6",
-      title: "Hypothetical Case Study: Complexity, Risk, and Decision Making",
+      title: "Complexity, Risk, and Decision Making",
       intro: [
         "Purpose: To assess and manage complexity, risk resiliency, and adaptive leadership in a professional sports organization.",
         "Organization: The New Mexico Cougars, a hypothetical new UFL team in Albuquerque, NM.",
@@ -182,7 +182,7 @@
     {
       chapter: 8,
       heading: "Chapter 8",
-      title: "Case Study: Diversity Management",
+      title: "Diversity Management",
       intro: ["Watch the video and then answer the following questions."],
       link: {
         label: "https://www.youtube.com/watch?v=CznqB2_j5L4",
@@ -197,7 +197,7 @@
     {
       chapter: 9,
       heading: "Chapter 9",
-      title: "Case Study: Cross-Cultural Leadership in International Soccer",
+      title: "Cross-Cultural Leadership in International Soccer",
       intro: [
         "When a French soccer manager took over as head coach of the Saudi Arabian national team, he faced several challenges that forced him to get out of his comfort zone as a leader. Some of the challenges included culture, language, and social environment. Known for his emotional and passionate style, the manager discovered he needed to adjust his communication and leadership approach to align with the more reserved and hierarchical cultural norms in Saudi Arabia. Rather than imposing his methods, he took time to understand local values, respect religious practices such as prayer times, and involved staff in decision-making processes to build trust with all stakeholders. His adaptive leadership impacted his team’s performance as Saudi Arabia shocked the world by defeating Argentina in the FIFA World Cup. The result was widely attributed to his ability to bring his team together and teach on-field strategies that emphasized discipline.",
       ],
@@ -210,7 +210,7 @@
     {
       chapter: 10,
       heading: "Chapter 10",
-      title: "Case Study 1: Organizational Leadership with Nike Leaders and Executives",
+      title: "Organizational Leadership with Nike Leaders and Executives",
       intro: [
         "This video is a panel discussion hosted by Columbia Business and Law Schools that includes several executive leaders with Nike Corporation discussing their experiences and contributions to the overall global Nike enterprise. Watch this panel discussion and answer the following questions.",
       ],
