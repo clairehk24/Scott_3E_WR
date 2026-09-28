@@ -177,7 +177,7 @@
         justify-content: flex-end;
       }
       .activity-number {
-        color: #80786c;
+        color: #786f64;
         font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 0.16em;
@@ -278,6 +278,11 @@
         background: var(--navy);
         color: #fff;
       }
+      .home-button:focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 4px;
+        box-shadow: 0 0 0 2px #fff;
+      }
       .wordmark-dark,
       .interior-nav-link {
         color: var(--navy);
@@ -366,13 +371,13 @@
       .chapter-button {
         min-height: 48px;
         padding: 10px 8px;
-        border: 2px solid transparent;
-        background: #fff;
+        border: 2px solid var(--navy);
+        background: #edf4fb;
         color: var(--navy);
         font-weight: 800;
       }
       .chapter-button:hover {
-        border-color: var(--navy);
+        background: #fff;
       }
       .chapter-button[aria-current="true"] {
         border-color: var(--navy);
@@ -554,6 +559,10 @@
         background: var(--navy);
         color: #fff;
       }
+      .new-window-note {
+        font-size: 0.82em;
+        font-weight: 700;
+      }
       .external-note {
         margin-top: 9px !important;
         color: var(--muted);
@@ -720,9 +729,12 @@
       }
       .text-button {
         margin-left: auto;
-        border-color: transparent;
-        background: transparent;
+        border-color: var(--bad);
+        background: #fff;
         color: var(--bad);
+      }
+      .text-button:hover {
+        background: #fff0f2;
       }
       .save-status {
         align-self: center;
@@ -938,7 +950,7 @@
         <div class="hero-grid">
           <div>
             <p class="eyebrow">Third Edition</p>
-            <h1>
+            <h1 aria-label="Contemporary Leadership in Sport Organizations">
               Contemporary Leadership
               <span>in Sport Organizations</span>
             </h1>
@@ -1031,7 +1043,8 @@
         <a href="#home" class="home-button">&#8592; Home</a>
       </div>
       <header class="copyright-header">
-        <p class="eyebrow eyebrow-dark">Copyright &amp; Permissions</p>
+        <p class="eyebrow eyebrow-dark">Legal resources</p>
+        <h1>Copyright &amp; Permissions</h1>
       </header>
       <article class="copyright-content">
         <section>
@@ -1197,6 +1210,7 @@
         const storageKey = "clso3e-case-study-responses-v1";
         let saved = loadSaved(),
           activeChapter = 1,
+          pendingChapterFocus = null,
           saveTimer;
         function loadSaved() {
           try {
@@ -1243,6 +1257,7 @@
             k +
             '" type="' +
             (type || "text") +
+            '" autocomplete="off' +
             '" value="' +
             esc(value) +
             '"></div>'
@@ -1260,7 +1275,7 @@
             fieldId(c, k) +
             '" data-answer-key="' +
             k +
-            '">' +
+            '" autocomplete="off">' +
             esc(value) +
             "</textarea></div>"
           );
@@ -1283,7 +1298,7 @@
             fieldId(chapter, key) +
             '" data-answer-key="' +
             key +
-            '">' +
+            '" autocomplete="off">' +
             esc(data[key]) +
             "</textarea></div>"
           );
@@ -1455,7 +1470,11 @@
             esc(sourceDocuments[chapter]) +
             '" download>Download Word document</a></aside>';
           const link = study.link
-            ? '<section class="study-section"><a class="external-link" href="' + study.link.url + '" target="_blank" rel="noopener noreferrer">' + esc(study.link.label) + "</a></section>"
+            ? '<section class="study-section"><a class="external-link" href="' +
+              study.link.url +
+              '" target="_blank" rel="noopener noreferrer">' +
+              esc(study.link.label) +
+              ' <span class="new-window-note">(opens in a new tab)</span></a></section>'
             : "";
           let activity = "";
           if (study.type === "order") activity = '<section class="study-section">' + orderMarkup(data) + "</section>";
@@ -1471,7 +1490,7 @@
                   (x, i) =>
                     '<div class="component-item"><strong>' +
                     x +
-                    '</strong><input type="text" data-answer-key="visionComponent' +
+                    '</strong><input type="text" autocomplete="off" data-answer-key="visionComponent' +
                     i +
                     '" aria-label="How the vision addresses ' +
                     x +
@@ -1488,7 +1507,7 @@
                   (x, i) =>
                     '<div class="component-item"><strong>' +
                     x +
-                    '</strong><input type="text" data-answer-key="missionComponent' +
+                    '</strong><input type="text" autocomplete="off" data-answer-key="missionComponent' +
                     i +
                     '" aria-label="How the mission addresses ' +
                     x +
@@ -1520,6 +1539,11 @@
             activity +
             '<div class="action-bar"><button type="button" class="primary-button" id="download-pdf">Download answers as PDF</button><button type="button" class="secondary-button" id="print-answers">Print answers</button><span class="save-status" id="save-status">Saved on this device</span><button type="button" class="text-button" id="clear-answers">Clear this chapter</button></div><p class="privacy-note">Your responses stay in this browser unless you print or download them.</p>';
           renderButtons();
+          if (pendingChapterFocus === chapter) {
+            const activeButton = document.querySelector('.chapter-button[data-chapter="' + chapter + '"]');
+            if (activeButton) activeButton.focus({ preventScroll: true });
+            pendingChapterFocus = null;
+          }
           bindEvents();
           document.title = "Chapter " + chapter + " Case Study | Contemporary Leadership Web Resource";
           if (study.type === "order" && data.orderChecked) {
@@ -1706,7 +1730,13 @@
         }
         document.getElementById("chapter-buttons").addEventListener("click", (event) => {
           const b = event.target.closest("[data-chapter]");
-          if (b) location.hash = "case-studies/chapter-" + b.dataset.chapter;
+          if (b) {
+            const targetHash = "#case-studies/chapter-" + b.dataset.chapter;
+            if (location.hash !== targetHash) {
+              pendingChapterFocus = Number(b.dataset.chapter);
+              location.hash = targetHash;
+            }
+          }
         });
         function showView() {
           const route = location.hash.slice(1) || "home";
