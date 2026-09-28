@@ -1293,6 +1293,16 @@
           if (colon < 0) return esc(text);
           return "<strong>" + esc(text.slice(0, colon + 1)) + "</strong>" + esc(text.slice(colon + 1));
         }
+        function emphasizePhrase(text, phrase) {
+          const start = text.indexOf(phrase);
+          if (start < 0) return esc(text);
+          return esc(text.slice(0, start)) + "<strong>" + esc(phrase) + "</strong>" + esc(text.slice(start + phrase.length));
+        }
+        function emphasizeLeadAndPhrase(text, phrase) {
+          const colon = text.indexOf(":");
+          if (colon < 0) return emphasizePhrase(text, phrase);
+          return "<strong>" + esc(text.slice(0, colon + 1)) + "</strong>" + emphasizePhrase(text.slice(colon + 1), phrase);
+        }
         function critiqueList(paragraphs) {
           return '<ol class="critique-list">' + paragraphs.map((paragraph) => "<li>" + esc(paragraph.replace(/^\d+\.\s*/, "")) + "</li>").join("") + "</ol>";
         }
@@ -1301,7 +1311,7 @@
           return (
             '<div class="study-intro chapter-five-intro">' +
             '<p class="chapter-five-directions">' +
-            emphasizeLead(paragraphs[0]) +
+            emphasizeLeadAndPhrase(paragraphs[0], "Create both vision and mission statements") +
             "</p>" +
             '<section class="manuscript-subsection"><h3>' +
             esc(paragraphs[1]) +
@@ -1377,7 +1387,26 @@
         function renderIntroduction(study) {
           if (study.chapter === 5) return renderChapterFiveIntroduction(study);
           if (study.chapter === 6) return renderChapterSixIntroduction(study);
-          return '<div class="study-intro">' + study.intro.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>";
+          return (
+            '<div class="study-intro">' +
+            study.intro
+              .map((paragraph) => {
+                let content = esc(paragraph);
+                if (study.chapter === 1) {
+                  content = emphasizePhrase(paragraph, "in the correct order they should occur");
+                } else if (study.chapter === 7) {
+                  const emphasizedPhrase = [
+                    "executive leadership team",
+                    "sexual misconduct, harassment, and a toxic workplace environment",
+                    "ignored, minimized, or inadequately addressed",
+                  ].find((phrase) => paragraph.includes(phrase));
+                  if (emphasizedPhrase) content = emphasizePhrase(paragraph, emphasizedPhrase);
+                }
+                return "<p>" + content + "</p>";
+              })
+              .join("") +
+            "</div>"
+          );
         }
         function renderButtons() {
           document.getElementById("chapter-buttons").innerHTML = studies

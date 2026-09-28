@@ -18,7 +18,7 @@
       heading: "Chapter 1",
       title: "Agile Leadership Scenario Activity",
       intro: [
-        "Scenario: You are the athletic director, acting as the Scrum Master, responsible for guiding your NCAA Division I athletic department staff through a recent, unexpected change.",
+        "Scenario: You are the athletic director, acting as the Scrum Master, responsible for guiding your National Collegiate Athletic Association (NCAA) Division I athletic department staff through a recent, unexpected change.",
         "You received confirmation on a Monday morning that the upcoming women’s basketball game on Saturday has been selected for national television due to changes in conference standings. The game time is adjusted, media exposure will be significant, and attendance is expected to increase dramatically.",
         "In your role, you will need to be prepared to maintain safety, optimize the fan experience, and ensure broadcast readiness.",
         "Your task for this exercise is to arrange the following Scrum processes in the correct order they should occur to demonstrate effective agile leadership.",
@@ -43,7 +43,7 @@
     {
       chapter: 3,
       heading: "Chapter 3",
-      title: "Global Leadership Foundation: Self-Assessment—Emotional Intelligence (EI)Test",
+      title: "Global Leadership Foundation: Self-Assessment—Emotional Intelligence (EI) Test",
       intro: [
         "Click on the following link and take the EI test. There are a total of 40 questions. Once you are finished, click on “score test” and assess your strengths and weaknesses. Your scores will reflect your skill level within each of Goleman’s four EI quadrants.",
       ],
@@ -102,62 +102,48 @@
         "9. Employees",
       ],
       statementFields: true,
-      visionComponents: [
-        "Future-oriented",
-        "Inspiring and challenging",
-        "Motivating and memorable",
-        "Purpose-driven",
-        "Unique",
-      ],
-      missionComponents: [
-        "Customers",
-        "Products or services",
-        "Markets",
-        "Technology",
-        "Survival, growth, and profitability",
-        "Philosophy",
-        "Distinctive competence",
-        "Public image",
-        "Employees",
-      ],
+      visionComponents: ["Future-oriented", "Inspiring and challenging", "Motivating and memorable", "Purpose-driven", "Unique"],
+      missionComponents: ["Customers", "Products or services", "Markets", "Technology", "Survival, growth, and profitability", "Philosophy", "Distinctive competence", "Public image", "Employees"],
     },
     {
       chapter: 6,
       heading: "Chapter 6",
       title: "Complexity, Risk, and Decision Making",
       intro: [
-        "Purpose: To assess and manage complexity, risk resiliency, and adaptive leadership in a professional sports organization.",
-        "Organization: The New Mexico Cougars, a hypothetical new UFL team in Albuquerque, NM.",
+        "Purpose: To assess and manage complexity, risk resiliency, and adaptive leadership in professional sport organizations.",
+        "Organization: The New Mexico Cougars, a hypothetical new United Football League (UFL) team in Albuquerque, NM.",
         "Injury Crisis: Two key players, including the star running back and one of their defensive linebackers who is leading the league in tackles, both suffer significant injuries in the final month of the regular season. This puts the team’s chances of advancing to the playoffs in jeopardy.",
         "Financial Strain: Due to economic factors (inflation, rising operational costs, and less-than-expected fan attendance) the team is facing financial pressure. There’s a potential risk of missing out on major sponsorship deals if the team’s performance suffers or if management fails to act swiftly.",
-        "Public Relations Issues: A controversy arises involving a player’s off-field behavior, which gains media attention. The negative publicity affects the organization’s brand image, potentially damaging relationships with sponsors, fans, and other stakeholders.",
-        "Leadership Change: The team’s GM announces an unexpected resignation due to health conditions, leaving the organization in a leadership vacuum with only a few weeks left until the postseason.",
+        "Public Relations (PR) Issues: A controversy arises involving a player’s off-field behavior, which gains media attention. The negative publicity affects the organization’s brand image, potentially damaging relationships with sponsors, fans, and other stakeholders.",
+        "Leadership Change: The team’s general manager (GM) announces an unexpected resignation due to health conditions, leaving the organization in a leadership vacuum with only a few weeks left until the postseason.",
         "Key Leaders Involved in the Case",
-        "CEO of the Cougars: A seasoned executive focused on ensuring long-term success and financial stability. The CEO is concerned about both the team’s performance and the management of external pressures such as sponsorship deals.",
+        "Chief executive officer (CEO) of the Cougars: A seasoned executive focused on ensuring long-term success and financial stability. The CEO is concerned about both the team’s performance and the management of external pressures such as sponsorship deals.",
         "Head Coach: Responsible for the team’s performance and recovery strategy. The coach must manage player injuries, devise new tactics with a depleted roster, and keep morale high.",
-        "Interim General Manager: The new interim GM steps up temporarily after the resignation, tasked with making tough decisions about team strategy, financial spending, and overseeing both short-term fixes and long-term planning.",
-        "PR Director: While focusing on management of the team’s reputation, the PR director has to balance public relations efforts which include handling media fallout from the player controversy, maintaining positive community relations.",
+        "GM: The new interim GM steps up temporarily after the resignation, tasked with making tough decisions about team strategy, financial spending, and overseeing both short-term fixes and long-term planning.",
+        "PR Director: While focusing on management of the team’s reputation, the PR director has to balance efforts which include handling media fallout from the player controversy, maintaining positive community relations.",
         "Medical and Performance Team: They must assess player injuries, implement rehabilitation programs, and ensure the players are prepared for critical games. Their decisions directly affect the team’s success or failure.",
         "Decision Points for the Organization: Given all of the above information as the foundation for this case, put yourself in the role of a leadership advisor and answer the following questions (either individually or with a small group in your class).",
       ],
       questions: [
         {
           section: "1. Risk Resiliency in Team Composition and Performance:",
-          prompt: "With key players injured, the team must decide how to adjust its roster. Should they promote from within and develop existing talent or invest resources into acquiring one or two emergency players via trade or free agency? What is your rationale for this decision?",
+          prompt:
+            "With key players injured, the team must decide how to adjust its roster. Should they promote from within and develop existing talent or invest resources into acquiring one or two emergency players via trade or free agency? What is your rationale for this decision?",
         },
         "Should the coach modify tactics to minimize the gap created by injuries, and how can leadership balance the short-term need for wins with the long-term vision of maintaining team cohesion?",
         {
-          section: "2. Financial Stability Amidst Risk:",
+          section: "2. Financial Stability Amid Risk:",
           prompt: "The CEO must make difficult decisions regarding budget cuts. How should limited funds be allocated to maintain operations, secure new sponsorship deals, or acquire players?",
         },
         "What specific ways might the team lean into innovative solutions, like leveraging digital content, merchandise, or fan engagement strategies, to create new revenue streams and offset potential losses?",
         {
           section: "3. Crisis Management and Leadership Change:",
-          prompt: "In light of the sudden resignation of the GM, the interim GM has to step up and lead the organization through this turbulent period. How does the interim GM keep the staff motivated, continue negotiations with sponsors, and ensure smooth operations?",
+          prompt:
+            "In light of the sudden resignation of the GM, the interim GM has to step up and lead the organization through this turbulent period. How does the interim GM keep the staff motivated, continue negotiations with sponsors, and ensure smooth operations?",
         },
         "Does the CEO look for a permanent GM replacement quickly, or is it better to elevate a trusted internal leader for continuity?",
         {
-          section: "4. Effective Communication and Public Relations:",
+          section: "4. Effective Communication and PR:",
           prompt: "The PR director faces backlash from the player’s off-court actions. Should they issue a public apology, suspend the player, or take another approach to manage the crisis?",
         },
         "Which type of communication should be used to ensure sponsors, fans, and the broader community that the situation is under control and that the organization is committed to ethical standards and performance excellence?",
@@ -199,11 +185,11 @@
       heading: "Chapter 9",
       title: "Cross-Cultural Leadership in International Soccer",
       intro: [
-        "When a French soccer manager took over as head coach of the Saudi Arabian national team, he faced several challenges that forced him to get out of his comfort zone as a leader. Some of the challenges included culture, language, and social environment. Known for his emotional and passionate style, the manager discovered he needed to adjust his communication and leadership approach to align with the more reserved and hierarchical cultural norms in Saudi Arabia. Rather than imposing his methods, he took time to understand local values, respect religious practices such as prayer times, and involved staff in decision-making processes to build trust with all stakeholders. His adaptive leadership impacted his team’s performance as Saudi Arabia shocked the world by defeating Argentina in the FIFA World Cup. The result was widely attributed to his ability to bring his team together and teach on-field strategies that emphasized discipline.",
+        "When a French soccer manager took over as head coach of the Saudi Arabian national team, he faced several challenges that forced him to get out of his comfort zone as a leader. Some of the challenges included culture, language, and social environment. Known for his emotional and passionate style, the manager discovered he needed to adjust his communication and leadership approach to align with the more reserved and hierarchical cultural norms in Saudi Arabia. Rather than imposing his methods, he took time to understand local values, respect religious practices such as prayer times, and involved staff in decision-making processes to build trust with all stakeholders. His adaptive leadership impacted his team’s performance as Saudi Arabia shocked the world by defeating Argentina in the Fédération Internationale de Football Association (FIFA) World Cup. The result was widely attributed to his ability to bring his team together and teach on-field strategies that emphasized discipline.",
       ],
       questions: [
         "How did the manager demonstrate cultural competence in his leadership of the Saudi national team?",
-        "What strategies can international sports leaders use to bridge cultural gaps with their teams?",
+        "What strategies can international sport leaders use to bridge cultural gaps with their teams?",
         "What are some potential risks or challenges a coach might face if they fail to adapt to the cultural context of their team?",
       ],
     },
@@ -222,7 +208,8 @@
         "What are three to five of the most important points made in this panel discussion that you think would be most helpful in your future leadership roles?",
         "Which one or more of the five disciplines of the learning organization presented in Table 1 of chapter 10 do you think are most applicable to the discussion in this video? Why?",
         {
-          prompt: "In chapter 10, McCall (2010) was cited as identifyng five demands that executives must meet to become more effective as a leader. The five demands are listed below. Identify and give two or three examples of how Nike executives demonstrated one or more of these demands.",
+          prompt:
+            "In chapter 10, McCall (2010) was cited as identifying five demands that executives must meet to become more effective as a leader. The five demands are listed below. Identify and give two or three examples of how Nike executives demonstrated one or more of these demands.",
           details: [
             "Setting direction (e.g., knowledge of business, strategic thinking, development of structure, and control systems)",
             "Alignment (e.g., working with constituents and political situations, dealing with conflict, negotiation, developing people)",
