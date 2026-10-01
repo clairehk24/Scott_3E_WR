@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" identifier="SCORM_PACKAGE_1" version="1.0">
+  <metadata>
+    <schema>IMSGlobal Learning Object Metadata</schema>
+    <schemaversion>1.0</schemaversion>
+  </metadata>
+  <organizations>
+    <organization identifier="SCORM_ORG_1">
+      <title>Simple SCORM Package</title>
+      <item identifier="SCORM_ITEM_1" isvisible="true">
+        <title>Introduction</title>
+        <adlcp:timeLimit>PT10M</adlcp:timeLimit>
+        <adlcp:maxTimeAllowed>PT10M</adlcp:maxTimeAllowed>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="SCORM_RESOURCE_1" type="webcontent" href="index.html">
+      <file href="index.html"/>
+      <file href="styles.css"/>
+      <file href="script.js"/>
+    </resource>
+  </resources>
+</manifest>

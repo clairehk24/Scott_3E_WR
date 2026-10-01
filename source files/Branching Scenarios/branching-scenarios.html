@@ -25,7 +25,7 @@
 <div class="resource-grid">
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-1.html">
     <span class="num">01</span>
-    <h3>Leadership Circle Self-Assessment</h3>
+    <h2>The Leadership Circle: Self Assessment Tool</h2>
     <p>Explore your leadership profile, strengths, and priorities for continued development.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -34,7 +34,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-2.html">
     <span class="num">02</span>
-    <h3>Professional and Ethical Responsibility</h3>
+    <h2>Results, Relationships, and Responsibility</h2>
     <p>Navigate concussion decisions involving athlete welfare, confidentiality, resources, and accountability.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -43,7 +43,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-3.html">
     <span class="num">03</span>
-    <h3>Emotional Intelligence and Leadership</h3>
+    <h2>Emotional Intelligence and Leadership</h2>
     <p>Use empathy, self-control, and active listening to resolve a difficult member interaction.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -52,7 +52,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-4.html">
     <span class="num">04</span>
-    <h3>Building a Culture of Success</h3>
+    <h2>Building a Culture of Success</h2>
     <p>Engage members in strengthening teamwork, respect, understanding, and equity.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -61,7 +61,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-5.html">
     <span class="num">05</span>
-    <h3>Vision and Strategic Leadership</h3>
+    <h2>Vision and Strategic Leadership</h2>
     <p>Lead a shared visioning process during a university's move to NCAA Division I.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -70,7 +70,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-6.html">
     <span class="num">06</span>
-    <h3>Complexity and Problem Solving</h3>
+    <h2>Complexity and Problem Solving</h2>
     <p>Apply the Cynefin framework and Bolman and Deal's leadership frames to sport challenges.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -79,7 +79,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-7.html">
     <span class="num">07</span>
-    <h3>Change, Turnaround, and Crisis Leadership</h3>
+    <h2>Change, Turnaround, and Crisis Leadership</h2>
     <p>Balance urgency, diagnosis, participation, and strategy to turn around a struggling club.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -88,7 +88,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-8.html">
     <span class="num">08</span>
-    <h3>Leading Across Difference</h3>
+    <h2>Leading Diverse Employees at Summit Athletics</h2>
     <p>Build inclusion, belonging, trust, and collaboration at Summit Athletics.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -97,7 +97,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-9.html">
     <span class="num">09</span>
-    <h3>Cross-Cultural Leadership at Adidas</h3>
+    <h2>Cross-Cultural Leadership at Adidas</h2>
     <p>Adapt communication and decision-making across a multinational product team.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -106,7 +106,7 @@
 
   <a class="resource-card" style="--card-accent:var(--crimson-600);" href="scenario-10.html">
     <span class="num">10</span>
-    <h3>Phoenix United FC as a Learning Organization</h3>
+    <h2>Leading Phoenix United FC as a Learning Organization</h2>
     <p>Strengthen performance and long-term viability through learning-centered leadership.</p>
     <span class="explore-link">Start scenario
       <svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -116,6 +116,14 @@
 
 
 
+<dialog id="resetDialog" aria-labelledby="resetTitle" aria-describedby="resetDescription">
+  <h2 id="resetTitle">Reset completion status?</h2>
+  <p id="resetDescription">This clears the completion status for all ten scenarios.</p>
+  <form method="dialog">
+    <button class="btn btn-secondary" value="cancel" autofocus>Cancel</button>
+    <button class="btn btn-primary" value="reset">Reset completion status</button>
+  </form>
+</dialog>
 <script>
 const scenarioCards = document.querySelectorAll('.resource-card[href^="scenario-"]');
 
@@ -125,21 +133,48 @@ scenarioCards.forEach(card => {
   try {
     if (localStorage.getItem(`clso:scenario:${match[1]}:completed`) === 'true') {
       card.classList.add('is-complete');
+      const label = document.createElement('span');
+      label.className = 'completion-label';
+      label.textContent = 'Completed';
+      card.querySelector('.explore-link').before(label);
     }
   } catch (error) {
     // Keep the selection screen usable if browser storage is unavailable.
   }
 });
 
-document.getElementById('resetProgressBtn').addEventListener('click', () => {
-  if (!window.confirm('Reset the completion status for all scenarios?')) return;
+const resetDialog = document.getElementById('resetDialog');
+const resetButton = document.getElementById('resetProgressBtn');
+resetButton.addEventListener('click', () => {
+  resetDialog.returnValue = '';
+  resetDialog.showModal();
+});
+// Keep keyboard focus cycling between this dialog's two actions.
+resetDialog.addEventListener('keydown', event => {
+  if (event.key !== 'Tab' || event.altKey || event.ctrlKey || event.metaKey) return;
+  const cancel = resetDialog.querySelector('button[value="cancel"]');
+  const confirm = resetDialog.querySelector('button[value="reset"]');
+  if (event.shiftKey && document.activeElement === cancel) {
+    event.preventDefault();
+    confirm.focus();
+  } else if (!event.shiftKey && document.activeElement === confirm) {
+    event.preventDefault();
+    cancel.focus();
+  }
+});
+resetDialog.addEventListener('close', () => {
+  resetButton.focus();
+  if (resetDialog.returnValue !== 'reset') return;
 
   const status = document.getElementById('resetProgressStatus');
   try {
     for (let scenario = 1; scenario <= 10; scenario++) {
       localStorage.removeItem(`clso:scenario:${scenario}:completed`);
     }
-    scenarioCards.forEach(card => card.classList.remove('is-complete'));
+    scenarioCards.forEach(card => {
+      card.classList.remove('is-complete');
+      card.querySelector('.completion-label')?.remove();
+    });
     status.textContent = 'Completion status reset.';
   } catch (error) {
     status.textContent = 'Completion status could not be reset in this browser.';

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple SCORM Package</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cream-50 text-ink-900 font-body">
+  <header class="topbar bg-navy-700 border-t-5 border-navy-900 py-4 px-6 flex justify-between items-center">
+    <div class="brand flex items-center gap-3">
+      <div class="wr-mark w-7 h-7 border-2 border-white rounded-md flex items-center justify-center text-white font-bold text-sm">WR</div>
+      <span class="brand-label text-white font-bold text-13px leading-1.2 uppercase">Web Resource</span>
+    </div>
+    <nav>
+      <a href="#" class="text-white/85 font-bold text-13px">Home</a>
+      <a href="#" class="text-white/85 font-bold text-13px">About</a>
+      <a href="#" class="text-white/85 font-bold text-13px">Contact</a>
+    </nav>
+  </header>
+  
+  <main class="container mx-auto px-6 py-12 max-w-1180px">
+    <section class="hero-banner bg-navy-700 border-t-6 border-navy-900 py-16 px-6">
+      <div class="brand-row flex items-center gap-3 pb-7 mb-7 border-b border-white/18">
+        <div class="wr-mark w-12 h-12 border-2 border-white rounded-md flex items-center justify-center text-white font-bold text-md">WR</div>
+        <h1 class="text-white text-3xl font-bold">Simple SCORM Package</h1>
+      </div>
+      <p class="text-white text-lg mb-8">Welcome to your first SCORM course. This is a minimal package built with Tailwind for modern styling.</p>
+      <button class="btn-primary bg-white text-navy-700 border-2 border-navy-700 hover:bg-navy-700 hover:text-white px-6 py-2 rounded-lg font-bold">Start Course</button>
+    </section>
+    
+    <section class="course-content max-w-780px mx-auto mt-16">
+      <h2 class="text-2xl font-bold mb-8">Course Overview</h2>
+      <div class="card bg-white rounded-xl shadow-md p-6 mb-8">
+        <h3 class="text-xl font-bold mb-4">Introduction</h3>
+        <p class="text-ink-600 mb-4">This is a basic SCORM package designed for testing learning management systems.</p>
+        <div class="feedback-bar good rounded-lg p-4 mb-4">
+          <p class="verdict text-green-700 font-bold text-lg">Completed</p>
+          <p class="text-ink-600">This module is ready for review and deployment.</p>
+        </div>
+        <button class="btn-primary bg-navy-700 text-white border-2 border-navy-700 hover:bg-white hover:text-navy-700 px-6 py-2 rounded-lg font-bold">Next Module</button>
+      </div>
+      
+      <section class="page-nav flex justify-between items-center mt-12 pt-6 border-t border-line-card">
+        <a href="#" class="text-ink-400 font-bold text-14px flex items-center gap-2">
+          <span class="icon">←</span> Previous Module
+        </a>
+        <button class="btn-primary bg-white text-navy-700 border-2 border-navy-700 hover:bg-navy-700 hover:text-white px-6 py-2 rounded-lg font-bold">Next Module</button>
+      </section>
+    </section>
+    
+    <footer class="site-footer max-w-1180px mx-auto py-12 px-6 border-t border-line flex justify-between items-center flex-wrap gap-6">
+      <div class="logo-placeholder flex items-center gap-4">
+        <div class="box w-13 h-13 border-1.5-dashed ink-subtle border rounded-md flex items-center justify-center text-ink-subtle font-bold text-10px text-center">LOGO</div>
+        <div class="label text-ink-900 font-bold text-13.5px">Web Resource</div>
+        <div class="caption text-ink-subtle text-12.5px italic">© 2026 Web Resource</div>
+      </div>
+      <div class="footer-meta text-13px text-ink-600">
+        <a href="#" class="font-bold">Privacy Policy</a>
+        <a href="#" class="font-bold">Terms of Service</a>
+      </div>
+    </footer>
+  </main>
+  
+  <script>
+    // Initialize SCORM interaction
+    function initScorm() {
+      // Check if we're in a SCORM environment
+      if (typeof window.scormAPI !== 'undefined') {
+        console.log('SCORM initialized successfully');
+        // Track course start
+        window.scormAPI.LMSInitialize();
+        window.scormAPI.LMSCommit();
+        window.scormAPI.LMSFinish();
+      } else {
+        console.warn('SCORM environment not detected');
+      }
+    }
+    
+    // Event listeners for interactive elements
+    document.addEventListener('DOMContentLoaded', function() {
+      initScorm();
+      
+      // Example: Button interaction
+      const startButton = document.querySelector('.btn-primary');
+      if (startButton) {
+        startButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('Course started!');
+          // Simulate SCORM tracking
+          if (typeof window.scormAPI !== 'undefined') {
+            window.scormAPI.SetValue('cmi.core.lesson_status', 'in_progress');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
