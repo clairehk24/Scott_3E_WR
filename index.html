@@ -1410,11 +1410,9 @@
                 if (study.chapter === 1) {
                   content = emphasizePhrase(paragraph, "in the correct order they should occur");
                 } else if (study.chapter === 7) {
-                  const emphasizedPhrase = [
-                    "executive leadership team",
-                    "sexual misconduct, harassment, and a toxic workplace environment",
-                    "ignored, minimized, or inadequately addressed",
-                  ].find((phrase) => paragraph.includes(phrase));
+                  const emphasizedPhrase = ["executive leadership team", "sexual misconduct, harassment, and a toxic workplace environment", "ignored, minimized, or inadequately addressed"].find(
+                    (phrase) => paragraph.includes(phrase),
+                  );
                   if (emphasizedPhrase) content = emphasizePhrase(paragraph, emphasizedPhrase);
                 }
                 return "<p>" + content + "</p>";
