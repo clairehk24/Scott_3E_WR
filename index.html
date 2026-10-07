@@ -776,13 +776,15 @@
         text-decoration: underline;
         text-underline-offset: 3px;
       }
+      .copyright-content a.secondary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
       .copyright-download-note {
         margin-bottom: 16px !important;
         color: var(--muted);
-      }
-      .placeholder-download-button:disabled {
-        cursor: not-allowed;
-        opacity: 0.58;
       }
       @media (max-width: 900px) {
         .activity-grid {
@@ -1048,9 +1050,8 @@
       </header>
       <article class="copyright-content">
         <section>
-          <h2>Copyright &amp; permissions document</h2>
-          <p class="copyright-download-note">The downloadable copyright and permissions document will be available here.</p>
-          <button class="secondary-button placeholder-download-button" type="button" disabled>Download document—coming soon</button>
+          <p class="copyright-download-note">Download the copyright and permissions document.</p>
+          <a class="secondary-button" href="source%20files/Scott_3E_AWS_WR%20Copyright%20Page%20.docx" download>Download document</a>
         </section>
       </article>
     </div>
